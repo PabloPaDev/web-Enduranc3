@@ -1,0 +1,224 @@
+{
+	"nav": {
+		"equipo": "Equipo",
+		"servicios": "Servicios",
+		"verTodosServicios": "Ver todos los servicios",
+		"entrenamientoOnline": "Entrenamiento Online",
+		"entrenamientoPresencial": "Entrenamiento Presencial",
+		"formacion": "Formación",
+		"gestionClubes": "Gestión de Clubes",
+		"asesoramiento": "Asesoramiento",
+		"contacto": "Contacto",
+		"blog": "Blog"
+	},
+	"hero": {
+		"title": "PLANIFICACIÓN\nDEPORTIVA PROFESIONAL",
+		"description": "es un grupo de entrenamiento cuya base es la formación científica y profesional de todos sus miembros, ofreciendo una clara diferencia no solo en el sector deportivo sino también en el trato personal y profesional con el deportista."
+	},
+	"servicios": {
+		"atletas": "+ 150 Atletas",
+		"llevadosNivel": "LLEVADOS AL SIGUIENTE NIVEL",
+		"title": "Entrena con ciencia,\nalcanza tus objetivos",
+		"description": "Planes de entrenamiento personalizados respaldados por análisis fisiológico avanzado. Optimizado cada sesión con datos objetivos y seguimiento continuo de tu evolución.",
+		"button": "SERVICIOS"
+	},
+	"strideTogether": {
+		"title": "Última tecnología en entrenamiento deportivo",
+		"description": "Para tener todos tus datos en un solo lugar y poder optimizar tu rendimiento.",
+		"button": "Saber más",
+		"modal": {
+			"title": "App en Desarrollo",
+			"description1": "Estamos desarrollando una aplicación de gestión deportiva que te permitirá tener todos tus datos de entrenamiento en un solo lugar y optimizar tu rendimiento de manera integral.",
+			"description2": "Próximamente estará disponible para todos nuestros deportistas.",
+			"button": "Entendido"
+		}
+	},
+	"team": {
+		"title": "Equipo",
+		"description": "Conoce a quienes forman Enduranc3. Un equipo de profesionales apasionados por el entrenamiento deportivo y la ciencia aplicada al rendimiento",
+		"carlos": {
+			"name": "CARLOS CABRERA",
+			"items": [
+				"Lcdo. en Ciencias del Deporte (Col 58150)",
+				"Entrenador Nivel I de triatlón",
+				"Triatleta y Ciclista",
+				"Especialista en emprendimiento y marca personal, proyectos de desarrollo profesional y formación",
+				"Especialista en entrenamiento y Ciclo Menstrual",
+				"Experiencia paralela de más de 10 años en competición y planificación deportiva en deportes de resistencia"
+			]
+		},
+		"chantal": {
+			"name": "CHANTAL",
+			"items": [
+				"Entrenadora de triatlón, especializada en larga distancia",
+				"Especialista en entrenamiento y salud hormonal de la mujer",
+				"Especialista en prevención y readaptación de lesiones deportivas",
+				"Triatleta en activo\nPreferencia por la ultradistancia",
+				"Acompañamiento a deportistas en:\n– iniciación\n– salud y lesiones\n– pruebas de larga distancia",
+				"Pasión por ayudar a los deportistas a cumplir retos y mejorar su calidad de vida a través del deporte"
+			]
+		},
+		"eva": {
+			"name": "EVA",
+			"items": [
+				"Graduada en Ciencias de la Actividad Física y del Deporte (Col. nº 69462)",
+				"Máster en Deportes Cíclicos",
+				"Máster en Alto Rendimiento y Salud",
+				"Directora Nivel III RFEC\nEscola de Ciclisme Bèrnia Xaló\nEquipo Cresan Bodegas Xaló",
+				"Especialista en entrenamiento en ciclismo",
+				"Ex atleta de fondo y medio fondo",
+				"Acompañamiento a deportistas jóvenes en etapas de desarrollo",
+				"Enfoque en rendimiento, salud y educación deportiva"
+			]
+		}
+	},
+	"contact": {
+		"title": "Contacto",
+		"subtitle": "¿Tienes alguna pregunta? Estamos aquí para ayudarte.",
+		"whatsapp": "Contáctanos por WhatsApp",
+		"whatsappMessage": "Estoy interesado en gestionar mis entrenes con vosotros",
+		"whatsappResponse": "Respuesta rápida y directa",
+		"form": {
+			"nombre": "Tu nombre",
+			"email": "tuemail.com",
+			"asunto": "¿Sobre qué quieres hablar?",
+			"mensaje": "Escribe tu mensaje aquí...",
+			"submit": "Enviar Mensaje"
+		},
+		"email": "Email",
+		"sponsors": "Patrocinios",
+		"social": "Redes Sociales",
+		"description": "Endurance3 es un centro de entrenamiento deportivo especializado en rendimiento. Combinamos ciencia, datos y experiencia para maximizar tu potencial atlético."
+	},
+	"footer": {
+		"description": "Entrenamiento deportivo basado en ciencia y datos. Maximiza tu potencial con metodología probada.",
+		"servicios": "Servicios",
+		"entrenamientoOnline": "Entrenamiento Online",
+		"presencial": "Presencial",
+		"valoraciones": "Valoraciones",
+		"empresa": "Empresa",
+		"sobreNosotros": "Sobre Nosotros",
+		"blog": "Blog",
+		"contacto": "Contacto",
+		"legal": "Legal",
+		"privacidad": "Privacidad",
+		"terminos": "Términos",
+		"copyright": "Todos los derechos reservados."
+	},
+	"servicesPage": {
+		"hero": {
+			"title": "SERVICIOS",
+			"description": "Ofrecemos servicios de entrenamiento deportivo profesional basados en ciencia y datos. Elige el servicio que mejor se adapte a tus necesidades."
+		},
+		"entrenamientoOnline": {
+			"title": "ENTRENAMIENTO ONLINE",
+			"table": {
+				"serviciosBasicos": "SERVICIOS BÁSICOS",
+				"endurance": "ENDURANCE",
+				"tempo": "TEMPO",
+				"ftp": "FTP",
+				"entrevista": "ENTREVISTA",
+				"planificacion": "PLANIFICACIÓN",
+				"feedback": "FEEDBACK",
+				"comunicacion": "COMUNICACIÓN",
+				"reajustes": "REAJUSTES",
+				"gestionCompeticion": "GESTIÓN COMPETICIÓN",
+				"appsBasicas": "APPs Básicas",
+				"consultoria": "CONSULTORIA",
+				"videollamada": "Videollamada",
+				"semanal": "Semanal",
+				"resumenSemanal": "Resumen Semanal",
+				"cada2_3dias": "Cada 2-3 días",
+				"aTravesApp": "A través de la APP",
+				"aTravesAppWhatsapp": "A través de la APP + Whatsapp",
+				"aTravesAppLlamadaWhatsapp": "A través de la APP + Llamada/Whatsapp",
+				"alFinalSemana": "Al final de la semana",
+				"diarios": "Diarios",
+				"hrvTrainingpeaks": "HRV + Trainingpeaks",
+				"hrvTrainingpeaksWko5": "HRV + Trainingpeaks + WKO5",
+				"unMes": "1 mes",
+				"guion": "–"
+			},
+			"masInformacion": "Más información"
+		},
+		"entrenamientoPresencial": {
+			"title": "ENTRENAMIENTO PRESENCIAL",
+			"description": "Entrenamiento personalizado con seguimiento directo y presencial. Ideal para deportistas que buscan un acompañamiento más cercano y personalizado.",
+			"masInformacion": "Más información"
+		},
+		"formacion": {
+			"title": "FORMACIÓN",
+			"mentoringEntrenadores": {
+				"title": "PROGRAMA MENTORING ENTRENADORES",
+				"description": "Te ayudamos con tu proceso de formación. Has terminado tu formación en TAFAD, Ciencias del Deporte o como entrenador deportivo y no sabes cómo comenzar a entrenar a deportistas.",
+				"meInteresa": "Me interesa"
+			},
+			"mentoringMarketing": {
+				"title": "PROGRAMA MENTORING MARKETING Y MARCA PERSONAL",
+				"description": "Te ayudamos con la creación y desarrollo de tu marca, producto o negocio. Ideal para CAFD, Nutricionistas, Fisioterapeutas que quieren crear su marca personal.",
+				"meInteresa": "Me interesa"
+			},
+			"clubesFederaciones": {
+				"title": "PROGRAMA CLUBES Y FEDERACIONES",
+				"description": "Te ayudamos con la formación de tus entrenadores/as y técnicos. Charlas, Cursos o Talleres para llevar tu club a un nivel superior.",
+				"meInteresa": "Me interesa"
+			}
+		},
+		"gestionClubes": {
+			"title": "GESTIÓN DE CLUBES",
+			"description": "Servicios de gestión integral para clubes deportivos. Profesionalización de servicios y mejora del rendimiento de tus deportistas.",
+			"masInformacion": "Más información"
+		},
+		"asesoramiento": {
+			"title": "ASESORAMIENTO",
+			"deportivo": {
+				"title": "ASESORAMIENTO DEPORTIVO",
+				"description": "Orientado a deportistas que buscan conocer los parámetros y determinantes del rendimiento implicados en su prueba objetivo.",
+				"items": [
+					"¿Qué requisitos fisiológicos necesito para preparar un gran fondo?",
+					"¿Cómo distribuyo la carga de entrenamiento?",
+					"¿Cuáles son mis zonas de entrenamiento?",
+					"¿Cómo afecta la carga de entrenamiento a mi ciclo menstrual?"
+				]
+			},
+			"profesional": {
+				"title": "ASESORAMIENTO PROFESIONAL",
+				"description": "Orientado a profesionales cuyo objetivo es iniciar un proyecto, buscar público objetivo, realizar análisis de la marca y crear una estrategia de venta y crecimiento.",
+				"items": [
+					"Creación y desarrollo de marca personal",
+					"Gestión de redes sociales",
+					"Análisis de público objetivo",
+					"Estrategia de venta y crecimiento"
+				]
+			},
+			"masInformacion": "Más información"
+		},
+		"whatsappMessage": "Hola, me gustaría saber sobre..."
+	},
+	"blogPage": {
+		"hero": {
+			"title": "BLOG",
+			"description": "Historias, experiencias y reflexiones de nuestro equipo sobre entrenamiento, rendimiento y pasión por el deporte."
+		},
+		"category": "Blog",
+		"leerMenos": "Leer menos",
+		"continuarLeyendo": "Continuar leyendo",
+		"posts": {
+			"carlos": {
+				"title": "Mi camino Endurance Carlos",
+				"excerpt": "Nunca dejes de creer en ti y cuando alguien te da la mano y confíe, te acompañe, esté contigo para conseguir los objetivos, todo será mucho más fácil. Y así…",
+				"content": "Nunca dejes de creer en ti y cuando alguien te da la mano y confíe, te acompañe, esté contigo para conseguir los objetivos, todo será mucho más fácil. Y así fue como llegué a Enduranc3, un lugar donde la pasión por el deporte se une con la ciencia y el conocimiento profesional. Aquí encontré no solo un equipo, sino una familia que comparte los mismos valores y objetivos. El camino no siempre ha sido fácil, pero con dedicación, esfuerzo y el apoyo adecuado, cualquier meta es alcanzable. Cada entrenamiento, cada competición, cada día es una oportunidad para crecer y superarnos a nosotros mismos."
+			},
+			"chantal": {
+				"title": "Mi camino Endurance Chantal",
+				"excerpt": "¿Por qué creamos Enduranc3? Desde muy pequeño el deporte ha sido mi principal hobby e inspiración y tenía muy claro que mi futuro laboral y mi pasión debían estar estrechamente…",
+				"content": "¿Por qué creamos Enduranc3? Desde muy pequeño el deporte ha sido mi principal hobby e inspiración y tenía muy claro que mi futuro laboral y mi pasión debían estar estrechamente relacionados. La idea de poder ayudar a otros deportistas a alcanzar sus objetivos mientras vivo mi pasión diariamente era algo que siempre había soñado. En Enduranc3 encontramos la manera perfecta de combinar la ciencia del deporte con el trato personal y profesional que cada atleta merece. Creemos firmemente que el entrenamiento debe ser individualizado, basado en datos objetivos y siempre con un enfoque humano. Cada deportista es único, y su planificación debe reflejarlo."
+			},
+			"eva": {
+				"title": "Mi camino Endurance Eva",
+				"excerpt": "Si has llegado hasta aquí, supongo que es porque quieres saber algo más sobre mí, pero primero quiero hacerte una pregunta: ¿para tí qué es el deporte? Para mí, el…",
+				"content": "Si has llegado hasta aquí, supongo que es porque quieres saber algo más sobre mí, pero primero quiero hacerte una pregunta: ¿para tí qué es el deporte? Para mí, el deporte es mucho más que competir o entrenar. Es una forma de vida, una herramienta de crecimiento personal, una manera de conocerse a uno mismo y superar límites que creíamos imposibles. El deporte me ha enseñado valores como la disciplina, la perseverancia, el trabajo en equipo y la humildad. En Enduranc3, trabajamos cada día para transmitir estos valores y ayudar a nuestros deportistas no solo a mejorar su rendimiento, sino a crecer como personas. Porque al final, el deporte es un viaje de autoconocimiento y superación constante."
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		font-family: var(--font-righteous), sans-serif;
+	}
+	
+	h1, h2, h3 {
+		font-family: var(--font-righteous), sans-serif;
+		letter-spacing: -0.03em;
+		line-height: 0.9;
+	}
+}

@@ -1,0 +1,224 @@
+{
+	"nav": {
+		"equipo": "Team",
+		"servicios": "Services",
+		"verTodosServicios": "View all services",
+		"entrenamientoOnline": "Online Training",
+		"entrenamientoPresencial": "In-Person Training",
+		"formacion": "Training",
+		"gestionClubes": "Club Management",
+		"asesoramiento": "Consulting",
+		"contacto": "Contact",
+		"blog": "Blog"
+	},
+	"hero": {
+		"title": "PROFESSIONAL\nSPORTS PLANNING",
+		"description": "is a training group whose foundation is the scientific and professional training of all its members, offering a clear difference not only in the sports sector but also in personal and professional treatment with the athlete."
+	},
+	"servicios": {
+		"atletas": "+ 150 Athletes",
+		"llevadosNivel": "TAKEN TO THE NEXT LEVEL",
+		"title": "Train with science,\nreach your goals",
+		"description": "Personalized training plans backed by advanced physiological analysis. Optimize each session with objective data and continuous tracking of your progress.",
+		"button": "SERVICES"
+	},
+	"strideTogether": {
+		"title": "Latest technology in sports training",
+		"description": "To have all your data in one place and optimize your performance.",
+		"button": "Learn more",
+		"modal": {
+			"title": "App in Development",
+			"description1": "We are developing a sports management application that will allow you to have all your training data in one place and optimize your performance comprehensively.",
+			"description2": "It will be available soon for all our athletes.",
+			"button": "Got it"
+		}
+	},
+	"team": {
+		"title": "Team",
+		"description": "Meet those who make up Enduranc3. A team of professionals passionate about sports training and science applied to performance",
+		"carlos": {
+			"name": "CARLOS CABRERA",
+			"items": [
+				"BSc in Sports Sciences (Col 58150)",
+				"Level I Triathlon Coach",
+				"Triathlete and Cyclist",
+				"Specialist in entrepreneurship and personal branding, professional development projects and training",
+				"Specialist in training and Menstrual Cycle",
+				"Parallel experience of more than 10 years in competition and sports planning in endurance sports"
+			]
+		},
+		"chantal": {
+			"name": "CHANTAL",
+			"items": [
+				"Triathlon coach, specialized in long distance",
+				"Specialist in training and women's hormonal health",
+				"Specialist in prevention and rehabilitation of sports injuries",
+				"Active triathlete\nPreference for ultradistance",
+				"Support for athletes in:\n– initiation\n– health and injuries\n– long distance events",
+				"Passion for helping athletes achieve challenges and improve their quality of life through sport"
+			]
+		},
+		"eva": {
+			"name": "EVA",
+			"items": [
+				"Graduate in Physical Activity and Sports Sciences (Col. nº 69462)",
+				"Master's in Cyclical Sports",
+				"Master's in High Performance and Health",
+				"Level III RFEC Director\nEscola de Ciclisme Bèrnia Xaló\nCresan Bodegas Xaló Team",
+				"Specialist in cycling training",
+				"Former middle and long distance athlete",
+				"Support for young athletes in development stages",
+				"Focus on performance, health and sports education"
+			]
+		}
+	},
+	"contact": {
+		"title": "Contact",
+		"subtitle": "Do you have any questions? We are here to help you.",
+		"whatsapp": "Contact us on WhatsApp",
+		"whatsappMessage": "I'm interested in managing my training with you",
+		"whatsappResponse": "Quick and direct response",
+		"form": {
+			"nombre": "Your name",
+			"email": "youremail.com",
+			"asunto": "What would you like to talk about?",
+			"mensaje": "Write your message here...",
+			"submit": "Send Message"
+		},
+		"email": "Email",
+		"sponsors": "Sponsorships",
+		"social": "Social Media",
+		"description": "Endurance3 is a sports training center specialized in performance. We combine science, data and experience to maximize your athletic potential."
+	},
+	"footer": {
+		"description": "Sports training based on science and data. Maximize your potential with proven methodology.",
+		"servicios": "Services",
+		"entrenamientoOnline": "Online Training",
+		"presencial": "In-Person",
+		"valoraciones": "Assessments",
+		"empresa": "Company",
+		"sobreNosotros": "About Us",
+		"blog": "Blog",
+		"contacto": "Contact",
+		"legal": "Legal",
+		"privacidad": "Privacy",
+		"terminos": "Terms",
+		"copyright": "All rights reserved."
+	},
+	"servicesPage": {
+		"hero": {
+			"title": "SERVICES",
+			"description": "We offer professional sports training services based on science and data. Choose the service that best suits your needs."
+		},
+		"entrenamientoOnline": {
+			"title": "ONLINE TRAINING",
+			"table": {
+				"serviciosBasicos": "BASIC SERVICES",
+				"endurance": "ENDURANCE",
+				"tempo": "TEMPO",
+				"ftp": "FTP",
+				"entrevista": "INTERVIEW",
+				"planificacion": "PLANNING",
+				"feedback": "FEEDBACK",
+				"comunicacion": "COMMUNICATION",
+				"reajustes": "ADJUSTMENTS",
+				"gestionCompeticion": "COMPETITION MANAGEMENT",
+				"appsBasicas": "Basic Apps",
+				"consultoria": "CONSULTING",
+				"videollamada": "Video call",
+				"semanal": "Weekly",
+				"resumenSemanal": "Weekly Summary",
+				"cada2_3dias": "Every 2-3 days",
+				"aTravesApp": "Through the APP",
+				"aTravesAppWhatsapp": "Through the APP + WhatsApp",
+				"aTravesAppLlamadaWhatsapp": "Through the APP + Call/WhatsApp",
+				"alFinalSemana": "At the end of the week",
+				"diarios": "Daily",
+				"hrvTrainingpeaks": "HRV + Trainingpeaks",
+				"hrvTrainingpeaksWko5": "HRV + Trainingpeaks + WKO5",
+				"unMes": "1 month",
+				"guion": "–"
+			},
+			"masInformacion": "More information"
+		},
+		"entrenamientoPresencial": {
+			"title": "IN-PERSON TRAINING",
+			"description": "Personalized training with direct and in-person follow-up. Ideal for athletes seeking closer and more personalized support.",
+			"masInformacion": "More information"
+		},
+		"formacion": {
+			"title": "TRAINING",
+			"mentoringEntrenadores": {
+				"title": "COACH MENTORING PROGRAM",
+				"description": "We help you with your training process. You've finished your training in TAFAD, Sports Sciences or as a sports coach and don't know how to start training athletes.",
+				"meInteresa": "I'm interested"
+			},
+			"mentoringMarketing": {
+				"title": "MARKETING AND PERSONAL BRANDING MENTORING PROGRAM",
+				"description": "We help you with the creation and development of your brand, product or business. Ideal for CAFD, Nutritionists, Physiotherapists who want to create their personal brand.",
+				"meInteresa": "I'm interested"
+			},
+			"clubesFederaciones": {
+				"title": "CLUBS AND FEDERATIONS PROGRAM",
+				"description": "We help you with the training of your coaches and technicians. Talks, Courses or Workshops to take your club to the next level.",
+				"meInteresa": "I'm interested"
+			}
+		},
+		"gestionClubes": {
+			"title": "CLUB MANAGEMENT",
+			"description": "Comprehensive management services for sports clubs. Professionalization of services and improvement of your athletes' performance.",
+			"masInformacion": "More information"
+		},
+		"asesoramiento": {
+			"title": "CONSULTING",
+			"deportivo": {
+				"title": "SPORTS CONSULTING",
+				"description": "Aimed at athletes seeking to understand the parameters and determinants of performance involved in their target event.",
+				"items": [
+					"What physiological requirements do I need to prepare for a long distance event?",
+					"How do I distribute training load?",
+					"What are my training zones?",
+					"How does training load affect my menstrual cycle?"
+				]
+			},
+			"profesional": {
+				"title": "PROFESSIONAL CONSULTING",
+				"description": "Aimed at professionals whose goal is to start a project, find target audience, perform brand analysis and create a sales and growth strategy.",
+				"items": [
+					"Creation and development of personal brand",
+					"Social media management",
+					"Target audience analysis",
+					"Sales and growth strategy"
+				]
+			},
+			"masInformacion": "More information"
+		},
+		"whatsappMessage": "Hello, I would like to know about..."
+	},
+	"blogPage": {
+		"hero": {
+			"title": "BLOG",
+			"description": "Stories, experiences and reflections from our team about training, performance and passion for sports."
+		},
+		"category": "Blog",
+		"leerMenos": "Read less",
+		"continuarLeyendo": "Continue reading",
+		"posts": {
+			"carlos": {
+				"title": "My Endurance Path Carlos",
+				"excerpt": "Never stop believing in yourself and when someone gives you a hand and trusts you, accompanies you, is with you to achieve your goals, everything will be much easier. And so…",
+				"content": "Never stop believing in yourself and when someone gives you a hand and trusts you, accompanies you, is with you to achieve your goals, everything will be much easier. And that's how I came to Enduranc3, a place where passion for sports meets science and professional knowledge. Here I found not only a team, but a family that shares the same values and goals. The path hasn't always been easy, but with dedication, effort and the right support, any goal is achievable. Every training session, every competition, every day is an opportunity to grow and surpass ourselves."
+			},
+			"chantal": {
+				"title": "My Endurance Path Chantal",
+				"excerpt": "Why did we create Enduranc3? Since I was very young, sports have been my main hobby and inspiration and I was very clear that my professional future and my passion should be closely…",
+				"content": "Why did we create Enduranc3? Since I was very young, sports have been my main hobby and inspiration and I was very clear that my professional future and my passion should be closely related. The idea of being able to help other athletes achieve their goals while living my passion daily was something I had always dreamed of. At Enduranc3 we found the perfect way to combine sports science with the personal and professional treatment that every athlete deserves. We firmly believe that training should be individualized, based on objective data and always with a human approach. Every athlete is unique, and their planning should reflect that."
+			},
+			"eva": {
+				"title": "My Endurance Path Eva",
+				"excerpt": "If you've made it here, I suppose it's because you want to know something more about me, but first I want to ask you a question: what is sports to you? For me, sports…",
+				"content": "If you've made it here, I suppose it's because you want to know something more about me, but first I want to ask you a question: what is sports to you? For me, sports is much more than competing or training. It's a way of life, a tool for personal growth, a way to know oneself and overcome limits we thought were impossible. Sports has taught me values such as discipline, perseverance, teamwork and humility. At Enduranc3, we work every day to transmit these values and help our athletes not only improve their performance, but grow as people. Because in the end, sports is a journey of self-knowledge and constant improvement."
+			}
+		}
+	}
+}

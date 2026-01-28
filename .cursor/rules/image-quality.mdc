@@ -1,0 +1,29 @@
+---
+description: Preservar calidad de imágenes - nunca comprimir o reducir calidad
+alwaysApply: true
+---
+
+# Calidad de Imágenes
+
+## Regla Fundamental
+
+**NUNCA reducir, comprimir o bajar la calidad de las imágenes.**
+
+### Directrices
+
+- Mantener la calidad original de todas las imágenes
+- No aplicar compresión que reduzca calidad
+- No optimizar imágenes si implica pérdida de calidad
+- Preservar la resolución original
+- No usar herramientas que reduzcan calidad (como compresores con pérdida)
+
+### Cuando trabajar con imágenes
+
+- Usar formatos sin pérdida cuando sea posible (PNG, WebP sin pérdida)
+- Si es necesario optimizar, usar solo optimizaciones sin pérdida
+- Mantener metadatos originales si son relevantes
+- Preservar colores y detalles originales
+
+### Excepciones
+
+No hay excepciones a esta regla. La calidad de las imágenes es prioritaria sobre el tamaño del archivo.

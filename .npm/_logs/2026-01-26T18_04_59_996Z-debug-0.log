@@ -1,0 +1,73 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.13.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Proyectos\Personales\Enduranc3\.npmrc
+5 silly config load:file:C:\Users\palit\.npmrc
+6 silly config load:file:C:\Users\palit\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm" "--prefer-offline" "false"
+9 verbose logfile logs-max:10 dir:C:\Proyectos\Personales\Enduranc3\.npm\_logs\2026-01-26T18_04_59_996Z-
+10 verbose logfile C:\Proyectos\Personales\Enduranc3\.npm\_logs\2026-01-26T18_04_59_996Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with ECONNREFUSED
+13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+14 silly idealTree buildDeps
+15 silly fetch manifest react@^18.3.1
+16 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+17 silly fetch manifest react-dom@^18.3.1
+18 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+19 silly fetch manifest next@^14.2.0
+20 silly packumentCache full:https://registry.npmjs.org/next cache-miss
+21 silly fetch manifest typescript@^5.5.0
+22 silly packumentCache full:https://registry.npmjs.org/typescript cache-miss
+23 silly fetch manifest @types/node@^20.14.0
+24 silly packumentCache full:https://registry.npmjs.org/@types%2fnode cache-miss
+25 silly fetch manifest @types/react@^18.3.0
+26 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+27 silly fetch manifest @types/react-dom@^18.3.0
+28 silly packumentCache full:https://registry.npmjs.org/@types%2freact-dom cache-miss
+29 silly fetch manifest tailwindcss@^3.4.0
+30 silly packumentCache full:https://registry.npmjs.org/tailwindcss cache-miss
+31 silly fetch manifest postcss@^8.4.0
+32 silly packumentCache full:https://registry.npmjs.org/postcss cache-miss
+33 silly fetch manifest autoprefixer@^10.4.0
+34 silly packumentCache full:https://registry.npmjs.org/autoprefixer cache-miss
+35 silly fetch manifest eslint@^8.57.0
+36 silly packumentCache full:https://registry.npmjs.org/eslint cache-miss
+37 silly fetch manifest eslint-config-next@^14.2.0
+38 silly packumentCache full:https://registry.npmjs.org/eslint-config-next cache-miss
+39 silly placeDep ROOT @types/node@ OK for: enduranc3@0.1.0 want: ^20.14.0
+40 silly placeDep ROOT @types/react@ OK for: enduranc3@0.1.0 want: ^18.3.0
+41 silly placeDep ROOT @types/react-dom@ OK for: enduranc3@0.1.0 want: ^18.3.0
+42 silly placeDep ROOT autoprefixer@ OK for: enduranc3@0.1.0 want: ^10.4.0
+43 silly placeDep ROOT eslint@ OK for: enduranc3@0.1.0 want: ^8.57.0
+44 silly placeDep ROOT eslint-config-next@ OK for: enduranc3@0.1.0 want: ^14.2.0
+45 silly placeDep ROOT next@ OK for: enduranc3@0.1.0 want: ^14.2.0
+46 silly placeDep ROOT postcss@ OK for: enduranc3@0.1.0 want: ^8.4.0
+47 silly placeDep ROOT react@ OK for: enduranc3@0.1.0 want: ^18.3.1
+48 silly placeDep ROOT react-dom@ OK for: enduranc3@0.1.0 want: ^18.3.1
+49 silly placeDep ROOT tailwindcss@ OK for: enduranc3@0.1.0 want: ^3.4.0
+50 silly placeDep ROOT typescript@ OK for: enduranc3@0.1.0 want: ^5.5.0
+51 verbose stack Error: request to https://registry.npmjs.org/@types%2fnode failed: cache mode is 'only-if-cached' but no cached response is available.
+51 verbose stack     at cacheFetch (C:\Program Files\nodejs\node_modules\npm\node_modules\make-fetch-happen\lib\cache\index.js:12:13)
+51 verbose stack     at async fetch (C:\Program Files\nodejs\node_modules\npm\node_modules\make-fetch-happen\lib\fetch.js:98:7)
+51 verbose stack     at async RegistryFetcher.packument (C:\Program Files\nodejs\node_modules\npm\node_modules\pacote\lib\registry.js:90:19)
+51 verbose stack     at async RegistryFetcher.manifest (C:\Program Files\nodejs\node_modules\npm\node_modules\pacote\lib\registry.js:128:23)
+51 verbose stack     at async #fetchManifest (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1227:20)
+51 verbose stack     at async #nodeFromEdge (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1065:19)
+51 verbose stack     at async #buildDepStep (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:929:11)
+51 verbose stack     at async Arborist.buildIdealTree (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:182:7)
+51 verbose stack     at async Promise.all (index 1)
+51 verbose stack     at async Arborist.reify (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:114:5)
+52 error code ENOTCACHED
+53 error request to https://registry.npmjs.org/@types%2fnode failed: cache mode is 'only-if-cached' but no cached response is available.
+54 silly unfinished npm timer reify 1769450700706
+55 silly unfinished npm timer reify:loadTrees 1769450700707
+56 verbose cwd C:\Proyectos\Personales\Enduranc3
+57 verbose os Windows_NT 10.0.26100
+58 verbose node v24.13.0
+59 verbose npm  v11.6.2
+60 verbose exit 1
+61 verbose code 1
+62 error A complete log of this run can be found in: C:\Proyectos\Personales\Enduranc3\.npm\_logs\2026-01-26T18_04_59_996Z-debug-0.log
