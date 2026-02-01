@@ -10,7 +10,7 @@ type Props = {
 
 export default function Servicios({ variant = "normal" }: Props) {
 	const { t } = useLanguage();
-	const titleLines = t("servicios.title").split("\n");
+	const titleLines = (t("servicios.title") as string).split("\n");
 	const isOverlay = variant === "overlay";
 
 	return (
@@ -40,7 +40,7 @@ export default function Servicios({ variant = "normal" }: Props) {
 
 				<div className={`bg-[#2B2B2B] flex flex-col items-center justify-center p-12 ${isOverlay ? "h-full" : "min-h-[900px]"}`}>
 					<h2 className="text-5xl md:text-6xl font-bold mb-4">
-						{titleLines.map((line, i) => (
+						{titleLines.map((line: string, i: number) => (
 							<span key={i}>
 								{line}
 								{i < titleLines.length - 1 && <br />}
