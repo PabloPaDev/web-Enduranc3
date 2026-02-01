@@ -10,7 +10,7 @@ export default function StrideTogether() {
 
 	return (
 		<>
-			<section className="relative bg-[#2B2B2B] text-white py-20 md:py-32">
+			<section className="relative bg-[#2B2B2B] text-white py-12 sm:py-16 md:py-20 lg:py-32">
 				<div className="absolute inset-0 z-0">
 					<Image
 						src="/images/End-6.png"
@@ -22,17 +22,17 @@ export default function StrideTogether() {
 					<div className="absolute inset-0 bg-[#2B2B2B]/60"></div>
 				</div>
 				
-				<div className="relative z-10 container mx-auto px-6">
+				<div className="relative z-10 container mx-auto px-4 sm:px-6">
 					<div className="max-w-4xl mx-auto text-center">
-						<h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6">
 							{t("strideTogether.title")}
 						</h2>
-						<p className="text-white text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+						<p className="text-white text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">
 							{t("strideTogether.description")}
 						</p>
 						<button
 							onClick={() => setIsModalOpen(true)}
-							className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+							className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg transition-colors"
 						>
 							{t("strideTogether.button")}
 							<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

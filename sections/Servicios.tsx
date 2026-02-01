@@ -19,7 +19,7 @@ export default function Servicios({ variant = "normal" }: Props) {
 				isOverlay ? "h-screen overflow-hidden bg-transparent" : "bg-[#2B2B2B]"
 			}`}
 		>
-			<div className="grid md:grid-cols-2 h-full">
+			<div className="grid grid-cols-1 md:grid-cols-2 h-full">
 				<div className={`relative overflow-hidden ${isOverlay ? "h-full" : "min-h-[900px]"}`}>
 					<Image
 						src="/images/End-5.jpg"
@@ -28,8 +28,8 @@ export default function Servicios({ variant = "normal" }: Props) {
 						className="object-cover"
 						quality={100}
 					/>
-					<div className="absolute inset-0 bg-[#2B2B2B]/50 flex flex-col items-center justify-center p-8">
-						<h2 className="text-5xl md:text-6xl font-bold mb-2">
+					<div className="absolute inset-0 bg-[#2B2B2B]/50 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+						<h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2">
 							{t("servicios.atletas")}
 						</h2>
 						<p className="text-white/90">
@@ -38,8 +38,8 @@ export default function Servicios({ variant = "normal" }: Props) {
 					</div>
 				</div>
 
-				<div className={`bg-[#2B2B2B] flex flex-col items-center justify-center p-12 ${isOverlay ? "h-full" : "min-h-[900px]"}`}>
-					<h2 className="text-5xl md:text-6xl font-bold mb-4">
+				<div className={`bg-[#2B2B2B] flex flex-col items-center justify-center p-6 sm:p-8 md:p-10 lg:p-12 ${isOverlay ? "h-full" : "min-h-[900px]"}`}>
+					<h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
 						{titleLines.map((line: string, i: number) => (
 							<span key={i}>
 								{line}
@@ -48,7 +48,7 @@ export default function Servicios({ variant = "normal" }: Props) {
 						))}
 					</h2>
 
-					<p className="text-white/80 mb-8 text-center text-lg">
+					<p className="text-white/80 mb-6 sm:mb-8 text-center text-base sm:text-lg">
 						{t("servicios.description")}
 					</p>
 

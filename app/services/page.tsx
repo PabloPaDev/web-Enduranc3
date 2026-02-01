@@ -17,7 +17,7 @@ export default function Services() {
 			<Header />
 			
 			{/* Hero Section */}
-			<section className="relative w-full h-screen overflow-hidden">
+			<section className="relative w-full min-h-[75vh] sm:h-screen overflow-hidden">
 				<div className="absolute inset-0 z-0">
 					<Image
 						src="/images/End-2.jpg"
@@ -29,23 +29,23 @@ export default function Services() {
 					/>
 					<div className="absolute inset-0 bg-[#2B2B2B]/60 z-0"></div>
 				</div>
-				<div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
-					<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-6 uppercase tracking-tight">
+				<div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 sm:px-6">
+					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-4 sm:mb-6 uppercase tracking-tight">
 						{t("servicesPage.hero.title")}
 					</h1>
-					<p className="text-white/90 text-lg md:text-xl lg:text-2xl text-center max-w-3xl mx-auto">
+					<p className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl text-center max-w-3xl mx-auto">
 						{t("servicesPage.hero.description")}
 					</p>
 				</div>
 			</section>
 
 			{/* Entrenamiento Online y Presencial */}
-			<section id="entrenamiento-online" className="py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20">
-				<div className="container mx-auto px-6">
-					<div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+			<section id="entrenamiento-online" className="py-12 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20">
+				<div className="container mx-auto px-4 sm:px-6">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
 						{/* Columna Izquierda - Entrenamiento Online */}
 						<div>
-							<h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+							<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8">
 								{t("servicesPage.entrenamientoOnline.title")}
 							</h2>
 							
@@ -53,60 +53,60 @@ export default function Services() {
 								<table className="w-full border-collapse bg-[#2B2B2B] text-white">
 									<thead>
 										<tr className="border-b border-white/20">
-											<th className="text-left p-3 font-bold text-sm md:text-base">{t("servicesPage.entrenamientoOnline.table.serviciosBasicos")}</th>
-											<th className="text-center p-3 font-bold text-sm md:text-base border-l border-white/20">{t("servicesPage.entrenamientoOnline.table.endurance")}</th>
-											<th className="text-center p-3 font-bold text-sm md:text-base border-l border-white/20">{t("servicesPage.entrenamientoOnline.table.tempo")}</th>
-											<th className="text-center p-3 font-bold text-sm md:text-base border-l border-white/20">{t("servicesPage.entrenamientoOnline.table.ftp")}</th>
+											<th className="text-left p-2 sm:p-3 font-bold text-xs sm:text-sm md:text-base">{t("servicesPage.entrenamientoOnline.table.serviciosBasicos")}</th>
+											<th className="text-center p-2 sm:p-3 font-bold text-xs sm:text-sm md:text-base border-l border-white/20">{t("servicesPage.entrenamientoOnline.table.endurance")}</th>
+											<th className="text-center p-2 sm:p-3 font-bold text-xs sm:text-sm md:text-base border-l border-white/20">{t("servicesPage.entrenamientoOnline.table.tempo")}</th>
+											<th className="text-center p-2 sm:p-3 font-bold text-xs sm:text-sm md:text-base border-l border-white/20">{t("servicesPage.entrenamientoOnline.table.ftp")}</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr className="border-b border-white/10">
-											<td className="p-3 text-xs md:text-sm">{t("servicesPage.entrenamientoOnline.table.entrevista")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.videollamada")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.videollamada")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.videollamada")}</td>
+											<td className="p-2 sm:p-3 text-xs sm:text-sm md:text-sm">{t("servicesPage.entrenamientoOnline.table.entrevista")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.videollamada")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.videollamada")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.videollamada")}</td>
 										</tr>
 										<tr className="border-b border-white/10">
-											<td className="p-3 text-xs md:text-sm">{t("servicesPage.entrenamientoOnline.table.planificacion")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.semanal")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.semanal")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.semanal")}</td>
+											<td className="p-2 sm:p-3 text-xs sm:text-sm md:text-sm">{t("servicesPage.entrenamientoOnline.table.planificacion")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.semanal")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.semanal")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.semanal")}</td>
 										</tr>
 										<tr className="border-b border-white/10">
-											<td className="p-3 text-xs md:text-sm">{t("servicesPage.entrenamientoOnline.table.feedback")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.resumenSemanal")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.cada2_3dias")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.cada2_3dias")}</td>
+											<td className="p-2 sm:p-3 text-xs sm:text-sm md:text-sm">{t("servicesPage.entrenamientoOnline.table.feedback")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.resumenSemanal")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.cada2_3dias")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.cada2_3dias")}</td>
 										</tr>
 										<tr className="border-b border-white/10">
-											<td className="p-3 text-xs md:text-sm">{t("servicesPage.entrenamientoOnline.table.comunicacion")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesApp")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesAppWhatsapp")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesAppWhatsapp")}</td>
+											<td className="p-2 sm:p-3 text-xs sm:text-sm md:text-sm">{t("servicesPage.entrenamientoOnline.table.comunicacion")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesApp")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesAppWhatsapp")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesAppWhatsapp")}</td>
 										</tr>
 										<tr className="border-b border-white/10">
-											<td className="p-3 text-xs md:text-sm">{t("servicesPage.entrenamientoOnline.table.reajustes")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.alFinalSemana")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.diarios")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.diarios")}</td>
+											<td className="p-2 sm:p-3 text-xs sm:text-sm md:text-sm">{t("servicesPage.entrenamientoOnline.table.reajustes")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.alFinalSemana")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.diarios")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.diarios")}</td>
 										</tr>
 										<tr className="border-b border-white/10">
-											<td className="p-3 text-xs md:text-sm">{t("servicesPage.entrenamientoOnline.table.gestionCompeticion")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesApp")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesAppLlamadaWhatsapp")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesAppLlamadaWhatsapp")}</td>
+											<td className="p-2 sm:p-3 text-xs sm:text-sm md:text-sm">{t("servicesPage.entrenamientoOnline.table.gestionCompeticion")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesApp")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesAppLlamadaWhatsapp")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.aTravesAppLlamadaWhatsapp")}</td>
 										</tr>
 										<tr className="border-b border-white/10">
-											<td className="p-3 text-xs md:text-sm">{t("servicesPage.entrenamientoOnline.table.appsBasicas")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.hrvTrainingpeaks")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.hrvTrainingpeaksWko5")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.hrvTrainingpeaksWko5")}</td>
+											<td className="p-2 sm:p-3 text-xs sm:text-sm md:text-sm">{t("servicesPage.entrenamientoOnline.table.appsBasicas")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.hrvTrainingpeaks")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.hrvTrainingpeaksWko5")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.hrvTrainingpeaksWko5")}</td>
 										</tr>
 										<tr>
-											<td className="p-3 text-xs md:text-sm">{t("servicesPage.entrenamientoOnline.table.consultoria")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.guion")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.guion")}</td>
-											<td className="p-3 text-center text-xs md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.unMes")}</td>
+											<td className="p-2 sm:p-3 text-xs sm:text-sm md:text-sm">{t("servicesPage.entrenamientoOnline.table.consultoria")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.guion")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.guion")}</td>
+											<td className="p-2 sm:p-3 text-center text-xs sm:text-sm md:text-sm border-l border-white/10">{t("servicesPage.entrenamientoOnline.table.unMes")}</td>
 										</tr>
 									</tbody>
 								</table>
@@ -129,10 +129,10 @@ export default function Services() {
 
 						{/* Columna Derecha - Entrenamiento Presencial */}
 						<div id="entrenamiento-presencial" className="flex flex-col justify-center scroll-mt-20">
-							<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+							<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
 								{t("servicesPage.entrenamientoPresencial.title")}
 							</h2>
-							<p className="text-white/80 text-base md:text-lg mb-8">
+							<p className="text-white/80 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
 								{t("servicesPage.entrenamientoPresencial.description")}
 							</p>
 							<Link
@@ -152,16 +152,16 @@ export default function Services() {
 			</section>
 
 			{/* Formación */}
-			<section id="formacion" className="py-16 md:py-24 bg-[#2B2B2B] border-t border-white/10 scroll-mt-20">
-				<div className="container mx-auto px-6">
-					<h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
+			<section id="formacion" className="py-12 sm:py-16 md:py-24 bg-[#2B2B2B] border-t border-white/10 scroll-mt-20">
+				<div className="container mx-auto px-4 sm:px-6">
+					<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
 						{t("servicesPage.formacion.title")}
 					</h2>
 					
-					<div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
 						{/* Programa Mentoring Entrenadores */}
 						<div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-colors">
-							<h3 className="text-2xl font-bold text-white mb-4">{t("servicesPage.formacion.mentoringEntrenadores.title")}</h3>
+							<h3 className="text-xl sm:text-2xl font-bold text-white mb-4">{t("servicesPage.formacion.mentoringEntrenadores.title")}</h3>
 							<div className="w-16 h-1 bg-[#E10613] mb-4"></div>
 							<p className="text-white/80 mb-6">
 								{t("servicesPage.formacion.mentoringEntrenadores.description")}
@@ -181,7 +181,7 @@ export default function Services() {
 
 						{/* Programa Mentoring Marketing y Marca Personal */}
 						<div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-colors">
-							<h3 className="text-2xl font-bold text-white mb-4">{t("servicesPage.formacion.mentoringMarketing.title")}</h3>
+							<h3 className="text-xl sm:text-2xl font-bold text-white mb-4">{t("servicesPage.formacion.mentoringMarketing.title")}</h3>
 							<div className="w-16 h-1 bg-[#E10613] mb-4"></div>
 							<p className="text-white/80 mb-6">
 								{t("servicesPage.formacion.mentoringMarketing.description")}
@@ -201,7 +201,7 @@ export default function Services() {
 
 						{/* Programa Clubes y Federaciones */}
 						<div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-colors">
-							<h3 className="text-2xl font-bold text-white mb-4">{t("servicesPage.formacion.clubesFederaciones.title")}</h3>
+							<h3 className="text-xl sm:text-2xl font-bold text-white mb-4">{t("servicesPage.formacion.clubesFederaciones.title")}</h3>
 							<div className="w-16 h-1 bg-[#E10613] mb-4"></div>
 							<p className="text-white/80 mb-6">
 								{t("servicesPage.formacion.clubesFederaciones.description")}
@@ -223,7 +223,7 @@ export default function Services() {
 			</section>
 
 			{/* Gestión de Clubes */}
-			<section id="gestion-clubes" className="relative bg-[#2B2B2B] text-white py-24 md:py-40 border-t border-white/10 scroll-mt-20">
+			<section id="gestion-clubes" className="relative bg-[#2B2B2B] text-white py-16 sm:py-24 md:py-40 border-t border-white/10 scroll-mt-20">
 				<div className="absolute inset-0 z-0">
 					<Image
 						src="/images/servicios/Equipo.jpeg"
@@ -235,19 +235,19 @@ export default function Services() {
 					<div className="absolute inset-0 bg-[#2B2B2B]/60"></div>
 				</div>
 				
-				<div className="relative z-10 container mx-auto px-6">
+				<div className="relative z-10 container mx-auto px-4 sm:px-6">
 					<div className="max-w-5xl mx-auto text-center">
-						<h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 md:mb-10">
+						<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 md:mb-10">
 							{t("servicesPage.gestionClubes.title")}
 						</h2>
-						<p className="text-white/90 text-xl md:text-2xl lg:text-3xl mb-10 md:mb-12 leading-relaxed">
+						<p className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-8 sm:mb-10 md:mb-12 leading-relaxed">
 							{t("servicesPage.gestionClubes.description")}
 						</p>
 						<Link
 							href={whatsappUrl}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="inline-flex items-center gap-2 border-2 border-[#E10613] bg-transparent hover:bg-[#E10613]/10 text-white font-semibold px-10 py-4 md:px-12 md:py-5 rounded-lg transition-colors text-lg md:text-xl"
+							className="inline-flex items-center gap-2 border-2 border-[#E10613] bg-transparent hover:bg-[#E10613]/10 text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-4 lg:px-12 lg:py-5 rounded-lg transition-colors text-base sm:text-lg md:text-xl"
 						>
 							{t("servicesPage.gestionClubes.masInformacion")}
 							<svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -259,14 +259,14 @@ export default function Services() {
 			</section>
 
 			{/* Asesoramiento */}
-			<section id="asesoramiento" className="py-16 md:py-24 bg-[#2B2B2B] border-t border-white/10 scroll-mt-20">
-				<div className="container mx-auto px-6">
+			<section id="asesoramiento" className="py-12 sm:py-16 md:py-24 bg-[#2B2B2B] border-t border-white/10 scroll-mt-20">
+				<div className="container mx-auto px-4 sm:px-6">
 					<div className="max-w-4xl mx-auto">
-						<h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">
+						<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-6 sm:mb-8">
 							{t("servicesPage.asesoramiento.title")}
 						</h2>
 						
-						<div className="grid md:grid-cols-2 gap-8 mb-8">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8">
 							<div className="bg-white/5 border border-white/10 rounded-lg p-6">
 								<h3 className="text-2xl font-bold text-white mb-4">{t("servicesPage.asesoramiento.deportivo.title")}</h3>
 								<div className="w-16 h-1 bg-[#E10613] mb-4"></div>

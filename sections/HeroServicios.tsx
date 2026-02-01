@@ -19,23 +19,8 @@ export default function HeroServicios() {
   useEffect(() => {
     if (!containerRef.current || !serviciosRef.current || !contentRef.current) return;
 
-    //  Detectar móvil
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
-
     // =========================
-    // MÓVIL → SIN ANIMACIONES
-    // =========================
-    if (isMobile) {
-      gsap.set(contentRef.current, {
-        opacity: 1,
-        position: "relative",
-        zIndex: 10,
-      });
-      return;
-    }
-
-    // =========================
-    //  DESKTOP → CINEMÁTICO
+    //  DESKTOP/MÓVIL → CINEMÁTICO
     // =========================
     const ctx = gsap.context(() => {
       const section = serviciosRef.current!.querySelector("section");
@@ -59,6 +44,9 @@ export default function HeroServicios() {
         zIndex: 10,
       });
 
+      // Cortinas activas al inicio para clicks en Servicios
+      gsap.set(serviciosRef.current, { pointerEvents: "auto" });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -78,6 +66,9 @@ export default function HeroServicios() {
       // 🟩 FASE 2 — Abrir cortinas
       tl.to(leftCol, { xPercent: -100, ease: "power2.in", duration: 0.5 }, 0.5)
         .to(rightCol, { xPercent: 100, ease: "power2.in", duration: 0.5 }, 0.5);
+
+      // Tras abrir cortinas, permitir interacción con el contenido
+      tl.set(serviciosRef.current, { pointerEvents: "none" }, 0.5);
 
       //  Revelar contenido (Stride → Team → Contact)
       tl.to(
@@ -105,7 +96,7 @@ export default function HeroServicios() {
       {/* Desktop: absolute para superposición | Móvil: flujo normal */}
       <div
         ref={contentRef}
-        className="relative sm:absolute top-0 left-0 right-0 w-full z-10"
+        className="absolute top-0 left-0 right-0 w-full z-10"
       >
         <StrideTogether />
         <Team />
@@ -115,7 +106,7 @@ export default function HeroServicios() {
       {/* Solo desktop */}
       <div
         ref={serviciosRef}
-        className="hidden sm:block absolute inset-0 z-20"
+        className="absolute inset-0 z-20"
       >
         <Servicios variant="overlay" />
       </div>

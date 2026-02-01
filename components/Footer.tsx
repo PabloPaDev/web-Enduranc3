@@ -14,23 +14,23 @@ export default function Footer() {
 				<div className="absolute inset-0 bg-[#2B2B2B]/70"></div>
 			</div>
 			
-			<div className="relative z-10 container mx-auto px-6 py-24">
-				<div className="grid md:grid-cols-2 gap-12 mb-16">
+			<div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
 					<div>
 						<div className="space-y-6">
 							<div>
-								<h3 className="font-bold text-white mb-2 text-xl">Email</h3>
-								<p className="text-white/80 text-base">info@enduranc3.es</p>
+								<h3 className="font-bold text-white mb-2 text-lg sm:text-xl">Email</h3>
+								<p className="text-white/80 text-sm sm:text-base">info@enduranc3.es</p>
 							</div>
 							<div>
-								<h3 className="font-bold text-white mb-2 text-xl">Patrocinios</h3>
-								<p className="text-white/80 text-base">patrocinios@enduranc3.es</p>
+								<h3 className="font-bold text-white mb-2 text-lg sm:text-xl">Patrocinios</h3>
+								<p className="text-white/80 text-sm sm:text-base">patrocinios@enduranc3.es</p>
 							</div>
 						</div>
 					</div>
 					
 					<div>
-						<h3 className="font-bold text-white mb-4 text-xl">Redes Sociales</h3>
+						<h3 className="font-bold text-white mb-4 text-lg sm:text-xl">Redes Sociales</h3>
 						<div className="flex gap-3 mb-6">
 							<a
 								href="https://www.instagram.com/endurance3.es?igsh=dDVtdHhxaG9nc24="
@@ -49,7 +49,7 @@ export default function Footer() {
 							</a>
 						</div>
 						<div>
-							<p className="text-white/70 text-sm leading-relaxed text-justify">
+							<p className="text-white/70 text-xs sm:text-sm leading-relaxed text-justify">
 								Enduranc3 es un movimiento/empresa que busca fomentar la actividad física y el bienestar social, promoviendo una vida activa y saludable para todos. Nuestro objetivo es crear una comunidad fuerte y comprometida que inspire a más personas a adoptar un estilo de vida activo y disfrutar de los beneficios del deporte.
 							</p>
 						</div>
@@ -58,7 +58,7 @@ export default function Footer() {
 				
 				<div className="pt-6 flex flex-col items-center">
 					<div className="w-full max-w-4xl border-t border-white/30 mb-6"></div>
-					<h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white uppercase">ENDURANC3</h2>
+					<h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase">ENDURANC3</h2>
 				</div>
 			</div>
 		</footer>

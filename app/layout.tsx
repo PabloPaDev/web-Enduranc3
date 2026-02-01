@@ -19,6 +19,9 @@ const righteous = Righteous({
 export const metadata: Metadata = {
 	title: "Enduranc3",
 	description: "Web corporativa",
+	icons: {
+		icon: "/images/logo.png",
+	},
 };
 
 export default function RootLayout({

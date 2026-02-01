@@ -27,8 +27,8 @@ export default function Hero() {
 			<div className="absolute inset-0 z-10 flex flex-col items-center justify-start px-4 sm:px-6 2xl:px-12 pt-12 sm:pt-16 md:pt-48">
 				{/* Contenedor con max-w solo en ultrawide */}
 				<div className="w-full max-w-full 2xl:max-w-content 2xl:mx-auto">
-					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white text-center uppercase tracking-tight">
-					{titleLines.map((line: string, index: number) => (
+					<h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white text-center uppercase tracking-tight leading-tight">
+						{titleLines.map((line: string, index: number) => (
 							<span key={index}>
 								{line}
 								{index < titleLines.length - 1 && <br />}
