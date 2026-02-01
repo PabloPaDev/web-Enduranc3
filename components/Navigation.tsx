@@ -22,7 +22,7 @@ export default function Navigation() {
 
 	return (
 		<nav className="flex items-center gap-8 md:gap-10">
-			<Link href="/#equipo" className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
+			<Link href="/#equipo" scroll className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
 				{t("nav.equipo")}
 			</Link>
 			<div
@@ -78,7 +78,7 @@ export default function Navigation() {
 					</div>
 				)}
 			</div>
-			<Link href="/#contacto" className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
+			<Link href="/#contacto" scroll className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
 				{t("nav.contacto")}
 			</Link>
 			<Link href="/blog" className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">

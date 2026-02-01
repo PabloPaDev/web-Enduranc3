@@ -5,39 +5,48 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
 	const { t } = useLanguage();
-	const titleLines = t("hero.title").split("\n");
+	const titleLines = (t("hero.title") as string).split("\n");
 
 	return (
-		<section className="relative w-full h-screen overflow-hidden">
+		<section className="relative w-full h-[70vh] sm:h-[75vh] md:h-screen overflow-hidden">
+			{/* Background Image - Mantener siempre */}
 			<div className="absolute inset-0 z-0">
 				<Image
 					src="/images/End-3.jpg"
 					alt="Athlete hero"
 					fill
-					className="object-cover"
+					className="object-cover object-center"
 					priority
 					quality={100}
 				/>
-				<div className="absolute inset-0 bg-[#2B2B2B]/60 z-0"></div>
+				{/* Overlay - Más sutil en móvil, completo en desktop */}
+				<div className="absolute inset-0 bg-[#2B2B2B]/50 sm:bg-[#2B2B2B]/60 z-0"></div>
 			</div>
-			<div className="absolute inset-0 z-10 flex flex-col items-center justify-start px-6 pt-16 md:pt-48">
-				<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center uppercase tracking-tight">
-					{titleLines.map((line, index) => (
-						<span key={index}>
-							{line}
-							{index < titleLines.length - 1 && <br />}
-						</span>
-					))}
-				</h1>
+			
+			{/* Título - Mantener estructura, ajustar solo tamaños */}
+			<div className="absolute inset-0 z-10 flex flex-col items-center justify-start px-4 sm:px-6 2xl:px-12 pt-12 sm:pt-16 md:pt-48">
+				{/* Contenedor con max-w solo en ultrawide */}
+				<div className="w-full max-w-full 2xl:max-w-content 2xl:mx-auto">
+					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white text-center uppercase tracking-tight">
+					{titleLines.map((line: string, index: number) => (
+							<span key={index}>
+								{line}
+								{index < titleLines.length - 1 && <br />}
+							</span>
+						))}
+					</h1>
+				</div>
 			</div>
-			<div className="absolute bottom-0 right-0 z-10 p-6 md:p-8 max-w-xl lg:max-w-2xl text-right">
-				<p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-white">
+			
+			{/* Descripción inferior derecha - Mantener estructura, ajustar posicionamiento */}
+			<div className="absolute bottom-0 right-0 z-10 p-4 sm:p-6 md:p-8 2xl:p-12 max-w-full sm:max-w-xl lg:max-w-2xl 2xl:max-w-text text-right">
+				<p className="text-base sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl leading-relaxed text-white">
 					<Image
 						src="/images/logoEndurance.png"
 						alt="Enduranc3"
-						width={180}
-						height={54}
-						className="h-[1.2em] w-auto inline align-text-bottom mr-1"
+						width={140}
+						height={42}
+						className="h-[1.2em] w-auto inline align-text-bottom mr-1 sm:w-[160px] md:w-[180px] lg:w-[180px] 2xl:w-[200px]"
 						quality={100}
 					/>{t("hero.description")}
 				</p>

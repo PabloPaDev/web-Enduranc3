@@ -35,38 +35,41 @@ export default function ContactSection() {
 	const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
 	return (
-		<section id="contacto" className="relative bg-[#2B2B2B] text-white min-h-screen flex flex-col scroll-mt-20">
+		<section id="contacto" className="relative bg-[#2B2B2B] text-white min-h-screen flex flex-col scroll-mt-20 overflow-x-hidden">
 			<div className="absolute inset-0 z-0">
 				<Image
 					src="/images/End-4.jpg"
 					alt="Cyclist background"
 					fill
-					className="object-cover"
+					className="object-cover object-center"
 					quality={100}
 				/>
-				<div className="absolute inset-0 bg-[#2B2B2B]/60"></div>
+				<div className="absolute inset-0 bg-[#2B2B2B]/50 sm:bg-[#2B2B2B]/60"></div>
 			</div>
 
-			<div className="relative z-10 container mx-auto px-6 pt-6 pb-6 flex-1 flex flex-col">
-				<div className="max-w-4xl mx-auto text-center mb-10">
-					<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+			<div className="relative z-10 container mx-auto px-4 sm:px-6 pt-6 sm:pt-6 pb-6 flex-1 flex flex-col">
+				{/* Título - Compacto en móvil */}
+				<div className="max-w-4xl mx-auto text-center mb-6 sm:mb-10">
+					<h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-6">
 						{t("contact.title")}
 					</h1>
-					<p className="text-white/90 text-lg md:text-xl">
+					<p className="text-white/90 text-sm sm:text-lg md:text-xl">
 						{t("contact.subtitle")}
 					</p>
 				</div>
 
-				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 mb-10">
-					<div className="flex flex-col justify-center space-y-8">
+				{/* Grid - Columna en móvil, 2 columnas en desktop */}
+				<div className="max-w-6xl mx-auto flex flex-col sm:grid sm:grid-cols-2 gap-6 sm:gap-10 mb-6 sm:mb-10">
+					{/* WhatsApp Button - Compacto en móvil */}
+					<div className="flex flex-col justify-center space-y-4 sm:space-y-8 order-2 sm:order-1">
 						<a
 							href={whatsappUrl}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-6 rounded-lg transition-colors flex items-center justify-center gap-3 text-lg"
+							className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-4 sm:px-8 sm:py-6 rounded-lg transition-colors flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg min-h-[48px]"
 						>
 							<svg
-								className="w-7 h-7"
+								className="w-5 h-5 sm:w-7 sm:h-7"
 								fill="currentColor"
 								viewBox="0 0 24 24"
 							>
@@ -74,13 +77,14 @@ export default function ContactSection() {
 							</svg>
 							Contáctanos por WhatsApp
 						</a>
-						<p className="text-white/70 text-sm text-center">
+						<p className="text-white/70 text-xs sm:text-sm text-center">
 							Respuesta rápida y directa
 						</p>
 					</div>
 
-					<div>
-						<form onSubmit={handleSubmit} className="space-y-6">
+					{/* Formulario - Primero en móvil, segundo en desktop */}
+					<div className="order-1 sm:order-2">
+						<form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
 							<input
 								type="text"
 								name="nombre"
@@ -88,7 +92,7 @@ export default function ContactSection() {
 								value={formData.nombre}
 								onChange={handleChange}
 								required
-								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors"
+								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[48px]"
 							/>
 							<input
 								type="email"
@@ -97,7 +101,7 @@ export default function ContactSection() {
 								value={formData.email}
 								onChange={handleChange}
 								required
-								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors"
+								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[48px]"
 							/>
 							<input
 								type="text"
@@ -106,7 +110,7 @@ export default function ContactSection() {
 								value={formData.asunto}
 								onChange={handleChange}
 								required
-								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors"
+								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[48px]"
 							/>
 							<textarea
 								name="mensaje"
@@ -114,12 +118,12 @@ export default function ContactSection() {
 								value={formData.mensaje}
 								onChange={handleChange}
 								required
-								rows={12}
-								className="w-full bg-gray-800/80 border border-gray-700 rounded-lg px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors resize-none"
+								rows={6}
+								className="w-full bg-gray-800/80 border border-gray-700 rounded-lg px-4 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors resize-none"
 							/>
 							<button
 								type="submit"
-								className="w-full bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+								className="w-full bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-6 py-3 sm:px-8 rounded-lg transition-colors text-sm sm:text-base min-h-[48px]"
 							>
 								{t("contact.form.submit")}
 							</button>
@@ -127,23 +131,24 @@ export default function ContactSection() {
 					</div>
 				</div>
 
-				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 mb-8">
+				{/* Información de contacto - Columna en móvil */}
+				<div className="max-w-6xl mx-auto flex flex-col sm:grid sm:grid-cols-2 gap-6 sm:gap-10 mb-6 sm:mb-8">
 					<div>
-						<div className="space-y-8">
+						<div className="space-y-4 sm:space-y-8">
 							<div>
-								<h3 className="font-bold text-white mb-2 text-lg">{t("contact.email")}</h3>
-								<p className="text-white/80">endurance3.es@gmail.com</p>
+								<h3 className="font-bold text-white mb-1 sm:mb-2 text-base sm:text-lg">{t("contact.email")}</h3>
+								<p className="text-white/80 text-sm sm:text-base">endurance3.es@gmail.com</p>
 							</div>
 							<div>
-								<h3 className="font-bold text-white mb-2 text-lg">{t("contact.sponsors")}</h3>
-								<p className="text-white/80">sponsors@endurance3.es</p>
+								<h3 className="font-bold text-white mb-1 sm:mb-2 text-base sm:text-lg">{t("contact.sponsors")}</h3>
+								<p className="text-white/80 text-sm sm:text-base">sponsors@endurance3.es</p>
 							</div>
 						</div>
 					</div>
 					
 					<div>
-						<h3 className="font-bold text-white mb-6 text-lg">{t("contact.social")}</h3>
-						<div className="flex gap-3 mb-6">
+						<h3 className="font-bold text-white mb-3 sm:mb-6 text-base sm:text-lg">{t("contact.social")}</h3>
+						<div className="flex gap-3 mb-3 sm:mb-6">
 							<a
 								href="https://www.instagram.com/endurance3.es?igsh=dDVtdHhxaG9nc24="
 								target="_blank"
@@ -160,30 +165,27 @@ export default function ContactSection() {
 								</svg>
 							</a>
 						</div>
-						<p className="text-white/70 text-sm leading-relaxed">
+						<p className="text-white/70 text-xs sm:text-sm leading-relaxed">
 							{t("contact.description")}
 						</p>
 					</div>
 				</div>
 			</div>
 			
-			<div className="relative z-10 container mx-auto px-6 pb-6">
-  {/* Línea blanca */}
-  <div className="w-full h-px bg-white/30 mb-6"></div>
-
-  {/* Logo */}
-  <div className="flex justify-center">
-    <Image
-      src="/images/logoEndurance.png"
-      alt="Enduranc3 Logo"
-      width={400}
-      height={150}
-      className="h-auto brightness-0 invert"
-      quality={100}
-    />
-  </div>
-</div>
-
+			{/* Footer con logo - Compacto en móvil */}
+			<div className="relative z-10 container mx-auto px-4 sm:px-6 pb-4 sm:pb-6">
+				<div className="w-full h-px bg-white/30 mb-4 sm:mb-6"></div>
+				<div className="flex justify-center">
+					<Image
+						src="/images/logoEndurance.png"
+						alt="Enduranc3 Logo"
+						width={280}
+						height={105}
+						className="h-auto brightness-0 invert sm:w-[400px]"
+						quality={100}
+					/>
+				</div>
+			</div>
 		</section>
 	);
 }

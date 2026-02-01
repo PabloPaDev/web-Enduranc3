@@ -58,7 +58,7 @@ export default function Team() {
 								<h3 className="text-xl md:text-2xl font-bold text-white mb-3 uppercase">
 									{t("team.carlos.name")}
 								</h3>
-								<div className="w-24 h-1 bg-[#E10613] mb-4"></div>
+								<div className="w-24 border-t-4 border-[#E10613] mb-4"></div>
 								<ul className="text-white/90 text-sm md:text-base space-y-2.5 list-none pl-0">
 									{(Array.isArray(t("team.carlos.items")) ? t("team.carlos.items") : []).map((item: string, index: number) => (
 										<li key={index} className="flex items-start">
@@ -110,7 +110,7 @@ export default function Team() {
 								<h3 className="text-xl md:text-2xl font-bold text-white mb-3 uppercase">
 									{t("team.chantal.name")}
 								</h3>
-								<div className="w-24 h-1 bg-[#E10613] mb-4"></div>
+								<div className="w-24 border-t-4 border-[#E10613] mb-4"></div>
 								<ul className="text-white/90 text-sm md:text-base space-y-2.5 list-none pl-0">
 									{(Array.isArray(t("team.chantal.items")) ? t("team.chantal.items") : []).map((item: string, index: number) => (
 										<li key={index} className="flex items-start">
@@ -162,7 +162,7 @@ export default function Team() {
 								<h3 className="text-xl md:text-2xl font-bold text-white mb-3 uppercase">
 									{t("team.eva.name")}
 								</h3>
-								<div className="w-24 h-1 bg-[#E10613] mb-4"></div>
+								<div className="w-24 border-t-4 border-[#E10613] mb-4"></div>
 								<ul className="text-white/90 text-sm md:text-base space-y-2.5 list-none pl-0">
 									{(Array.isArray(t("team.eva.items")) ? t("team.eva.items") : []).map((item: string, index: number) => (
 										<li key={index} className="flex items-start">
