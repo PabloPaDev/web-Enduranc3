@@ -101,8 +101,8 @@ export default function HeroServicios() {
 					</div>
 				</div>
 				
-				{/* Anchor para navegación a Equipo - altura completa para ver Team sin Contacto */}
-				<div id="equipo" className="h-screen pointer-events-none"></div>
+				{/* Anchor para navegación a Equipo - más altura en móvil para ver todas las tarjetas */}
+				<div id="equipo" className="h-[150vh] sm:h-[120vh] md:h-screen pointer-events-none"></div>
 			</div>
 		</>
 	);

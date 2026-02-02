@@ -64,18 +64,20 @@ export default function Services() {
 					},
 				});
 
-				// Fade al salir
-				gsap.to(clubesTextRef.current, {
-					opacity: 0,
-					y: -30,
-					ease: "none",
-					scrollTrigger: {
-						trigger: clubesTextRef.current.parentElement,
-						start: "top top",
-						end: "50% top",
-						scrub: 1,
-					},
-				});
+				// Fade al salir - solo en desktop
+				if (window.innerWidth >= 768) {
+					gsap.to(clubesTextRef.current, {
+						opacity: 0,
+						y: -30,
+						ease: "none",
+						scrollTrigger: {
+							trigger: clubesTextRef.current.parentElement,
+							start: "top top",
+							end: "50% top",
+							scrub: 1,
+						},
+					});
+				}
 			}
 
 			// Animación de entrada para Asesoramiento - aparece antes
@@ -135,30 +137,30 @@ export default function Services() {
 			<div className="h-screen"></div>
 
 			{/* Entrenamiento Online y Testing - Sticky, tapa al hero */}
-			<section id="entrenamiento-online" className="sticky top-0 z-10 py-12 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
+			<section id="entrenamiento-online" className="sticky top-0 z-10 pt-16 pb-8 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
 				<div ref={entrenamientoRef} className="container mx-auto px-4 sm:px-6">
-					<div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-12">
+					<div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-12">
 						{/* Entrenamiento Online */}
 						<div>
-							<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
+							<h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
 								{t("servicesPage.entrenamientoOnline.title")}
 							</h2>
 							
-							<p className="text-white/80 text-sm sm:text-base mb-8">
+							<p className="text-white/80 text-xs sm:text-base mb-4 sm:mb-8">
 								{t("servicesPage.entrenamientoOnline.description")}
 							</p>
 							
-							<h3 className="text-lg sm:text-xl font-semibold text-white mb-6">
+							<h3 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
 								{t("servicesPage.entrenamientoOnline.serviciosIncluidos")}
 							</h3>
 							
-							<div className="space-y-6 mb-8">
+							<div className="space-y-3 sm:space-y-6 mb-4 sm:mb-8">
 								{(Array.isArray(t("servicesPage.entrenamientoOnline.items")) ? t("servicesPage.entrenamientoOnline.items") : []).map((item: { title: string; description: string }, index: number) => (
 									<div key={index}>
-										<h4 className="text-white font-semibold text-sm sm:text-base mb-1">
+										<h4 className="text-white font-semibold text-xs sm:text-base mb-0.5 sm:mb-1">
 											{item.title}
 										</h4>
-										<p className="text-white/60 text-sm">
+										<p className="text-white/60 text-[10px] sm:text-sm">
 											{item.description}
 										</p>
 									</div>
@@ -169,10 +171,10 @@ export default function Services() {
 								href={whatsappOnline}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm md:text-base"
+								className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-colors text-xs sm:text-sm md:text-base"
 							>
 								{t("servicesPage.entrenamientoOnline.masInformacion")}
-								<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
 								</svg>
 							</Link>
@@ -180,29 +182,29 @@ export default function Services() {
 
 						{/* Línea divisoria vertical (desktop) / horizontal (móvil) */}
 						<div className="hidden md:block w-0.5 bg-[#E10613] self-stretch"></div>
-						<div className="block md:hidden w-full h-0.5 bg-[#E10613] my-8"></div>
+						<div className="block md:hidden w-full h-0.5 bg-[#E10613] my-4 sm:my-8"></div>
 
 						{/* Testing */}
 						<div id="testing" className="scroll-mt-20">
-							<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
+							<h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
 								{t("servicesPage.testing.title")}
 							</h2>
 							
-							<p className="text-white/80 text-sm sm:text-base mb-4">
+							<p className="text-white/80 text-xs sm:text-base mb-2 sm:mb-4">
 								{t("servicesPage.testing.description")}
 							</p>
 							
-							<p className="text-white/80 text-sm sm:text-base mb-8 font-medium">
+							<p className="text-white/80 text-xs sm:text-base mb-4 sm:mb-8 font-medium">
 								{t("servicesPage.testing.resumen")}
 							</p>
 							
-							<h3 className="text-lg sm:text-xl font-semibold text-white mb-6">
+							<h3 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
 								{t("servicesPage.testing.paraQueSirve")}
 							</h3>
 							
-							<ul className="space-y-3 mb-8">
+							<ul className="space-y-1.5 sm:space-y-3 mb-4 sm:mb-8">
 								{(Array.isArray(t("servicesPage.testing.items")) ? t("servicesPage.testing.items") : []).map((item: string, index: number) => (
-									<li key={index} className="text-white/80 text-sm sm:text-base">
+									<li key={index} className="text-white/80 text-[10px] sm:text-base">
 										{item}
 									</li>
 								))}
@@ -212,10 +214,10 @@ export default function Services() {
 								href={whatsappTesting}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm md:text-base"
+								className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-colors text-xs sm:text-sm md:text-base"
 							>
 								{t("servicesPage.testing.masInformacion")}
-								<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
 								</svg>
 							</Link>
@@ -263,39 +265,39 @@ export default function Services() {
 			{/* Asesoramiento - Sticky, tapa a la anterior, ocupa pantalla completa */}
 			<section id="asesoramiento" className="sticky top-0 z-30 min-h-screen flex flex-col bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
 				{/* Contenido centrado en la pantalla */}
-				<div ref={asesoramientoRef} className="flex-1 flex items-center justify-center px-4 sm:px-6">
+				<div ref={asesoramientoRef} className="flex-1 flex items-center justify-center px-4 sm:px-6 pt-12 sm:pt-0">
 					<div className="max-w-4xl mx-auto">
-						<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-6 sm:mb-8">
+						<h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-4 sm:mb-8">
 							{t("servicesPage.asesoramiento.title")}
 						</h2>
 						
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8">
-							<div className="bg-white/5 border border-white/10 rounded-lg p-6">
-								<h3 className="text-2xl font-bold text-white mb-4">{t("servicesPage.asesoramiento.deportivo.title")}</h3>
-								<div className="w-16 h-1 bg-[#E10613] mb-4"></div>
-								<p className="text-white/80 mb-4">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mb-5 sm:mb-8">
+							<div className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-6">
+								<h3 className="text-base sm:text-2xl font-bold text-white mb-2 sm:mb-4">{t("servicesPage.asesoramiento.deportivo.title")}</h3>
+								<div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-[#E10613] mb-2 sm:mb-4"></div>
+								<p className="text-white/80 mb-3 sm:mb-4 text-xs sm:text-base">
 									{t("servicesPage.asesoramiento.deportivo.description")}
 								</p>
-								<ul className="text-white/80 text-sm space-y-2 list-none pl-0">
+								<ul className="text-white/80 text-[11px] sm:text-sm space-y-1 sm:space-y-2 list-none pl-0">
 									{(Array.isArray(t("servicesPage.asesoramiento.deportivo.items")) ? t("servicesPage.asesoramiento.deportivo.items") : []).map((item: string, index: number) => (
 										<li key={index} className="flex items-start">
-											<span className="text-[#E10613] mr-2">•</span>
+											<span className="text-[#E10613] mr-1.5 sm:mr-2">•</span>
 											<span>{item}</span>
 										</li>
 									))}
 								</ul>
 							</div>
 
-							<div className="bg-white/5 border border-white/10 rounded-lg p-6">
-								<h3 className="text-2xl font-bold text-white mb-4">{t("servicesPage.asesoramiento.profesional.title")}</h3>
-								<div className="w-16 h-1 bg-[#E10613] mb-4"></div>
-								<p className="text-white/80 mb-4">
+							<div className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-6">
+								<h3 className="text-base sm:text-2xl font-bold text-white mb-2 sm:mb-4">{t("servicesPage.asesoramiento.profesional.title")}</h3>
+								<div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-[#E10613] mb-2 sm:mb-4"></div>
+								<p className="text-white/80 mb-3 sm:mb-4 text-xs sm:text-base">
 									{t("servicesPage.asesoramiento.profesional.description")}
 								</p>
-								<ul className="text-white/80 text-sm space-y-2 list-none pl-0">
+								<ul className="text-white/80 text-[11px] sm:text-sm space-y-1 sm:space-y-2 list-none pl-0">
 									{(Array.isArray(t("servicesPage.asesoramiento.profesional.items")) ? t("servicesPage.asesoramiento.profesional.items") : []).map((item: string, index: number) => (
 										<li key={index} className="flex items-start">
-											<span className="text-[#E10613] mr-2">•</span>
+											<span className="text-[#E10613] mr-1.5 sm:mr-2">•</span>
 											<span>{item}</span>
 										</li>
 									))}
@@ -308,10 +310,10 @@ export default function Services() {
 								href={whatsappAsesoramiento}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+								className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-5 py-2.5 sm:px-8 sm:py-3 rounded-lg transition-colors text-sm sm:text-base"
 							>
 								{t("servicesPage.asesoramiento.masInformacion")}
-								<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
 								</svg>
 							</Link>
@@ -320,48 +322,48 @@ export default function Services() {
 				</div>
 
 				{/* Footer con logo y datos - al final */}
-				<div className="container mx-auto px-4 sm:px-6 pt-6 pb-6">
+				<div className="container mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-4 sm:pb-6">
 					{/* Logo encima de la línea */}
-					<div className="flex justify-center mb-4">
+					<div className="flex justify-center mb-2 sm:mb-4">
 						<Image
 							src="/images/logoEndurance.png"
 							alt="Enduranc3 Logo"
 							width={250}
 							height={80}
-							className="h-auto brightness-0 invert sm:w-[300px]"
+							className="h-auto brightness-0 invert w-[120px] sm:w-[300px]"
 							quality={100}
 						/>
 					</div>
 					
-					<div className="w-full h-px bg-white/30 mb-4"></div>
+					<div className="w-full h-px bg-white/30 mb-2 sm:mb-4"></div>
 					
 					{/* Grid de información del footer */}
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-xs sm:text-sm max-w-4xl mx-auto">
+					<div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 mb-2 sm:mb-4 text-[8px] sm:text-sm max-w-4xl mx-auto">
 						<div>
-							<h4 className="font-bold text-white mb-1">Endurance3</h4>
-							<p className="text-white/60 leading-snug">
+							<h4 className="font-bold text-white mb-0.5 sm:mb-1">Endurance3</h4>
+							<p className="text-white/60 leading-snug line-clamp-2 sm:line-clamp-none">
 								{t("footer.description")}
 							</p>
 						</div>
 						<div>
-							<h4 className="font-bold text-white mb-1">{t("footer.servicios")}</h4>
-							<ul className="space-y-0.5 text-white/60">
+							<h4 className="font-bold text-white mb-0.5 sm:mb-1">{t("footer.servicios")}</h4>
+							<ul className="space-y-0 sm:space-y-0.5 text-white/60">
 								<li><Link href="/services#entrenamiento-online" className="hover:text-white">{t("footer.entrenamientoOnline")}</Link></li>
 								<li><Link href="/services#testing" className="hover:text-white">Testing</Link></li>
 								<li><Link href="/services#gestion-clubes" className="hover:text-white">{t("footer.valoraciones")}</Link></li>
 							</ul>
 						</div>
 						<div>
-							<h4 className="font-bold text-white mb-1">{t("footer.empresa")}</h4>
-							<ul className="space-y-0.5 text-white/60">
+							<h4 className="font-bold text-white mb-0.5 sm:mb-1">{t("footer.empresa")}</h4>
+							<ul className="space-y-0 sm:space-y-0.5 text-white/60">
 								<li><Link href="/about" className="hover:text-white">{t("footer.sobreNosotros")}</Link></li>
 								<li><Link href="/blog" className="hover:text-white">{t("footer.blog")}</Link></li>
 								<li><Link href="/#contacto" className="hover:text-white">{t("footer.contacto")}</Link></li>
 							</ul>
 						</div>
 						<div>
-							<h4 className="font-bold text-white mb-1">{t("footer.legal")}</h4>
-							<ul className="space-y-0.5 text-white/60">
+							<h4 className="font-bold text-white mb-0.5 sm:mb-1">{t("footer.legal")}</h4>
+							<ul className="space-y-0 sm:space-y-0.5 text-white/60">
 								<li><Link href="/privacidad" className="hover:text-white">{t("footer.privacidad")}</Link></li>
 								<li><Link href="/terminos" className="hover:text-white">{t("footer.terminos")}</Link></li>
 							</ul>
@@ -369,7 +371,7 @@ export default function Services() {
 					</div>
 
 					{/* Copyright */}
-					<p className="text-white/40 text-xs text-center">
+					<p className="text-white/40 text-[7px] sm:text-xs text-center">
 						© {new Date().getFullYear()} Endurance3. Todos los derechos reservados.
 					</p>
 				</div>

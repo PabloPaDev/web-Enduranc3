@@ -8,7 +8,7 @@ export default function Hero() {
 	const titleLines = (t("hero.title") as string).split("\n");
 
 	return (
-		<section className="relative w-full h-[70vh] sm:h-[75vh] md:h-screen overflow-hidden">
+		<section className="relative w-full h-screen overflow-hidden">
 			{/* Background Image - Mantener siempre */}
 			<div className="absolute inset-0 z-0">
 				<Image
@@ -23,8 +23,8 @@ export default function Hero() {
 				<div className="absolute inset-0 bg-[#2B2B2B]/50 sm:bg-[#2B2B2B]/60 z-0"></div>
 			</div>
 			
-			{/* Título - Mantener estructura, ajustar solo tamaños */}
-			<div className="absolute inset-0 z-10 flex flex-col items-center justify-start px-4 sm:px-6 2xl:px-12 pt-12 sm:pt-16 md:pt-48">
+			{/* Título - Arriba en móvil y desktop */}
+			<div className="absolute inset-0 z-10 flex flex-col items-center justify-start px-4 sm:px-6 2xl:px-12 pt-28 sm:pt-28 md:pt-48">
 				{/* Contenedor con max-w solo en ultrawide */}
 				<div className="w-full max-w-full 2xl:max-w-content 2xl:mx-auto">
 					<h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white text-center uppercase tracking-tight leading-tight">

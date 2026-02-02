@@ -5,194 +5,164 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Team() {
-	const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+	const [expandedCard, setExpandedCard] = useState<number | null>(null);
 	const { t } = useLanguage();
 
+	const toggleCard = (cardId: number) => {
+		setExpandedCard(expandedCard === cardId ? null : cardId);
+	};
+
+	const teamMembers = [
+		{
+			id: 1,
+			name: t("team.carlos.name"),
+			items: t("team.carlos.items"),
+			image: "/images/E-1.jpg"
+		},
+		{
+			id: 2,
+			name: t("team.chantal.name"),
+			items: t("team.chantal.items"),
+			image: "/images/E-2.jpg"
+		},
+		{
+			id: 3,
+			name: t("team.eva.name"),
+			items: t("team.eva.items"),
+			image: "/images/E-3.jpeg"
+		}
+	];
+
 	return (
-		<section className="bg-[#E10613] text-white min-h-screen flex items-center py-6 sm:py-8 md:py-12">
-			<div className="container mx-auto px-4 sm:px-6 w-full">
-				<h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-3 sm:mb-6 md:mb-8">
+		<section className="bg-[#E10613] text-white min-h-screen flex items-center py-4 sm:py-12 md:py-12">
+			<div className="container mx-auto px-2 sm:px-6 w-full">
+				<h2 className="text-lg sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-1 sm:mb-6 md:mb-8">
 					{t("team.title")}
 				</h2>
-				<p className="text-white/90 text-sm sm:text-base md:text-xl text-center max-w-3xl mx-auto mb-4 sm:mb-8 md:mb-16 px-2">
+				<p className="text-white/90 text-[9px] sm:text-base md:text-xl text-center max-w-3xl mx-auto mb-2 sm:mb-8 md:mb-16 px-1 leading-tight">
 					{t("team.description")}
 				</p>
 				
-				{/* Scroll horizontal en móvil, grid en desktop */}
-				<div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
-					{/* Tarjeta 1 - Carlos Cabrera López */}
-					<div
-						className="min-w-[200px] w-[200px] sm:min-w-0 sm:w-auto h-[280px] sm:h-80 md:h-[500px] cursor-pointer snap-center flex-shrink-0 md:flex-shrink"
-						style={{ perspective: "1000px" }}
-						onPointerEnter={() => setHoveredCard(1)}
-						onPointerLeave={() => setHoveredCard(null)}
-						onMouseEnter={() => setHoveredCard(1)}
-						onMouseLeave={() => setHoveredCard(null)}
-						onClick={() => setHoveredCard(hoveredCard === 1 ? null : 1)}
-						onFocus={() => setHoveredCard(1)}
-						onBlur={() => setHoveredCard(null)}
-						tabIndex={0}
-					>
-						<div
-							className="relative w-full h-full transition-transform duration-500 cursor-pointer"
-							style={{
-								transformStyle: "preserve-3d",
-								transform: hoveredCard === 1 ? "rotateY(180deg)" : "rotateY(0deg)",
-							}}
-						>
-							{/* Cara frontal - Solo foto */}
+				{/* Móvil: vertical, Desktop: 3 columnas */}
+				<div className="flex flex-col gap-3 md:grid md:grid-cols-3 md:gap-8 max-w-6xl mx-auto px-4 md:px-0">
+					{teamMembers.map((member) => {
+						const isFlipped = expandedCard === member.id;
+						return (
 							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-white/10 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-								style={{ backfaceVisibility: "hidden" }}
+								key={member.id}
+								className="cursor-pointer"
+								onClick={() => toggleCard(member.id)}
 							>
-								<Image
-									src="/images/E-1.jpg"
-									alt="Carlos Cabrera López"
-									fill
-									className="object-cover"
-									quality={100}
-								/>
-							</div>
-							
-							{/* Cara trasera - Descripción */}
-							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-								style={{
-									backfaceVisibility: "hidden",
-									transform: "rotateY(180deg)",
-								}}
-							>
-								<h3 className="text-base sm:text-lg md:text-2xl font-bold text-white mb-2 uppercase">
-									{t("team.carlos.name")}
-								</h3>
-								<div className="w-20 border-t-4 border-[#E10613] mb-3"></div>
-								<ul className="text-white/90 text-[11px] sm:text-sm md:text-base space-y-1.5 sm:space-y-2 list-none pl-0 leading-snug">
-									{(Array.isArray(t("team.carlos.items")) ? t("team.carlos.items") : []).map((item: string, index: number) => (
-										<li key={index} className="flex items-start">
-											<span className="text-[#E10613] mr-2">•</span>
-											<span style={{ whiteSpace: "pre-line" }}>{item}</span>
-										</li>
-									))}
-								</ul>
-							</div>
-						</div>
-					</div>
+								{/* Móvil: Tarjeta con flip */}
+								<div
+									className="md:hidden h-[24vh] sm:h-[22vh]"
+									style={{ perspective: "1000px" }}
+								>
+									<div
+										className="relative w-full h-full transition-transform duration-500 ease-out"
+										style={{
+											transformStyle: "preserve-3d",
+											transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+										}}
+									>
+										{/* Cara frontal - Foto */}
+										<div
+											className="absolute inset-0 w-full h-full rounded-md overflow-hidden shadow-lg"
+											style={{ backfaceVisibility: "hidden" }}
+										>
+											<Image
+												src={member.image}
+												alt={member.name}
+												fill
+												className="object-cover object-center"
+												quality={100}
+											/>
+											{/* Nombre en la parte inferior */}
+											<div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-1.5">
+												<p className="text-white text-[8px] sm:text-[10px] font-bold text-center truncate">
+													{member.name.split(" ")[0]}
+												</p>
+											</div>
+										</div>
+										
+										{/* Cara trasera - Info */}
+										<div
+											className="absolute inset-0 w-full h-full rounded-md overflow-hidden bg-[#2B2B2B] flex flex-col p-2.5 shadow-lg"
+											style={{
+												backfaceVisibility: "hidden",
+												transform: "rotateY(180deg)",
+											}}
+										>
+											<h3 className="text-[11px] font-bold text-white mb-1 uppercase">
+												{member.name}
+											</h3>
+											<div className="w-8 border-t border-[#E10613] mb-1.5"></div>
+											<ul className="text-white/90 text-[10px] space-y-0.5 list-none pl-0 leading-snug flex-1">
+												{(Array.isArray(member.items) ? member.items : []).map((item: string, index: number) => (
+													<li key={index} className="flex items-start">
+														<span className="text-[#E10613] mr-1 flex-shrink-0">•</span>
+														<span className="line-clamp-2">{item}</span>
+													</li>
+												))}
+											</ul>
+										</div>
+									</div>
+								</div>
 
-					{/* Tarjeta 2 - Chantal */}
-					<div
-						className="min-w-[200px] w-[200px] sm:min-w-0 sm:w-auto h-[280px] sm:h-80 md:h-[500px] cursor-pointer snap-center flex-shrink-0 md:flex-shrink"
-						style={{ perspective: "1000px" }}
-						onPointerEnter={() => setHoveredCard(2)}
-						onPointerLeave={() => setHoveredCard(null)}
-						onMouseEnter={() => setHoveredCard(2)}
-						onMouseLeave={() => setHoveredCard(null)}
-						onClick={() => setHoveredCard(hoveredCard === 2 ? null : 2)}
-						onFocus={() => setHoveredCard(2)}
-						onBlur={() => setHoveredCard(null)}
-						tabIndex={0}
-					>
-						<div
-							className="relative w-full h-full transition-transform duration-500 cursor-pointer"
-							style={{
-								transformStyle: "preserve-3d",
-								transform: hoveredCard === 2 ? "rotateY(180deg)" : "rotateY(0deg)",
-							}}
-						>
-							{/* Cara frontal - Solo foto */}
-							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-white/10 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-								style={{ backfaceVisibility: "hidden" }}
-							>
-								<Image
-									src="/images/E-2.jpg"
-									alt="Chantal"
-									fill
-									className="object-cover"
-									quality={100}
-								/>
+								{/* Vista Desktop - Tarjetas con flip */}
+								<div
+									className="hidden md:block h-[500px]"
+									style={{ perspective: "1000px" }}
+									onMouseEnter={() => setExpandedCard(member.id)}
+									onMouseLeave={() => setExpandedCard(null)}
+								>
+									<div
+										className="relative w-full h-full transition-transform duration-500"
+										style={{
+											transformStyle: "preserve-3d",
+											transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+										}}
+									>
+										{/* Cara frontal */}
+										<div
+											className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+											style={{ backfaceVisibility: "hidden" }}
+										>
+											<Image
+												src={member.image}
+												alt={member.name}
+												fill
+												className="object-cover object-center"
+												quality={100}
+											/>
+										</div>
+										
+										{/* Cara trasera */}
+										<div
+											className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-5 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+											style={{
+												backfaceVisibility: "hidden",
+												transform: "rotateY(180deg)",
+											}}
+										>
+											<h3 className="text-2xl font-bold text-white mb-2 uppercase">
+												{member.name}
+											</h3>
+											<div className="w-20 border-t-4 border-[#E10613] mb-3"></div>
+											<ul className="text-white/90 text-base space-y-2 list-none pl-0 leading-snug">
+												{(Array.isArray(member.items) ? member.items : []).map((item: string, index: number) => (
+													<li key={index} className="flex items-start">
+														<span className="text-[#E10613] mr-2">•</span>
+														<span>{item}</span>
+													</li>
+												))}
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
-							
-							{/* Cara trasera - Descripción */}
-							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-								style={{
-									backfaceVisibility: "hidden",
-									transform: "rotateY(180deg)",
-								}}
-							>
-								<h3 className="text-base sm:text-lg md:text-2xl font-bold text-white mb-2 uppercase">
-									{t("team.chantal.name")}
-								</h3>
-								<div className="w-20 border-t-4 border-[#E10613] mb-3"></div>
-								<ul className="text-white/90 text-[11px] sm:text-sm md:text-base space-y-1.5 sm:space-y-2 list-none pl-0 leading-snug">
-									{(Array.isArray(t("team.chantal.items")) ? t("team.chantal.items") : []).map((item: string, index: number) => (
-										<li key={index} className="flex items-start">
-											<span className="text-[#E10613] mr-2">•</span>
-											<span style={{ whiteSpace: "pre-line" }}>{item}</span>
-										</li>
-									))}
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					{/* Tarjeta 3 - Eva */}
-					<div
-						className="min-w-[200px] w-[200px] sm:min-w-0 sm:w-auto h-[280px] sm:h-80 md:h-[500px] cursor-pointer snap-center flex-shrink-0 md:flex-shrink"
-						style={{ perspective: "1000px" }}
-						onPointerEnter={() => setHoveredCard(3)}
-						onPointerLeave={() => setHoveredCard(null)}
-						onMouseEnter={() => setHoveredCard(3)}
-						onMouseLeave={() => setHoveredCard(null)}
-						onClick={() => setHoveredCard(hoveredCard === 3 ? null : 3)}
-						onFocus={() => setHoveredCard(3)}
-						onBlur={() => setHoveredCard(null)}
-						tabIndex={0}
-					>
-						<div
-							className="relative w-full h-full transition-transform duration-500 cursor-pointer"
-							style={{
-								transformStyle: "preserve-3d",
-								transform: hoveredCard === 3 ? "rotateY(180deg)" : "rotateY(0deg)",
-							}}
-						>
-							{/* Cara frontal - Solo foto */}
-							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-white/10 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-								style={{ backfaceVisibility: "hidden" }}
-							>
-								<Image
-									src="/images/E-3.jpeg"
-									alt="Eva"
-									fill
-									className="object-cover object-left-bottom"
-									quality={100}
-								/>
-							</div>
-							
-							{/* Cara trasera - Descripción */}
-							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-								style={{
-									backfaceVisibility: "hidden",
-									transform: "rotateY(180deg)",
-								}}
-							>
-								<h3 className="text-base sm:text-lg md:text-2xl font-bold text-white mb-2 uppercase">
-									{t("team.eva.name")}
-								</h3>
-								<div className="w-20 border-t-4 border-[#E10613] mb-3"></div>
-								<ul className="text-white/90 text-[11px] sm:text-sm md:text-base space-y-1.5 sm:space-y-2 list-none pl-0 leading-snug">
-									{(Array.isArray(t("team.eva.items")) ? t("team.eva.items") : []).map((item: string, index: number) => (
-										<li key={index} className="flex items-start">
-											<span className="text-[#E10613] mr-2">•</span>
-											<span style={{ whiteSpace: "pre-line" }}>{item}</span>
-										</li>
-									))}
-								</ul>
-							</div>
-						</div>
-					</div>
+						);
+					})}
 				</div>
 			</div>
 		</section>

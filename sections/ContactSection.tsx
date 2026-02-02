@@ -48,26 +48,26 @@ export default function ContactSection() {
 				<div className="absolute inset-0 bg-[#2B2B2B]/50 sm:bg-[#2B2B2B]/60"></div>
 			</div>
 
-			<div className="relative z-10 container mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-6 flex-1 flex flex-col justify-center">
+			<div className="relative z-10 container mx-auto px-4 sm:px-6 pt-14 sm:pt-8 pb-4 sm:pb-6 flex-1 flex flex-col justify-center">
 				{/* Título - Compacto en móvil */}
-				<div className="max-w-4xl mx-auto text-center mb-6 sm:mb-10">
-					<h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-6">
+				<div className="max-w-4xl mx-auto text-center mb-3 sm:mb-10">
+					<h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-6">
 						{t("contact.title")}
 					</h1>
-					<p className="text-white/90 text-sm sm:text-lg md:text-xl">
+					<p className="text-white/90 text-xs sm:text-lg md:text-xl">
 						{t("contact.subtitle")}
 					</p>
 				</div>
 
 				{/* Grid - Columna en móvil, 2 columnas en desktop */}
-				<div className="max-w-6xl mx-auto flex flex-col sm:grid sm:grid-cols-2 gap-6 sm:gap-10 mb-6 sm:mb-10">
+				<div className="max-w-6xl mx-auto flex flex-col sm:grid sm:grid-cols-2 gap-4 sm:gap-10 mb-4 sm:mb-10">
 					{/* WhatsApp Button - Compacto en móvil */}
-					<div className="flex flex-col justify-center space-y-4 sm:space-y-8 order-2 sm:order-1">
+					<div className="flex flex-col justify-center space-y-2 sm:space-y-8 order-2 sm:order-1">
 						<a
 							href={whatsappUrl}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-4 sm:px-8 sm:py-6 rounded-lg transition-colors flex items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg min-h-[48px]"
+							className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-3 sm:px-8 sm:py-6 rounded-lg transition-colors flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-lg min-h-[44px] sm:min-h-[48px]"
 						>
 							<svg
 								className="w-5 h-5 sm:w-7 sm:h-7"
@@ -85,7 +85,7 @@ export default function ContactSection() {
 
 					{/* Formulario - Primero en móvil, segundo en desktop */}
 					<div className="order-1 sm:order-2">
-						<form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+						<form onSubmit={handleSubmit} className="space-y-2 sm:space-y-6">
 							<input
 								type="text"
 								name="nombre"
@@ -93,7 +93,7 @@ export default function ContactSection() {
 								value={formData.nombre}
 								onChange={handleChange}
 								required
-								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[48px]"
+								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[40px] sm:min-h-[48px]"
 							/>
 							<input
 								type="email"
@@ -102,7 +102,7 @@ export default function ContactSection() {
 								value={formData.email}
 								onChange={handleChange}
 								required
-								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[48px]"
+								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[40px] sm:min-h-[48px]"
 							/>
 							<input
 								type="text"
@@ -111,7 +111,7 @@ export default function ContactSection() {
 								value={formData.asunto}
 								onChange={handleChange}
 								required
-								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-4 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[48px]"
+								className="w-full bg-[#2B2B2B]/80 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors min-h-[40px] sm:min-h-[48px]"
 							/>
 							<textarea
 								name="mensaje"
@@ -119,12 +119,12 @@ export default function ContactSection() {
 								value={formData.mensaje}
 								onChange={handleChange}
 								required
-								rows={6}
-								className="w-full bg-gray-800/80 border border-gray-700 rounded-lg px-4 py-3 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors resize-none"
+								rows={4}
+								className="w-full bg-gray-800/80 border border-gray-700 rounded-lg px-3 py-2 sm:px-4 sm:py-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none focus:border-[#E10613] transition-colors resize-none"
 							/>
 							<button
 								type="submit"
-								className="w-full bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-6 py-3 sm:px-8 rounded-lg transition-colors text-sm sm:text-base min-h-[48px]"
+								className="w-full bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2.5 sm:px-8 sm:py-3 rounded-lg transition-colors text-sm sm:text-base min-h-[40px] sm:min-h-[48px]"
 							>
 								{t("contact.form.submit")}
 							</button>
@@ -133,31 +133,31 @@ export default function ContactSection() {
 				</div>
 
 				{/* Información de contacto - Columna en móvil */}
-				<div className="max-w-6xl mx-auto flex flex-col sm:grid sm:grid-cols-2 gap-4 sm:gap-8 mb-4 sm:mb-6">
+				<div className="max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:gap-8 mb-3 sm:mb-6">
 					<div>
-						<div className="space-y-4 sm:space-y-8">
+						<div className="space-y-2 sm:space-y-8">
 							<div>
-								<h3 className="font-bold text-white mb-1 sm:mb-2 text-base sm:text-lg">{t("contact.email")}</h3>
-								<p className="text-white/80 text-sm sm:text-base">endurance3.es@gmail.com</p>
+								<h3 className="font-bold text-white mb-0.5 sm:mb-2 text-xs sm:text-lg">{t("contact.email")}</h3>
+								<p className="text-white/80 text-[10px] sm:text-base">endurance3.es@gmail.com</p>
 							</div>
 							<div>
-								<h3 className="font-bold text-white mb-1 sm:mb-2 text-base sm:text-lg">{t("contact.sponsors")}</h3>
-								<p className="text-white/80 text-sm sm:text-base">sponsors@endurance3.es</p>
+								<h3 className="font-bold text-white mb-0.5 sm:mb-2 text-xs sm:text-lg">{t("contact.sponsors")}</h3>
+								<p className="text-white/80 text-[10px] sm:text-base">sponsors@endurance3.es</p>
 							</div>
 						</div>
 					</div>
 					
 					<div>
-						<h3 className="font-bold text-white mb-3 sm:mb-6 text-base sm:text-lg">{t("contact.social")}</h3>
-						<div className="flex gap-3 mb-3 sm:mb-6">
+						<h3 className="font-bold text-white mb-1 sm:mb-6 text-xs sm:text-lg">{t("contact.social")}</h3>
+						<div className="flex gap-2 mb-1 sm:mb-6">
 							<a
 								href="https://www.instagram.com/endurance3.es?igsh=dDVtdHhxaG9nc24="
 								target="_blank"
 								rel="noopener noreferrer"
-								className="w-10 h-10 bg-[#2B2B2B] border border-white/30 rounded flex items-center justify-center hover:bg-[#2B2B2B]/80 transition-colors cursor-pointer"
+								className="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2B2B] border border-white/30 rounded flex items-center justify-center hover:bg-[#2B2B2B]/80 transition-colors cursor-pointer"
 							>
 								<svg
-									className="w-5 h-5 text-white"
+									className="w-4 h-4 sm:w-5 sm:h-5 text-white"
 									fill="currentColor"
 									viewBox="0 0 24 24"
 									xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +166,7 @@ export default function ContactSection() {
 								</svg>
 							</a>
 						</div>
-						<p className="text-white/70 text-xs sm:text-sm leading-relaxed">
+						<p className="text-white/70 text-[9px] sm:text-sm leading-snug">
 							{t("contact.description")}
 						</p>
 					</div>
@@ -174,48 +174,48 @@ export default function ContactSection() {
 			</div>
 			
 			{/* Footer con datos y logo */}
-			<div className="relative z-10 container mx-auto px-4 sm:px-6 mt-auto pt-4 pb-6">
+			<div className="relative z-10 container mx-auto px-4 sm:px-6 mt-auto pt-2 sm:pt-4 pb-3 sm:pb-6">
 				{/* Logo encima de la línea */}
-				<div className="flex justify-center mb-4">
+				<div className="flex justify-center mb-2 sm:mb-4">
 					<Image
 						src="/images/logoEndurance.png"
 						alt="Enduranc3 Logo"
 						width={250}
 						height={80}
-						className="h-auto brightness-0 invert sm:w-[300px]"
+						className="h-auto brightness-0 invert w-[150px] sm:w-[300px]"
 						quality={100}
 					/>
 				</div>
 				
-				<div className="w-full h-px bg-white/30 mb-4"></div>
+				<div className="w-full h-px bg-white/30 mb-2 sm:mb-4"></div>
 				
 				{/* Grid de información del footer */}
-				<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-xs sm:text-sm">
+				<div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 mb-2 sm:mb-4 text-[9px] sm:text-sm">
 					<div>
-						<h4 className="font-bold text-white mb-1">Endurance3</h4>
-						<p className="text-white/60 leading-snug">
+						<h4 className="font-bold text-white mb-0.5 sm:mb-1">Endurance3</h4>
+						<p className="text-white/60 leading-snug line-clamp-2 sm:line-clamp-none">
 							{t("footer.description")}
 						</p>
 					</div>
 					<div>
-						<h4 className="font-bold text-white mb-1">{t("footer.servicios")}</h4>
-						<ul className="space-y-0.5 text-white/60">
+						<h4 className="font-bold text-white mb-0.5 sm:mb-1">{t("footer.servicios")}</h4>
+						<ul className="space-y-0 sm:space-y-0.5 text-white/60">
 							<li><Link href="/services#entrenamiento-online" className="hover:text-white">{t("footer.entrenamientoOnline")}</Link></li>
 							<li><Link href="/services#testing" className="hover:text-white">Testing</Link></li>
 							<li><Link href="/services#gestion-clubes" className="hover:text-white">{t("footer.valoraciones")}</Link></li>
 						</ul>
 					</div>
 					<div>
-						<h4 className="font-bold text-white mb-1">{t("footer.empresa")}</h4>
-						<ul className="space-y-0.5 text-white/60">
+						<h4 className="font-bold text-white mb-0.5 sm:mb-1">{t("footer.empresa")}</h4>
+						<ul className="space-y-0 sm:space-y-0.5 text-white/60">
 							<li><Link href="/about" className="hover:text-white">{t("footer.sobreNosotros")}</Link></li>
 							<li><Link href="/blog" className="hover:text-white">{t("footer.blog")}</Link></li>
 							<li><Link href="/#contacto" className="hover:text-white">{t("footer.contacto")}</Link></li>
 						</ul>
 					</div>
 					<div>
-						<h4 className="font-bold text-white mb-1">{t("footer.legal")}</h4>
-						<ul className="space-y-0.5 text-white/60">
+						<h4 className="font-bold text-white mb-0.5 sm:mb-1">{t("footer.legal")}</h4>
+						<ul className="space-y-0 sm:space-y-0.5 text-white/60">
 							<li><Link href="/privacidad" className="hover:text-white">{t("footer.privacidad")}</Link></li>
 							<li><Link href="/terminos" className="hover:text-white">{t("footer.terminos")}</Link></li>
 						</ul>
@@ -223,7 +223,7 @@ export default function ContactSection() {
 				</div>
 
 				{/* Copyright */}
-				<p className="text-white/40 text-xs text-center">
+				<p className="text-white/40 text-[8px] sm:text-xs text-center">
 					© {new Date().getFullYear()} Endurance3. Todos los derechos reservados.
 				</p>
 			</div>
