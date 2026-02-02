@@ -39,7 +39,7 @@ export default function Hero() {
 			</div>
 			
 			{/* Descripción inferior derecha - Mantener estructura, ajustar posicionamiento */}
-			<div className="absolute bottom-16 sm:bottom-0 right-0 z-10 p-4 sm:p-6 md:p-8 2xl:p-12 max-w-full sm:max-w-xl lg:max-w-2xl 2xl:max-w-text text-right">
+			<div className="absolute bottom-[22%] sm:bottom-0 right-0 z-10 p-4 sm:p-6 md:p-8 2xl:p-12 max-w-full sm:max-w-xl lg:max-w-2xl 2xl:max-w-text text-right">
 				<p className="text-base sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl leading-relaxed text-white">
 					<Image
 						src="/images/logoEndurance.png"
