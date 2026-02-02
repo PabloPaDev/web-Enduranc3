@@ -178,8 +178,9 @@ export default function Services() {
 							</Link>
 						</div>
 
-						{/* Línea divisoria vertical */}
+						{/* Línea divisoria vertical (desktop) / horizontal (móvil) */}
 						<div className="hidden md:block w-0.5 bg-[#E10613] self-stretch"></div>
+						<div className="block md:hidden w-full h-0.5 bg-[#E10613] my-8"></div>
 
 						{/* Testing */}
 						<div id="testing" className="scroll-mt-20">

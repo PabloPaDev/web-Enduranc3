@@ -66,8 +66,9 @@ export default function Servicios({ variant = "normal" }: Props) {
 				isOverlay ? "h-screen overflow-hidden bg-transparent" : "bg-[#2B2B2B]"
 			}`}
 		>
-			<div className="grid grid-cols-1 md:grid-cols-2 h-full">
-				<div className={`relative overflow-hidden ${isOverlay ? "h-full" : "min-h-[900px]"}`}>
+			{/* Siempre 2 columnas para que funcione la animación de cortinas */}
+			<div className="grid grid-cols-2 h-full">
+				<div className={`relative overflow-hidden ${isOverlay ? "h-full" : "min-h-[400px] sm:min-h-[600px] md:min-h-[900px]"}`}>
 					<Image
 						src="/images/End-5.jpg"
 						alt="Runner"
@@ -75,18 +76,18 @@ export default function Servicios({ variant = "normal" }: Props) {
 						className="object-cover"
 						quality={100}
 					/>
-					<div className="absolute inset-0 bg-[#2B2B2B]/50 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
-						<h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2">
+					<div className="absolute inset-0 bg-[#2B2B2B]/50 flex flex-col items-center justify-center p-2 sm:p-4 md:p-8">
+						<h2 className="text-lg sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-1 sm:mb-2 text-center">
 							<AnimatedCounter target={150} duration={3500} /> {t("servicios.atletasText")}
 						</h2>
-						<p className="text-white/90">
+						<p className="text-white/90 text-xs sm:text-sm md:text-base text-center">
 							{t("servicios.llevadosNivel")}
 						</p>
 					</div>
 				</div>
 
-				<div className={`bg-[#2B2B2B] flex flex-col items-center justify-center p-6 sm:p-8 md:p-10 lg:p-12 ${isOverlay ? "h-full" : "min-h-[900px]"}`}>
-					<h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
+				<div className={`bg-[#2B2B2B] flex flex-col items-center justify-center p-3 sm:p-6 md:p-10 lg:p-12 ${isOverlay ? "h-full" : "min-h-[400px] sm:min-h-[600px] md:min-h-[900px]"}`}>
+					<h2 className="text-lg sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 text-center">
 						{titleLines.map((line: string, i: number) => (
 							<span key={i}>
 								{line}
@@ -95,13 +96,13 @@ export default function Servicios({ variant = "normal" }: Props) {
 						))}
 					</h2>
 
-					<p className="text-white/80 mb-6 sm:mb-8 text-center text-base sm:text-lg">
+					<p className="text-white/80 mb-4 sm:mb-6 md:mb-8 text-center text-xs sm:text-sm md:text-base lg:text-lg">
 						{t("servicios.description")}
 					</p>
 
 					<Link
 						href="/services"
-						className="bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-8 py-4 rounded-lg transition-colors"
+						className="bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg transition-colors text-xs sm:text-sm md:text-base"
 					>
 						{t("servicios.button")}
 					</Link>

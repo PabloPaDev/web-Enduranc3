@@ -30,7 +30,9 @@ export default function HeroServicios() {
 			const [leftCol, rightCol] = Array.from(grid.children) as HTMLElement[];
 
 			const windowWidth = window.innerWidth || 1920;
-			const totalDuration = windowWidth * 3;
+			// Reducir duración en móvil para mejor experiencia
+			const isMobile = windowWidth < 768;
+			const totalDuration = isMobile ? windowWidth * 1.5 : windowWidth * 3;
 
 			// Cortinas fuera inicialmente (Hero visible)
 			gsap.set(leftCol, { xPercent: -100 });

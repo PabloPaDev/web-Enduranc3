@@ -102,7 +102,7 @@ export default function Navigation() {
 				href="/mujer"
 				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium"
 			>
-				Mujer
+				{t("nav.mujer")}
 			</Link>
 			<Link 
 				href="/#contacto" 
