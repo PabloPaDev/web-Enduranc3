@@ -55,7 +55,7 @@ export default function Team() {
 							>
 								{/* Móvil: Tarjeta con flip */}
 								<div
-									className="md:hidden h-[24vh] sm:h-[22vh]"
+									className="md:hidden h-[20vh] sm:h-[22vh]"
 									style={{ perspective: "1000px" }}
 								>
 									<div
