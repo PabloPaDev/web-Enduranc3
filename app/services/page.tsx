@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
-import SimpleFooter from "@/components/SimpleFooter";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,32 +35,32 @@ export default function Services() {
 				});
 			}
 
-			// Animación de entrada para Entrenamiento Online
+			// Animación de entrada para Entrenamiento Online - aparece antes
 			if (entrenamientoRef.current) {
 				gsap.from(entrenamientoRef.current, {
 					opacity: 0,
-					y: 80,
+					y: 60,
 					ease: "power2.out",
 					scrollTrigger: {
 						trigger: entrenamientoRef.current.parentElement,
-						start: "top 90%",
-						end: "top 50%",
-						scrub: 1,
+						start: "top 100%",
+						end: "top 70%",
+						scrub: 0.5,
 					},
 				});
 			}
 
-			// Animación de entrada para Clubes
+			// Animación de entrada para Clubes - aparece antes
 			if (clubesTextRef.current) {
 				gsap.from(clubesTextRef.current, {
 					opacity: 0,
-					y: 100,
+					y: 80,
 					ease: "power2.out",
 					scrollTrigger: {
 						trigger: clubesTextRef.current.parentElement,
-						start: "top 90%",
-						end: "top 40%",
-						scrub: 1,
+						start: "top 100%",
+						end: "top 60%",
+						scrub: 0.5,
 					},
 				});
 
@@ -79,17 +78,17 @@ export default function Services() {
 				});
 			}
 
-			// Animación de entrada para Asesoramiento
+			// Animación de entrada para Asesoramiento - aparece antes
 			if (asesoramientoRef.current) {
 				gsap.from(asesoramientoRef.current, {
 					opacity: 0,
-					y: 80,
+					y: 60,
 					ease: "power2.out",
 					scrollTrigger: {
 						trigger: asesoramientoRef.current.parentElement,
-						start: "top 90%",
-						end: "top 50%",
-						scrub: 1,
+						start: "top 100%",
+						end: "top 70%",
+						scrub: 0.5,
 					},
 				});
 			}
@@ -260,9 +259,10 @@ export default function Services() {
 				</div>
 			</section>
 
-			{/* Asesoramiento - Sticky, tapa a la anterior */}
-			<section id="asesoramiento" className="sticky top-0 z-30 py-12 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
-				<div ref={asesoramientoRef} className="container mx-auto px-4 sm:px-6">
+			{/* Asesoramiento - Sticky, tapa a la anterior, ocupa pantalla completa */}
+			<section id="asesoramiento" className="sticky top-0 z-30 min-h-screen flex flex-col bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
+				{/* Contenido centrado en la pantalla */}
+				<div ref={asesoramientoRef} className="flex-1 flex items-center justify-center px-4 sm:px-6">
 					<div className="max-w-4xl mx-auto">
 						<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-6 sm:mb-8">
 							{t("servicesPage.asesoramiento.title")}
@@ -317,11 +317,62 @@ export default function Services() {
 						</div>
 					</div>
 				</div>
-			</section>
 
-			<div className="sticky top-0 z-40">
-				<SimpleFooter />
-			</div>
+				{/* Footer con logo y datos - al final */}
+				<div className="container mx-auto px-4 sm:px-6 pt-6 pb-6">
+					{/* Logo encima de la línea */}
+					<div className="flex justify-center mb-4">
+						<Image
+							src="/images/logoEndurance.png"
+							alt="Enduranc3 Logo"
+							width={250}
+							height={80}
+							className="h-auto brightness-0 invert sm:w-[300px]"
+							quality={100}
+						/>
+					</div>
+					
+					<div className="w-full h-px bg-white/30 mb-4"></div>
+					
+					{/* Grid de información del footer */}
+					<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-xs sm:text-sm max-w-4xl mx-auto">
+						<div>
+							<h4 className="font-bold text-white mb-1">Endurance3</h4>
+							<p className="text-white/60 leading-snug">
+								{t("footer.description")}
+							</p>
+						</div>
+						<div>
+							<h4 className="font-bold text-white mb-1">{t("footer.servicios")}</h4>
+							<ul className="space-y-0.5 text-white/60">
+								<li><Link href="/services#entrenamiento-online" className="hover:text-white">{t("footer.entrenamientoOnline")}</Link></li>
+								<li><Link href="/services#testing" className="hover:text-white">Testing</Link></li>
+								<li><Link href="/services#gestion-clubes" className="hover:text-white">{t("footer.valoraciones")}</Link></li>
+							</ul>
+						</div>
+						<div>
+							<h4 className="font-bold text-white mb-1">{t("footer.empresa")}</h4>
+							<ul className="space-y-0.5 text-white/60">
+								<li><Link href="/about" className="hover:text-white">{t("footer.sobreNosotros")}</Link></li>
+								<li><Link href="/blog" className="hover:text-white">{t("footer.blog")}</Link></li>
+								<li><Link href="/#contacto" className="hover:text-white">{t("footer.contacto")}</Link></li>
+							</ul>
+						</div>
+						<div>
+							<h4 className="font-bold text-white mb-1">{t("footer.legal")}</h4>
+							<ul className="space-y-0.5 text-white/60">
+								<li><Link href="/privacidad" className="hover:text-white">{t("footer.privacidad")}</Link></li>
+								<li><Link href="/terminos" className="hover:text-white">{t("footer.terminos")}</Link></li>
+							</ul>
+						</div>
+					</div>
+
+					{/* Copyright */}
+					<p className="text-white/40 text-xs text-center">
+						© {new Date().getFullYear()} Endurance3. Todos los derechos reservados.
+					</p>
+				</div>
+			</section>
 		</main>
 	);
 }

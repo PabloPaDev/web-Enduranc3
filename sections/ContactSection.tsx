@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -47,7 +48,7 @@ export default function ContactSection() {
 				<div className="absolute inset-0 bg-[#2B2B2B]/50 sm:bg-[#2B2B2B]/60"></div>
 			</div>
 
-			<div className="relative z-10 container mx-auto px-4 sm:px-6 pt-6 sm:pt-6 pb-6 flex-1 flex flex-col">
+			<div className="relative z-10 container mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-6 flex-1 flex flex-col justify-center">
 				{/* Título - Compacto en móvil */}
 				<div className="max-w-4xl mx-auto text-center mb-6 sm:mb-10">
 					<h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 sm:mb-6">
@@ -132,7 +133,7 @@ export default function ContactSection() {
 				</div>
 
 				{/* Información de contacto - Columna en móvil */}
-				<div className="max-w-6xl mx-auto flex flex-col sm:grid sm:grid-cols-2 gap-6 sm:gap-10 mb-6 sm:mb-8">
+				<div className="max-w-6xl mx-auto flex flex-col sm:grid sm:grid-cols-2 gap-4 sm:gap-8 mb-4 sm:mb-6">
 					<div>
 						<div className="space-y-4 sm:space-y-8">
 							<div>
@@ -172,19 +173,59 @@ export default function ContactSection() {
 				</div>
 			</div>
 			
-			{/* Footer con logo - Compacto en móvil */}
-			<div className="relative z-10 container mx-auto px-4 sm:px-6 pb-4 sm:pb-6">
-				<div className="w-full h-px bg-white/30 mb-4 sm:mb-6"></div>
-				<div className="flex justify-center">
+			{/* Footer con datos y logo */}
+			<div className="relative z-10 container mx-auto px-4 sm:px-6 mt-auto pt-4 pb-6">
+				{/* Logo encima de la línea */}
+				<div className="flex justify-center mb-4">
 					<Image
 						src="/images/logoEndurance.png"
 						alt="Enduranc3 Logo"
-						width={280}
-						height={105}
-						className="h-auto brightness-0 invert sm:w-[400px]"
+						width={250}
+						height={80}
+						className="h-auto brightness-0 invert sm:w-[300px]"
 						quality={100}
 					/>
 				</div>
+				
+				<div className="w-full h-px bg-white/30 mb-4"></div>
+				
+				{/* Grid de información del footer */}
+				<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-xs sm:text-sm">
+					<div>
+						<h4 className="font-bold text-white mb-1">Endurance3</h4>
+						<p className="text-white/60 leading-snug">
+							{t("footer.description")}
+						</p>
+					</div>
+					<div>
+						<h4 className="font-bold text-white mb-1">{t("footer.servicios")}</h4>
+						<ul className="space-y-0.5 text-white/60">
+							<li><Link href="/services#entrenamiento-online" className="hover:text-white">{t("footer.entrenamientoOnline")}</Link></li>
+							<li><Link href="/services#testing" className="hover:text-white">Testing</Link></li>
+							<li><Link href="/services#gestion-clubes" className="hover:text-white">{t("footer.valoraciones")}</Link></li>
+						</ul>
+					</div>
+					<div>
+						<h4 className="font-bold text-white mb-1">{t("footer.empresa")}</h4>
+						<ul className="space-y-0.5 text-white/60">
+							<li><Link href="/about" className="hover:text-white">{t("footer.sobreNosotros")}</Link></li>
+							<li><Link href="/blog" className="hover:text-white">{t("footer.blog")}</Link></li>
+							<li><Link href="/#contacto" className="hover:text-white">{t("footer.contacto")}</Link></li>
+						</ul>
+					</div>
+					<div>
+						<h4 className="font-bold text-white mb-1">{t("footer.legal")}</h4>
+						<ul className="space-y-0.5 text-white/60">
+							<li><Link href="/privacidad" className="hover:text-white">{t("footer.privacidad")}</Link></li>
+							<li><Link href="/terminos" className="hover:text-white">{t("footer.terminos")}</Link></li>
+						</ul>
+					</div>
+				</div>
+
+				{/* Copyright */}
+				<p className="text-white/40 text-xs text-center">
+					© {new Date().getFullYear()} Endurance3. Todos los derechos reservados.
+				</p>
 			</div>
 		</section>
 	);

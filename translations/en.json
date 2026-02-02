@@ -16,6 +16,7 @@
 	},
 	"servicios": {
 		"atletas": "+ 150 Athletes",
+		"atletasText": "Athletes",
 		"llevadosNivel": "TAKEN TO THE NEXT LEVEL",
 		"title": "Train with science,\nreach your goals",
 		"description": "Personalized training plans backed by advanced physiological analysis. Optimize each session with objective data and continuous tracking of your progress.",

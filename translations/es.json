@@ -16,6 +16,7 @@
 	},
 	"servicios": {
 		"atletas": "+ 150 Atletas",
+		"atletasText": "Atletas",
 		"llevadosNivel": "LLEVADOS AL SIGUIENTE NIVEL",
 		"title": "Entrena con ciencia,\nalcanza tus objetivos",
 		"description": "Planes de entrenamiento personalizados respaldados por análisis fisiológico avanzado. Optimizado cada sesión con datos objetivos y seguimiento continuo de tu evolución.",

@@ -9,7 +9,7 @@ export default function Team() {
 	const { t } = useLanguage();
 
 	return (
-		<section id="equipo" className="bg-[#E10613] text-white min-h-screen flex items-center py-8 md:py-12 scroll-mt-20">
+		<section className="bg-[#E10613] text-white min-h-screen flex items-center py-8 md:py-12">
 			<div className="container mx-auto px-4 sm:px-6 w-full">
 				<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-4 sm:mb-6 md:mb-8">
 					{t("team.title")}
@@ -41,7 +41,7 @@ export default function Team() {
 						>
 							{/* Cara frontal - Solo foto */}
 							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border border-[#E10613] bg-white/10 backdrop-blur-sm"
+								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-white/10 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
 								style={{ backfaceVisibility: "hidden" }}
 							>
 								<Image
@@ -55,7 +55,7 @@ export default function Team() {
 							
 							{/* Cara trasera - Descripción */}
 							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden"
+								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
 								style={{
 									backfaceVisibility: "hidden",
 									transform: "rotateY(180deg)",
@@ -99,12 +99,12 @@ export default function Team() {
 						>
 							{/* Cara frontal - Solo foto */}
 							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border border-[#E10613] bg-white/10 backdrop-blur-sm"
+								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-white/10 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
 								style={{ backfaceVisibility: "hidden" }}
 							>
 								<Image
 									src="/images/E-2.jpg"
-									alt="Carlos Cabrera López"
+									alt="Chantal"
 									fill
 									className="object-cover"
 									quality={100}
@@ -113,7 +113,7 @@ export default function Team() {
 							
 							{/* Cara trasera - Descripción */}
 							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden"
+								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
 								style={{
 									backfaceVisibility: "hidden",
 									transform: "rotateY(180deg)",
@@ -157,7 +157,7 @@ export default function Team() {
 						>
 							{/* Cara frontal - Solo foto */}
 							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border border-[#E10613] bg-white/10 backdrop-blur-sm"
+								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-white/10 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
 								style={{ backfaceVisibility: "hidden" }}
 							>
 								<Image
@@ -171,7 +171,7 @@ export default function Team() {
 							
 							{/* Cara trasera - Descripción */}
 							<div
-								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden"
+								className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-4 sm:p-5 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
 								style={{
 									backfaceVisibility: "hidden",
 									transform: "rotateY(180deg)",

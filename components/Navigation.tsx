@@ -22,26 +22,25 @@ export default function Navigation() {
 		setLanguage(language === "es" ? "en" : "es");
 	};
 
-	const handleEquipoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-		if (pathname !== "/") return;
-
-		event.preventDefault();
-		const target = document.getElementById("servicios");
-		if (target) {
-			target.scrollIntoView({ behavior: "smooth", block: "start" });
-			window.history.replaceState(null, "", "#servicios");
-			return;
+	const handleSectionClick = (sectionId: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+		// Si estamos en la página principal, hacer scroll suave
+		if (pathname === "/") {
+			event.preventDefault();
+			const target = document.getElementById(sectionId);
+			if (target) {
+				target.scrollIntoView({ behavior: "smooth", block: "start" });
+				window.history.replaceState(null, "", `#${sectionId}`);
+			}
 		}
-
-		router.push("/#servicios");
+		// Si estamos en otra página, dejar que el Link navegue normalmente a /#sectionId
 	};
 
 	return (
 		<nav className="flex items-center gap-8 md:gap-10">
 			<Link
-				href="/#servicios"
+				href="/#equipo"
 				scroll
-				onClick={handleEquipoClick}
+				onClick={handleSectionClick("equipo")}
 				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium"
 			>
 				{t("nav.equipo")}
@@ -105,7 +104,12 @@ export default function Navigation() {
 			>
 				Mujer
 			</Link>
-			<Link href="/#contacto" scroll className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
+			<Link 
+				href="/#contacto" 
+				scroll 
+				onClick={handleSectionClick("contacto")}
+				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium"
+			>
 				{t("nav.contacto")}
 			</Link>
 			<Link href="/blog" className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
