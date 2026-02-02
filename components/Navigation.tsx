@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navigation() {
 	const [isServicesOpen, setIsServicesOpen] = useState(false);
+	const router = useRouter();
+	const pathname = usePathname();
 	const { t, language, setLanguage } = useLanguage();
 
 	const services = [
@@ -20,9 +23,28 @@ export default function Navigation() {
 		setLanguage(language === "es" ? "en" : "es");
 	};
 
+	const handleEquipoClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+		if (pathname !== "/") return;
+
+		event.preventDefault();
+		const target = document.getElementById("servicios");
+		if (target) {
+			target.scrollIntoView({ behavior: "smooth", block: "start" });
+			window.history.replaceState(null, "", "#servicios");
+			return;
+		}
+
+		router.push("/#servicios");
+	};
+
 	return (
 		<nav className="flex items-center gap-8 md:gap-10">
-			<Link href="/#equipo" scroll className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
+			<Link
+				href="/#servicios"
+				scroll
+				onClick={handleEquipoClick}
+				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium"
+			>
 				{t("nav.equipo")}
 			</Link>
 			<div
@@ -78,6 +100,12 @@ export default function Navigation() {
 					</div>
 				)}
 			</div>
+			<Link
+				href="/mujer"
+				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium"
+			>
+				Mujer
+			</Link>
 			<Link href="/#contacto" scroll className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
 				{t("nav.contacto")}
 			</Link>

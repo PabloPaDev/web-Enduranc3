@@ -5,9 +5,14 @@ import Link from "next/link";
 import Navigation from "./Navigation";
 import { useState, useEffect } from "react";
 
-export default function Header() {
+type HeaderProps = {
+	logoVariant?: "default" | "white";
+};
+
+export default function Header({ logoVariant = "default" }: HeaderProps) {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const logoClassName = `${logoVariant === "white" ? "brightness-0 invert" : ""} h-auto w-[140px] sm:w-[200px]`;
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -33,7 +38,7 @@ export default function Header() {
 							alt="Enduranc3 Logo"
 							width={200}
 							height={70}
-							className="h-auto w-[140px] sm:w-[200px]"
+							className={logoClassName}
 							priority
 						/>
 					</Link>

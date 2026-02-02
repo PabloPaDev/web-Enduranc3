@@ -9,8 +9,8 @@ export default function Team() {
 	const { t } = useLanguage();
 
 	return (
-		<section id="equipo" className="bg-[#E10613] text-white pt-8 pb-16 md:pt-12 md:pb-24 scroll-mt-20">
-			<div className="container mx-auto px-4 sm:px-6">
+		<section id="equipo" className="bg-[#E10613] text-white min-h-screen flex items-center py-8 md:py-12 scroll-mt-20">
+			<div className="container mx-auto px-4 sm:px-6 w-full">
 				<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-4 sm:mb-6 md:mb-8">
 					{t("team.title")}
 				</h2>

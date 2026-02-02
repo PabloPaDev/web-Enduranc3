@@ -15,6 +15,7 @@ export default function Servicios({ variant = "normal" }: Props) {
 
 	return (
 		<section
+			id="servicios"
 			className={`text-white ${
 				isOverlay ? "h-screen overflow-hidden bg-transparent" : "bg-[#2B2B2B]"
 			}`}

@@ -33,6 +33,10 @@
 			"button": "Entendido"
 		}
 	},
+	"mujer": {
+		"description": "Estamos desarrollando una App donde ciencia hormonal y deportiva se juntan para llevar al entrenamiento femenino al siguiente nivel",
+		"button": "Proximamente"
+	},
 	"team": {
 		"title": "Equipo",
 		"description": "Conoce a quienes forman Enduranc3. Un equipo de profesionales apasionados por el entrenamiento deportivo y la ciencia aplicada al rendimiento",

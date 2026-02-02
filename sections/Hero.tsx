@@ -46,7 +46,7 @@ export default function Hero() {
 						alt="Enduranc3"
 						width={140}
 						height={42}
-						className="h-[1.2em] w-auto inline align-text-bottom mr-1 sm:w-[160px] md:w-[180px] lg:w-[180px] 2xl:w-[200px]"
+						className="h-[1.2em] w-auto inline align-text-bottom mr-1 brightness-0 invert sm:w-[160px] md:w-[180px] lg:w-[180px] 2xl:w-[200px]"
 						quality={100}
 					/>{t("hero.description")}
 				</p>

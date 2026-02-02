@@ -33,6 +33,10 @@
 			"button": "Got it"
 		}
 	},
+	"mujer": {
+		"description": "We are developing an app where hormonal science and sport come together to take women's training to the next level",
+		"button": "Coming Soon"
+	},
 	"team": {
 		"title": "Team",
 		"description": "Meet those who make up Enduranc3. A team of professionals passionate about sports training and science applied to performance",
