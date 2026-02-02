@@ -9,19 +9,20 @@ export default function Team() {
 	const { t } = useLanguage();
 
 	return (
-		<section className="bg-[#E10613] text-white min-h-screen flex items-center py-8 md:py-12">
+		<section className="bg-[#E10613] text-white min-h-screen flex items-center py-6 sm:py-8 md:py-12">
 			<div className="container mx-auto px-4 sm:px-6 w-full">
-				<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-4 sm:mb-6 md:mb-8">
+				<h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-3 sm:mb-6 md:mb-8">
 					{t("team.title")}
 				</h2>
-				<p className="text-white/90 text-base sm:text-lg md:text-xl text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
+				<p className="text-white/90 text-sm sm:text-base md:text-xl text-center max-w-3xl mx-auto mb-4 sm:mb-8 md:mb-16 px-2">
 					{t("team.description")}
 				</p>
 				
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+				{/* Scroll horizontal en móvil, grid en desktop */}
+				<div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
 					{/* Tarjeta 1 - Carlos Cabrera López */}
 					<div
-						className="h-[400px] sm:h-96 md:h-[500px] cursor-pointer"
+						className="min-w-[200px] w-[200px] sm:min-w-0 sm:w-auto h-[280px] sm:h-80 md:h-[500px] cursor-pointer snap-center flex-shrink-0 md:flex-shrink"
 						style={{ perspective: "1000px" }}
 						onPointerEnter={() => setHoveredCard(1)}
 						onPointerLeave={() => setHoveredCard(null)}
@@ -79,7 +80,7 @@ export default function Team() {
 
 					{/* Tarjeta 2 - Chantal */}
 					<div
-						className="h-[400px] sm:h-96 md:h-[500px] cursor-pointer"
+						className="min-w-[200px] w-[200px] sm:min-w-0 sm:w-auto h-[280px] sm:h-80 md:h-[500px] cursor-pointer snap-center flex-shrink-0 md:flex-shrink"
 						style={{ perspective: "1000px" }}
 						onPointerEnter={() => setHoveredCard(2)}
 						onPointerLeave={() => setHoveredCard(null)}
@@ -137,7 +138,7 @@ export default function Team() {
 
 					{/* Tarjeta 3 - Eva */}
 					<div
-						className="h-[400px] sm:h-96 md:h-[500px] cursor-pointer"
+						className="min-w-[200px] w-[200px] sm:min-w-0 sm:w-auto h-[280px] sm:h-80 md:h-[500px] cursor-pointer snap-center flex-shrink-0 md:flex-shrink"
 						style={{ perspective: "1000px" }}
 						onPointerEnter={() => setHoveredCard(3)}
 						onPointerLeave={() => setHoveredCard(null)}

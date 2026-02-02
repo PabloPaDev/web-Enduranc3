@@ -17,3 +17,14 @@
 		line-height: 0.9;
 	}
 }
+
+@layer utilities {
+	/* Ocultar scrollbar pero mantener scroll */
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+}
