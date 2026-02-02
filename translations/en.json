@@ -4,8 +4,7 @@
 		"servicios": "Services",
 		"verTodosServicios": "View all services",
 		"entrenamientoOnline": "Online Training",
-		"entrenamientoPresencial": "In-Person Training",
-		"formacion": "Training",
+		"testing": "Testing",
 		"gestionClubes": "Club Management",
 		"asesoramiento": "Consulting",
 		"contacto": "Contact",
@@ -116,39 +115,43 @@
 		},
 		"entrenamientoOnline": {
 			"title": "ONLINE TRAINING",
-			"table": {
-				"serviciosBasicos": "BASIC SERVICES",
-				"endurance": "ENDURANCE",
-				"tempo": "TEMPO",
-				"ftp": "FTP",
-				"entrevista": "INTERVIEW",
-				"planificacion": "PLANNING",
-				"feedback": "FEEDBACK",
-				"comunicacion": "COMMUNICATION",
-				"reajustes": "ADJUSTMENTS",
-				"gestionCompeticion": "COMPETITION MANAGEMENT",
-				"appsBasicas": "Basic Apps",
-				"consultoria": "CONSULTING",
-				"videollamada": "Video call",
-				"semanal": "Weekly",
-				"resumenSemanal": "Weekly Summary",
-				"cada2_3dias": "Every 2-3 days",
-				"aTravesApp": "Through the APP",
-				"aTravesAppWhatsapp": "Through the APP + WhatsApp",
-				"aTravesAppLlamadaWhatsapp": "Through the APP + Call/WhatsApp",
-				"alFinalSemana": "At the end of the week",
-				"diarios": "Daily",
-				"hrvTrainingpeaks": "HRV + Trainingpeaks",
-				"hrvTrainingpeaksWko5": "HRV + Trainingpeaks + WKO5",
-				"unMes": "1 month",
-				"guion": "–"
-			},
-			"masInformacion": "More information"
+			"description": "Personalized distance training, data-driven and adapted to your level, goals and availability. Structured planning, continuous monitoring and real support so you train with purpose and progress safely.",
+			"serviciosIncluidos": "Services included",
+			"items": [
+				{
+					"title": "Personalized follow-up",
+					"description": "Continuous monitoring of load, progress and sensations to adjust training according to your real response."
+				},
+				{
+					"title": "Constant consulting",
+					"description": "Resolution of doubts, weekly adjustments and direct guidance so you know what you do, why you do it and how to improve."
+				},
+				{
+					"title": "Discipline and athlete development",
+					"description": "Building habits, consistency and judgment. You don't just train: you learn to train and understand your process."
+				},
+				{
+					"title": "Elite-level analysis and tracking for amateur athletes",
+					"description": "Use of high-performance tools and methodologies applied realistically to amateur sports."
+				}
+			],
+			"masInformacion": "More information",
+			"whatsappMessage": "Hi, I'm interested in Online Training. I would like to receive more information."
 		},
-		"entrenamientoPresencial": {
-			"title": "IN-PERSON TRAINING",
-			"description": "Personalized training with direct and in-person follow-up. Ideal for athletes seeking closer and more personalized support.",
-			"masInformacion": "More information"
+		"testing": {
+			"title": "TESTING",
+			"description": "Testing is an objective evaluation of the athlete through standardized tests. It allows you to know your physical condition, identify strengths and weaknesses and make training decisions based on data.",
+			"resumen": "In summary: measure to train better.",
+			"paraQueSirve": "What is testing for?",
+			"items": [
+				"Know the real level of the athlete",
+				"Check if training is working",
+				"Adjust loads, intensities and rest",
+				"Reduce the risk of injuries and overtraining",
+				"Define realistic performance goals"
+			],
+			"masInformacion": "More information",
+			"whatsappMessage": "Hi, I'm interested in sports Testing. I would like to know about the available tests and prices."
 		},
 		"formacion": {
 			"title": "TRAINING",
@@ -171,7 +174,8 @@
 		"gestionClubes": {
 			"title": "CLUB MANAGEMENT",
 			"description": "Comprehensive management services for sports clubs. Professionalization of services and improvement of your athletes' performance.",
-			"masInformacion": "More information"
+			"masInformacion": "More information",
+			"whatsappMessage": "Hi, I'm interested in Club Management services. I would like to receive more information for my sports club."
 		},
 		"asesoramiento": {
 			"title": "CONSULTING",
@@ -195,7 +199,8 @@
 					"Sales and growth strategy"
 				]
 			},
-			"masInformacion": "More information"
+			"masInformacion": "More information",
+			"whatsappMessage": "Hi, I'm interested in Consulting services. I would like to receive more information."
 		},
 		"whatsappMessage": "Hello, I would like to know about..."
 	},

@@ -13,8 +13,7 @@ export default function Navigation() {
 
 	const services = [
 		{ name: t("nav.entrenamientoOnline"), href: "/services#entrenamiento-online" },
-		{ name: t("nav.entrenamientoPresencial"), href: "/services#entrenamiento-presencial" },
-		{ name: t("nav.formacion"), href: "/services#formacion" },
+		{ name: t("nav.testing"), href: "/services#testing" },
 		{ name: t("nav.gestionClubes"), href: "/services#gestion-clubes" },
 		{ name: t("nav.asesoramiento"), href: "/services#asesoramiento" }
 	];

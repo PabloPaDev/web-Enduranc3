@@ -4,8 +4,7 @@
 		"servicios": "Servicios",
 		"verTodosServicios": "Ver todos los servicios",
 		"entrenamientoOnline": "Entrenamiento Online",
-		"entrenamientoPresencial": "Entrenamiento Presencial",
-		"formacion": "Formación",
+		"testing": "Testing",
 		"gestionClubes": "Gestión de Clubes",
 		"asesoramiento": "Asesoramiento",
 		"contacto": "Contacto",
@@ -116,39 +115,43 @@
 		},
 		"entrenamientoOnline": {
 			"title": "ENTRENAMIENTO ONLINE",
-			"table": {
-				"serviciosBasicos": "SERVICIOS BÁSICOS",
-				"endurance": "ENDURANCE",
-				"tempo": "TEMPO",
-				"ftp": "FTP",
-				"entrevista": "ENTREVISTA",
-				"planificacion": "PLANIFICACIÓN",
-				"feedback": "FEEDBACK",
-				"comunicacion": "COMUNICACIÓN",
-				"reajustes": "REAJUSTES",
-				"gestionCompeticion": "GESTIÓN COMPETICIÓN",
-				"appsBasicas": "APPs Básicas",
-				"consultoria": "CONSULTORIA",
-				"videollamada": "Videollamada",
-				"semanal": "Semanal",
-				"resumenSemanal": "Resumen Semanal",
-				"cada2_3dias": "Cada 2-3 días",
-				"aTravesApp": "A través de la APP",
-				"aTravesAppWhatsapp": "A través de la APP + Whatsapp",
-				"aTravesAppLlamadaWhatsapp": "A través de la APP + Llamada/Whatsapp",
-				"alFinalSemana": "Al final de la semana",
-				"diarios": "Diarios",
-				"hrvTrainingpeaks": "HRV + Trainingpeaks",
-				"hrvTrainingpeaksWko5": "HRV + Trainingpeaks + WKO5",
-				"unMes": "1 mes",
-				"guion": "–"
-			},
-			"masInformacion": "Más información"
+			"description": "Entrenamiento personalizado a distancia, basado en datos y adaptado a tu nivel, objetivos y disponibilidad. Planificación estructurada, seguimiento continuo y acompañamiento real para que entrenes con criterio y progreses de forma segura.",
+			"serviciosIncluidos": "Servicios incluidos",
+			"items": [
+				{
+					"title": "Seguimiento personalizado",
+					"description": "Control continuo de la carga, evolución y sensaciones para ajustar el entrenamiento según tu respuesta real."
+				},
+				{
+					"title": "Asesoramiento constante",
+					"description": "Resolución de dudas, ajustes semanales y orientación directa para que sepas qué haces, por qué lo haces y cómo mejorar."
+				},
+				{
+					"title": "Disciplina y formación del atleta",
+					"description": "Creación de hábitos, constancia y criterio. No solo entrenas: aprendes a entrenar y a entender tu proceso."
+				},
+				{
+					"title": "Análisis y seguimiento de nivel élite para atletas amateur",
+					"description": "Uso de herramientas y metodologías propias del alto rendimiento aplicadas de forma realista al deporte amateur."
+				}
+			],
+			"masInformacion": "Más información",
+			"whatsappMessage": "Hola, me interesa el servicio de Entrenamiento Online. Me gustaría recibir más información."
 		},
-		"entrenamientoPresencial": {
-			"title": "ENTRENAMIENTO PRESENCIAL",
-			"description": "Entrenamiento personalizado con seguimiento directo y presencial. Ideal para deportistas que buscan un acompañamiento más cercano y personalizado.",
-			"masInformacion": "Más información"
+		"testing": {
+			"title": "TESTING",
+			"description": "El testing es una evaluación objetiva del deportista mediante pruebas estandarizadas. Permite conocer el estado físico, identificar fortalezas y debilidades y tomar decisiones de entrenamiento con base en datos.",
+			"resumen": "En resumen: medir para entrenar mejor.",
+			"paraQueSirve": "¿Para qué sirve el testing?",
+			"items": [
+				"Conocer el nivel real del deportista",
+				"Comprobar si el entrenamiento está funcionando",
+				"Ajustar cargas, intensidades y descansos",
+				"Reducir el riesgo de lesiones y sobreentrenamiento",
+				"Definir objetivos realistas de rendimiento"
+			],
+			"masInformacion": "Más información",
+			"whatsappMessage": "Hola, me interesa el servicio de Testing deportivo. Me gustaría conocer las pruebas disponibles y precios."
 		},
 		"formacion": {
 			"title": "FORMACIÓN",
@@ -171,7 +174,8 @@
 		"gestionClubes": {
 			"title": "GESTIÓN DE CLUBES",
 			"description": "Servicios de gestión integral para clubes deportivos. Profesionalización de servicios y mejora del rendimiento de tus deportistas.",
-			"masInformacion": "Más información"
+			"masInformacion": "Más información",
+			"whatsappMessage": "Hola, me interesa el servicio de Gestión de Clubes. Me gustaría recibir más información para mi club deportivo."
 		},
 		"asesoramiento": {
 			"title": "ASESORAMIENTO",
@@ -195,7 +199,8 @@
 					"Estrategia de venta y crecimiento"
 				]
 			},
-			"masInformacion": "Más información"
+			"masInformacion": "Más información",
+			"whatsappMessage": "Hola, me interesa el servicio de Asesoramiento. Me gustaría recibir más información."
 		},
 		"whatsappMessage": "Hola, me gustaría saber sobre..."
 	},
