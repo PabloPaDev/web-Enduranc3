@@ -33,17 +33,7 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 		setIsMenuOpen(false);
 	}, [pathname]);
 
-	// Bloquear scroll del body cuando el menú está abierto
-	useEffect(() => {
-		if (isMenuOpen) {
-			document.body.style.overflow = "hidden";
-		} else {
-			document.body.style.overflow = "";
-		}
-		return () => {
-			document.body.style.overflow = "";
-		};
-	}, [isMenuOpen]);
+	// Ya no bloqueamos scroll porque el menú es compacto
 
 	const toggleLanguage = () => {
 		setLanguage(language === "es" ? "en" : "es");
@@ -97,57 +87,65 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 				</nav>
 			</header>
 			
-			{/* Menú móvil fullscreen */}
+			{/* Overlay para cerrar menú al tocar fuera */}
+			{isMenuOpen && (
+				<div 
+					className="fixed inset-0 z-[54] bg-black/50 md:hidden"
+					onClick={() => setIsMenuOpen(false)}
+				/>
+			)}
+			
+			{/* Menú móvil desplegable desde arriba */}
 			<div
-				className={`fixed inset-0 z-[55] bg-[#2B2B2B] transition-transform duration-300 md:hidden ${
-					isMenuOpen ? "translate-x-0" : "translate-x-full"
+				className={`fixed top-0 left-0 right-0 z-[55] bg-[#2B2B2B] shadow-lg transition-transform duration-300 md:hidden ${
+					isMenuOpen ? "translate-y-0" : "-translate-y-full"
 				}`}
 			>
-				<div className="flex flex-col h-full pt-20 pb-8 px-6">
+				<div className="pt-20 pb-6 px-6">
 					{/* Links de navegación */}
-					<nav className="flex flex-col space-y-6 flex-1">
+					<nav className="flex flex-col space-y-4">
 						<Link
 							href="/#equipo"
 							onClick={handleMobileLink}
-							className="text-white text-2xl font-medium hover:text-[#E10613] transition-colors"
+							className="text-white text-lg font-medium hover:text-[#E10613] transition-colors py-2"
 						>
 							{t("nav.equipo")}
 						</Link>
 						<Link
 							href="/services"
 							onClick={handleMobileLink}
-							className="text-white text-2xl font-medium hover:text-[#E10613] transition-colors"
+							className="text-white text-lg font-medium hover:text-[#E10613] transition-colors py-2"
 						>
 							{t("nav.servicios")}
 						</Link>
 						<Link
 							href="/mujer"
 							onClick={handleMobileLink}
-							className="text-white text-2xl font-medium hover:text-[#E10613] transition-colors"
+							className="text-white text-lg font-medium hover:text-[#E10613] transition-colors py-2"
 						>
 							{t("nav.mujer")}
 						</Link>
 						<Link
 							href="/#contacto"
 							onClick={handleMobileLink}
-							className="text-white text-2xl font-medium hover:text-[#E10613] transition-colors"
+							className="text-white text-lg font-medium hover:text-[#E10613] transition-colors py-2"
 						>
 							{t("nav.contacto")}
 						</Link>
 						<Link
 							href="/blog"
 							onClick={handleMobileLink}
-							className="text-white text-2xl font-medium hover:text-[#E10613] transition-colors"
+							className="text-white text-lg font-medium hover:text-[#E10613] transition-colors py-2"
 						>
 							{t("nav.blog")}
 						</Link>
 					</nav>
 					
 					{/* Selector de idioma */}
-					<div className="pt-6 border-t border-white/20">
+					<div className="pt-4 mt-4 border-t border-white/20">
 						<button
 							onClick={toggleLanguage}
-							className="text-white text-xl font-medium flex items-center gap-3"
+							className="text-white text-base font-medium flex items-center gap-3"
 						>
 							<span className={language === "es" ? "text-[#E10613]" : "opacity-50"}>ES</span>
 							<span className="opacity-30">|</span>
