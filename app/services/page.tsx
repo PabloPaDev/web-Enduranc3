@@ -1,13 +1,102 @@
 "use client";
 
+import { useRef, useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import SimpleFooter from "@/components/SimpleFooter";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Services() {
 	const { t } = useLanguage();
+	const heroTextRef = useRef<HTMLDivElement>(null);
+	const entrenamientoRef = useRef<HTMLDivElement>(null);
+	const clubesTextRef = useRef<HTMLDivElement>(null);
+	const asesoramientoRef = useRef<HTMLDivElement>(null);
+	const sectionsRef = useRef<HTMLDivElement>(null);
+
+	useLayoutEffect(() => {
+		const ctx = gsap.context(() => {
+			// Fade del texto del Hero mientras se tapa
+			if (heroTextRef.current) {
+				gsap.to(heroTextRef.current, {
+					opacity: 0,
+					y: -50,
+					ease: "none",
+					scrollTrigger: {
+						trigger: heroTextRef.current.parentElement,
+						start: "top top",
+						end: "50% top",
+						scrub: 1,
+					},
+				});
+			}
+
+			// Animación de entrada para Entrenamiento Online
+			if (entrenamientoRef.current) {
+				gsap.from(entrenamientoRef.current, {
+					opacity: 0,
+					y: 80,
+					ease: "power2.out",
+					scrollTrigger: {
+						trigger: entrenamientoRef.current.parentElement,
+						start: "top 90%",
+						end: "top 50%",
+						scrub: 1,
+					},
+				});
+			}
+
+			// Animación de entrada para Clubes
+			if (clubesTextRef.current) {
+				gsap.from(clubesTextRef.current, {
+					opacity: 0,
+					y: 100,
+					ease: "power2.out",
+					scrollTrigger: {
+						trigger: clubesTextRef.current.parentElement,
+						start: "top 90%",
+						end: "top 40%",
+						scrub: 1,
+					},
+				});
+
+				// Fade al salir
+				gsap.to(clubesTextRef.current, {
+					opacity: 0,
+					y: -30,
+					ease: "none",
+					scrollTrigger: {
+						trigger: clubesTextRef.current.parentElement,
+						start: "top top",
+						end: "50% top",
+						scrub: 1,
+					},
+				});
+			}
+
+			// Animación de entrada para Asesoramiento
+			if (asesoramientoRef.current) {
+				gsap.from(asesoramientoRef.current, {
+					opacity: 0,
+					y: 80,
+					ease: "power2.out",
+					scrollTrigger: {
+						trigger: asesoramientoRef.current.parentElement,
+						start: "top 90%",
+						end: "top 50%",
+						scrub: 1,
+					},
+				});
+			}
+		}, sectionsRef);
+
+		return () => ctx.revert();
+	}, []);
 	const whatsappNumber = "+34633940227";
 	
 	// URLs de WhatsApp con mensajes personalizados por sección
@@ -17,12 +106,12 @@ export default function Services() {
 	const whatsappAsesoramiento = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t("servicesPage.asesoramiento.whatsappMessage") as string)}`;
 
 	return (
-		<main className="min-h-screen bg-[#2B2B2B] text-white">
+		<main ref={sectionsRef} className="min-h-screen bg-[#2B2B2B] text-white">
 			<Header />
 			
-			{/* Hero Section */}
-			<section className="relative w-full min-h-[75vh] sm:h-screen overflow-hidden">
-				<div className="absolute inset-0 z-0">
+			{/* Hero Section - Fija, el contenido sube por encima */}
+			<section className="fixed top-0 left-0 right-0 w-full h-screen overflow-hidden z-0">
+				<div className="absolute inset-0">
 					<Image
 						src="/images/End-2.jpg"
 						alt="Servicios Enduranc3"
@@ -31,9 +120,9 @@ export default function Services() {
 						priority
 						quality={100}
 					/>
-					<div className="absolute inset-0 bg-[#2B2B2B]/60 z-0"></div>
+					<div className="absolute inset-0 bg-gradient-to-b from-[#2B2B2B]/40 via-[#2B2B2B]/50 to-[#2B2B2B]/70"></div>
 				</div>
-				<div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 sm:px-6">
+				<div ref={heroTextRef} className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 sm:px-6">
 					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-4 sm:mb-6 uppercase tracking-tight">
 						{t("servicesPage.hero.title")}
 					</h1>
@@ -43,9 +132,12 @@ export default function Services() {
 				</div>
 			</section>
 
-			{/* Entrenamiento Online y Testing */}
-			<section id="entrenamiento-online" className="py-12 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20">
-				<div className="container mx-auto px-4 sm:px-6">
+			{/* Espaciador para el hero fijo */}
+			<div className="h-screen"></div>
+
+			{/* Entrenamiento Online y Testing - Sticky, tapa al hero */}
+			<section id="entrenamiento-online" className="sticky top-0 z-10 py-12 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
+				<div ref={entrenamientoRef} className="container mx-auto px-4 sm:px-6">
 					<div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-12">
 						{/* Entrenamiento Online */}
 						<div>
@@ -132,9 +224,9 @@ export default function Services() {
 				</div>
 			</section>
 
-			{/* Gestión de Clubes */}
-			<section id="gestion-clubes" className="relative bg-[#2B2B2B] text-white py-16 sm:py-24 md:py-40 border-t border-white/10 scroll-mt-20">
-				<div className="absolute inset-0 z-0">
+			{/* Gestión de Clubes - Sticky, tapa a la anterior */}
+			<section id="gestion-clubes" className="sticky top-0 z-20 h-screen text-white scroll-mt-20 overflow-hidden flex items-center rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
+				<div className="absolute inset-0">
 					<Image
 						src="/images/servicios/Equipo.jpeg"
 						alt="Equipo de ciclistas"
@@ -142,10 +234,10 @@ export default function Services() {
 						className="object-cover"
 						quality={100}
 					/>
-					<div className="absolute inset-0 bg-[#2B2B2B]/60"></div>
+					<div className="absolute inset-0 bg-gradient-to-b from-[#2B2B2B]/40 via-[#2B2B2B]/50 to-[#2B2B2B]/70"></div>
 				</div>
 				
-				<div className="relative z-10 container mx-auto px-4 sm:px-6">
+				<div ref={clubesTextRef} className="relative z-10 container mx-auto px-4 sm:px-6">
 					<div className="max-w-5xl mx-auto text-center">
 						<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 md:mb-10">
 							{t("servicesPage.gestionClubes.title")}
@@ -168,9 +260,9 @@ export default function Services() {
 				</div>
 			</section>
 
-			{/* Asesoramiento */}
-			<section id="asesoramiento" className="py-12 sm:py-16 md:py-24 bg-[#2B2B2B] border-t border-white/10 scroll-mt-20">
-				<div className="container mx-auto px-4 sm:px-6">
+			{/* Asesoramiento - Sticky, tapa a la anterior */}
+			<section id="asesoramiento" className="sticky top-0 z-30 py-12 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
+				<div ref={asesoramientoRef} className="container mx-auto px-4 sm:px-6">
 					<div className="max-w-4xl mx-auto">
 						<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-6 sm:mb-8">
 							{t("servicesPage.asesoramiento.title")}
@@ -227,7 +319,9 @@ export default function Services() {
 				</div>
 			</section>
 
-			<SimpleFooter />
+			<div className="sticky top-0 z-40">
+				<SimpleFooter />
+			</div>
 		</main>
 	);
 }
