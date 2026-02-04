@@ -66,8 +66,8 @@ export default function Servicios({ variant = "normal" }: Props) {
 				isOverlay ? "h-screen overflow-hidden bg-transparent" : "bg-[#2B2B2B]"
 			}`}
 		>
-			{/* Siempre 2 columnas para que funcione la animación de cortinas */}
-			<div className="grid grid-cols-2 h-full">
+			{/* Siempre 2 columnas para que funcione la animación de cortinas; overflow para que desaparezcan por los lados */}
+			<div className={`grid grid-cols-2 h-full ${isOverlay ? "overflow-hidden" : ""}`}>
 				<div className={`relative overflow-hidden ${isOverlay ? "h-full" : "min-h-[400px] sm:min-h-[600px] md:min-h-[900px]"}`}>
 					<Image
 						src="/images/End-5.jpg"

@@ -41,6 +41,8 @@
 	"team": {
 		"title": "Team",
 		"description": "Meet those who make up Enduranc3. A team of professionals passionate about sports training and science applied to performance",
+		"flipCard": "Tap to view info",
+		"closeCard": "Close card",
 		"carlos": {
 			"name": "CARLOS CABRERA",
 			"items": [

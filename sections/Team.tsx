@@ -50,12 +50,21 @@ export default function Team() {
 						return (
 							<div
 								key={member.id}
-								className="cursor-pointer"
+								role="button"
+								tabIndex={0}
+								aria-label={isFlipped ? t("team.closeCard") : t("team.flipCard")}
+								className="cursor-pointer select-none [touch-action:manipulation]"
 								onClick={() => toggleCard(member.id)}
+								onKeyDown={(e) => {
+									if (e.key === "Enter" || e.key === " ") {
+										e.preventDefault();
+										toggleCard(member.id);
+									}
+								}}
 							>
-								{/* Móvil: Tarjeta con flip */}
+								{/* Móvil: Tarjeta con flip al pulsar */}
 								<div
-									className="md:hidden h-[20vh] sm:h-[22vh]"
+									className="md:hidden h-[24vh] sm:h-[26vh]"
 									style={{ perspective: "1000px" }}
 								>
 									<div
@@ -68,13 +77,21 @@ export default function Team() {
 										{/* Cara frontal - Foto */}
 										<div
 											className="absolute inset-0 w-full h-full rounded-md overflow-hidden shadow-lg"
-											style={{ backfaceVisibility: "hidden" }}
+											style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
 										>
 											<Image
 												src={member.image}
 												alt={member.name}
 												fill
-												className="object-cover object-center"
+												className={`object-cover ${
+													member.id === 1
+														? "object-[50%_28%]"
+														: 													member.id === 2
+														? "object-[70%_25%]"
+														: member.id === 3
+														? "object-left"
+														: "object-center"
+												}`}
 												quality={100}
 											/>
 											{/* Nombre en la parte inferior */}
@@ -85,12 +102,13 @@ export default function Team() {
 											</div>
 										</div>
 										
-										{/* Cara trasera - Info */}
+										{/* Cara trasera - Info (visible al apretar) */}
 										<div
 											className="absolute inset-0 w-full h-full rounded-md overflow-hidden bg-[#2B2B2B] flex flex-col p-2.5 shadow-lg"
 											style={{
 												backfaceVisibility: "hidden",
-												transform: "rotateY(180deg)",
+												WebkitBackfaceVisibility: "hidden",
+												transform: "rotateY(180deg) translateZ(1px)",
 											}}
 										>
 											<h3 className="text-[11px] font-bold text-white mb-1 uppercase">
@@ -109,10 +127,11 @@ export default function Team() {
 									</div>
 								</div>
 
-								{/* Vista Desktop - Tarjetas con flip */}
+								{/* Vista Desktop - Tarjetas con flip (clic o hover para ver la parte de atrás) */}
 								<div
-									className="hidden md:block h-[500px]"
+									className="hidden md:block h-[540px]"
 									style={{ perspective: "1000px" }}
+									onClick={() => toggleCard(member.id)}
 									onMouseEnter={() => setExpandedCard(member.id)}
 									onMouseLeave={() => setExpandedCard(null)}
 								>
@@ -126,23 +145,32 @@ export default function Team() {
 										{/* Cara frontal */}
 										<div
 											className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-											style={{ backfaceVisibility: "hidden" }}
+											style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
 										>
 											<Image
 												src={member.image}
 												alt={member.name}
 												fill
-												className="object-cover object-center"
+												className={`object-cover ${
+													member.id === 1
+														? "object-[50%_35%]"
+														: member.id === 2
+														? "object-center"
+														: member.id === 3
+														? "object-left"
+														: "object-center"
+												}`}
 												quality={100}
 											/>
 										</div>
 										
-										{/* Cara trasera */}
+										{/* Cara trasera (visible al apretar) */}
 										<div
 											className="absolute inset-0 w-full h-full rounded-lg overflow-hidden border-2 border-[#E10613] bg-[#2B2B2B] flex flex-col items-start justify-start p-5 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
 											style={{
 												backfaceVisibility: "hidden",
-												transform: "rotateY(180deg)",
+												WebkitBackfaceVisibility: "hidden",
+												transform: "rotateY(180deg) translateZ(1px)",
 											}}
 										>
 											<h3 className="text-2xl font-bold text-white mb-2 uppercase">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Righteous } from "next/font/google";
 import "./globals.css";
 import LanguageProvider from "@/components/LanguageProvider";
+import ScrollToHero from "@/components/ScrollToHero";
 
 const inter = Inter({ 
 	subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
 		<html lang="es" className={righteous.variable}>
 			<body>
 				<LanguageProvider>
+					<ScrollToHero />
 					{children}
 				</LanguageProvider>
 			</body>

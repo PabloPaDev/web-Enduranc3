@@ -13,19 +13,17 @@ export default function Home() {
 	const mainRef = useRef<HTMLDivElement>(null);
 	const contactTextRef = useRef<HTMLDivElement>(null);
 
-	// Manejar navegación con hash desde otras páginas
+	// Navegación con hash solo cuando se llega desde un enlace (no en recarga).
+	// En recarga/carga ScrollToHero ya lleva al Hero y quita el hash.
 	useEffect(() => {
 		const hash = window.location.hash;
-		if (hash) {
-			// Esperar a que las animaciones se inicialicen
-			const timer = setTimeout(() => {
-				const element = document.getElementById(hash.replace("#", ""));
-				if (element) {
-					element.scrollIntoView({ behavior: "smooth", block: "start" });
-				}
-			}, 100);
-			return () => clearTimeout(timer);
-		}
+		if (!hash) return;
+		const element = document.getElementById(hash.replace("#", ""));
+		if (!element) return;
+		const timer = setTimeout(() => {
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+		}, 150);
+		return () => clearTimeout(timer);
 	}, []);
 
 	useLayoutEffect(() => {

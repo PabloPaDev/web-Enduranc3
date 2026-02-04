@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import FooterDeveloperCredit from "@/components/FooterDeveloperCredit";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactSection() {
@@ -226,6 +227,7 @@ export default function ContactSection() {
 				<p className="text-white/40 text-[8px] sm:text-xs text-center">
 					© {new Date().getFullYear()} Endurance3. Todos los derechos reservados.
 				</p>
+				<FooterDeveloperCredit />
 			</div>
 		</section>
 	);

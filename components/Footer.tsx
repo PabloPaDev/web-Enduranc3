@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FooterDeveloperCredit from "./FooterDeveloperCredit";
 
 export default function Footer() {
 	return (
@@ -59,6 +60,7 @@ export default function Footer() {
 				<div className="pt-6 flex flex-col items-center">
 					<div className="w-full max-w-4xl border-t border-white/30 mb-6"></div>
 					<h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase">ENDURANC3</h2>
+					<FooterDeveloperCredit />
 				</div>
 			</div>
 		</footer>

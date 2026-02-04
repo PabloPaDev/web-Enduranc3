@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FooterDeveloperCredit from "@/components/FooterDeveloperCredit";
 import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
 	const { t } = useLanguage();
+	const [expandOnline, setExpandOnline] = useState(false);
+	const [expandTesting, setExpandTesting] = useState(false);
 	const heroTextRef = useRef<HTMLDivElement>(null);
 	const entrenamientoRef = useRef<HTMLDivElement>(null);
 	const clubesTextRef = useRef<HTMLDivElement>(null);
@@ -50,7 +53,7 @@ export default function Services() {
 				});
 			}
 
-			// Animación de entrada para Clubes - aparece antes
+			// Animación de entrada para Clubes - aparece antes (el texto no desaparece al hacer scroll)
 			if (clubesTextRef.current) {
 				gsap.from(clubesTextRef.current, {
 					opacity: 0,
@@ -63,21 +66,6 @@ export default function Services() {
 						scrub: 0.5,
 					},
 				});
-
-				// Fade al salir - solo en desktop
-				if (window.innerWidth >= 768) {
-					gsap.to(clubesTextRef.current, {
-						opacity: 0,
-						y: -30,
-						ease: "none",
-						scrollTrigger: {
-							trigger: clubesTextRef.current.parentElement,
-							start: "top top",
-							end: "50% top",
-							scrub: 1,
-						},
-					});
-				}
 			}
 
 			// Animación de entrada para Asesoramiento - aparece antes
@@ -136,91 +124,168 @@ export default function Services() {
 			{/* Espaciador para el hero fijo */}
 			<div className="h-screen"></div>
 
-			{/* Entrenamiento Online y Testing - Sticky, tapa al hero */}
-			<section id="entrenamiento-online" className="sticky top-0 z-10 pt-16 pb-8 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
-				<div ref={entrenamientoRef} className="container mx-auto px-4 sm:px-6">
-					<div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-12">
-						{/* Entrenamiento Online */}
-						<div>
-							<h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
-								{t("servicesPage.entrenamientoOnline.title")}
-							</h2>
-							
-							<p className="text-white/80 text-xs sm:text-base mb-4 sm:mb-8">
-								{t("servicesPage.entrenamientoOnline.description")}
-							</p>
-							
-							<h3 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
-								{t("servicesPage.entrenamientoOnline.serviciosIncluidos")}
-							</h3>
-							
-							<div className="space-y-3 sm:space-y-6 mb-4 sm:mb-8">
-								{(Array.isArray(t("servicesPage.entrenamientoOnline.items")) ? t("servicesPage.entrenamientoOnline.items") : []).map((item: { title: string; description: string }, index: number) => (
-									<div key={index}>
-										<h4 className="text-white font-semibold text-xs sm:text-base mb-0.5 sm:mb-1">
-											{item.title}
-										</h4>
-										<p className="text-white/60 text-[10px] sm:text-sm">
-											{item.description}
-										</p>
+			{/* Entrenamiento Online y Testing - Sticky; móvil: centrado + expandir con "+" */}
+			<section id="entrenamiento-online" className="sticky top-0 z-10 min-h-screen md:min-h-0 pt-16 pb-8 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)] flex flex-col md:flex-none justify-center">
+				<div ref={entrenamientoRef} className="container mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-none justify-center">
+					<div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-12 lg:gap-12">
+						{/* Entrenamiento Online - móvil: tarjeta tipo asesoramiento */}
+						<div className="flex flex-col md:block">
+							{/* Móvil: tarjeta con formato referencia */}
+							<div className="md:contents">
+								<div className="md:hidden bg-white/5 border border-white/10 rounded-xl p-4 shadow-inner">
+									<h2 className="text-base font-bold text-white uppercase mb-1">
+										{t("servicesPage.entrenamientoOnline.title")}
+									</h2>
+									<div className="w-12 h-0.5 bg-[#E10613] mb-3"></div>
+									<p className="text-white/80 text-xs leading-relaxed mb-3">
+										{t("servicesPage.entrenamientoOnline.description")}
+									</p>
+									<div className="flex justify-center mb-2">
+										<button
+											onClick={() => { setExpandOnline(!expandOnline); setExpandTesting(false); }}
+											className="w-10 h-10 rounded-full bg-[#E10613] hover:bg-[#C10510] text-white flex items-center justify-center text-xl font-bold"
+											aria-label={expandOnline ? "Cerrar" : "Ver servicios"}
+										>
+											{expandOnline ? "−" : "+"}
+										</button>
 									</div>
-								))}
+									{expandOnline && (
+										<div className="pt-2 border-t border-white/10">
+											<h3 className="text-xs font-semibold text-white mb-2">
+												{t("servicesPage.entrenamientoOnline.serviciosIncluidos")}
+											</h3>
+											<ul className="space-y-1.5 mb-3 list-none pl-0">
+												{(Array.isArray(t("servicesPage.entrenamientoOnline.items")) ? t("servicesPage.entrenamientoOnline.items") : []).map((item: { title: string; description: string }, index: number) => (
+													<li key={index} className="flex items-start text-white/80 text-xs">
+														<span className="text-[#E10613] mr-2 mt-0.5">■</span>
+														<span><strong className="text-white">{item.title}</strong> — {item.description}</span>
+													</li>
+												))}
+											</ul>
+											<Link
+												href={whatsappOnline}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-3 py-2 rounded-lg text-xs"
+											>
+												{t("servicesPage.entrenamientoOnline.masInformacion")}
+												<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+											</Link>
+										</div>
+									)}
+								</div>
 							</div>
-							
-							<Link
-								href={whatsappOnline}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-colors text-xs sm:text-sm md:text-base"
-							>
-								{t("servicesPage.entrenamientoOnline.masInformacion")}
-								<svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-								</svg>
-							</Link>
+							{/* Desktop: contenido sin tarjeta */}
+							<div className="hidden md:block">
+								<h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
+									{t("servicesPage.entrenamientoOnline.title")}
+								</h2>
+								<p className="text-white/80 text-xs sm:text-base mb-4 sm:mb-8">
+									{t("servicesPage.entrenamientoOnline.description")}
+								</p>
+								<h3 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
+									{t("servicesPage.entrenamientoOnline.serviciosIncluidos")}
+								</h3>
+								<div className="space-y-3 sm:space-y-6 mb-4 sm:mb-8">
+									{(Array.isArray(t("servicesPage.entrenamientoOnline.items")) ? t("servicesPage.entrenamientoOnline.items") : []).map((item: { title: string; description: string }, index: number) => (
+										<div key={index}>
+											<h4 className="text-white font-semibold text-xs sm:text-base mb-0.5 sm:mb-1">{item.title}</h4>
+											<p className="text-white/60 text-[10px] sm:text-sm">{item.description}</p>
+										</div>
+									))}
+								</div>
+								<Link
+									href={whatsappOnline}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-colors text-xs sm:text-sm md:text-base"
+								>
+									{t("servicesPage.entrenamientoOnline.masInformacion")}
+									<svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+								</Link>
+							</div>
 						</div>
 
-						{/* Línea divisoria vertical (desktop) / horizontal (móvil) */}
 						<div className="hidden md:block w-0.5 bg-[#E10613] self-stretch"></div>
-						<div className="block md:hidden w-full h-0.5 bg-[#E10613] my-4 sm:my-8"></div>
+						<div className="block md:hidden w-full h-0.5 bg-[#E10613] my-2"></div>
 
-						{/* Testing */}
-						<div id="testing" className="scroll-mt-20">
-							<h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
-								{t("servicesPage.testing.title")}
-							</h2>
-							
-							<p className="text-white/80 text-xs sm:text-base mb-2 sm:mb-4">
-								{t("servicesPage.testing.description")}
-							</p>
-							
-							<p className="text-white/80 text-xs sm:text-base mb-4 sm:mb-8 font-medium">
-								{t("servicesPage.testing.resumen")}
-							</p>
-							
-							<h3 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
-								{t("servicesPage.testing.paraQueSirve")}
-							</h3>
-							
-							<ul className="space-y-1.5 sm:space-y-3 mb-4 sm:mb-8">
-								{(Array.isArray(t("servicesPage.testing.items")) ? t("servicesPage.testing.items") : []).map((item: string, index: number) => (
-									<li key={index} className="text-white/80 text-[10px] sm:text-base">
-										{item}
-									</li>
-								))}
-							</ul>
-							
-							<Link
-								href={whatsappTesting}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-colors text-xs sm:text-sm md:text-base"
-							>
-								{t("servicesPage.testing.masInformacion")}
-								<svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-								</svg>
-							</Link>
+						{/* Testing - móvil: misma tarjeta */}
+						<div id="testing" className="scroll-mt-20 flex flex-col md:block">
+							<div className="md:contents">
+								<div className="md:hidden bg-white/5 border border-white/10 rounded-xl p-4 shadow-inner">
+									<h2 className="text-base font-bold text-white uppercase mb-1">
+										{t("servicesPage.testing.title")}
+									</h2>
+									<div className="w-12 h-0.5 bg-[#E10613] mb-3"></div>
+									<p className="text-white/80 text-xs leading-relaxed mb-3">
+										{t("servicesPage.testing.description")}
+									</p>
+									<div className="flex justify-center mb-2">
+										<button
+											onClick={() => { setExpandTesting(!expandTesting); setExpandOnline(false); }}
+											className="w-10 h-10 rounded-full bg-[#E10613] hover:bg-[#C10510] text-white flex items-center justify-center text-xl font-bold"
+											aria-label={expandTesting ? "Cerrar" : "Ver para qué sirve"}
+										>
+											{expandTesting ? "−" : "+"}
+										</button>
+									</div>
+									{expandTesting && (
+										<div className="pt-2 border-t border-white/10">
+											<p className="text-white/80 text-xs font-medium mb-2">
+												{t("servicesPage.testing.resumen")}
+											</p>
+											<h3 className="text-xs font-semibold text-white mb-2">
+												{t("servicesPage.testing.paraQueSirve")}
+											</h3>
+											<ul className="space-y-1.5 mb-3 list-none pl-0">
+												{(Array.isArray(t("servicesPage.testing.items")) ? t("servicesPage.testing.items") : []).map((item: string, index: number) => (
+													<li key={index} className="flex items-start text-white/80 text-xs">
+														<span className="text-[#E10613] mr-2 mt-0.5">■</span>
+														<span>{item}</span>
+													</li>
+												))}
+											</ul>
+											<Link
+												href={whatsappTesting}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-3 py-2 rounded-lg text-xs"
+											>
+												{t("servicesPage.testing.masInformacion")}
+												<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+											</Link>
+										</div>
+									)}
+								</div>
+							</div>
+							<div className="hidden md:block">
+								<h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
+									{t("servicesPage.testing.title")}
+								</h2>
+								<p className="text-white/80 text-xs sm:text-base mb-2 sm:mb-4">
+									{t("servicesPage.testing.description")}
+								</p>
+								<p className="text-white/80 text-xs sm:text-base mb-4 md:mb-8 font-medium">
+									{t("servicesPage.testing.resumen")}
+								</p>
+								<h3 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
+									{t("servicesPage.testing.paraQueSirve")}
+								</h3>
+								<ul className="space-y-1.5 sm:space-y-3 mb-4 sm:mb-8">
+									{(Array.isArray(t("servicesPage.testing.items")) ? t("servicesPage.testing.items") : []).map((item: string, index: number) => (
+										<li key={index} className="text-white/80 text-[10px] sm:text-base">{item}</li>
+									))}
+								</ul>
+								<Link
+									href={whatsappTesting}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center gap-2 bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-colors text-xs sm:text-sm md:text-base"
+								>
+									{t("servicesPage.testing.masInformacion")}
+									<svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+								</Link>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -374,6 +439,7 @@ export default function Services() {
 					<p className="text-white/40 text-[7px] sm:text-xs text-center">
 						© {new Date().getFullYear()} Endurance3. Todos los derechos reservados.
 					</p>
+					<FooterDeveloperCredit />
 				</div>
 			</section>
 		</main>

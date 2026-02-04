@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import FooterDeveloperCredit from "./FooterDeveloperCredit";
 
 export default function SimpleFooter() {
 	const { t } = useLanguage();
@@ -80,6 +81,7 @@ export default function SimpleFooter() {
 					<p className="text-white/70 text-sm text-center">
 						© {new Date().getFullYear()} Endurance3. {t("footer.copyright")}
 					</p>
+					<FooterDeveloperCredit />
 				</div>
 			</div>
 		</footer>

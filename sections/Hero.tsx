@@ -15,7 +15,7 @@ export default function Hero() {
 					src="/images/End-3.jpg"
 					alt="Athlete hero"
 					fill
-					className="object-cover object-center"
+					className="object-cover object-[50%_45%] md:object-center"
 					priority
 					quality={100}
 				/>

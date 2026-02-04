@@ -41,6 +41,8 @@
 	"team": {
 		"title": "Equipo",
 		"description": "Conoce a quienes forman Enduranc3. Un equipo de profesionales apasionados por el entrenamiento deportivo y la ciencia aplicada al rendimiento",
+		"flipCard": "Pulsar para ver información",
+		"closeCard": "Cerrar tarjeta",
 		"carlos": {
 			"name": "CARLOS CABRERA",
 			"items": [
