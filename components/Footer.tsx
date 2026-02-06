@@ -9,6 +9,7 @@ export default function Footer() {
 					src="/images/End-4.jpg"
 					alt="Triathlete"
 					fill
+					sizes="100vw"
 					className="object-cover opacity-40"
 					quality={100}
 				/>

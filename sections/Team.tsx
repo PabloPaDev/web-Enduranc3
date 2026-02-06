@@ -83,6 +83,7 @@ export default function Team() {
 												src={member.image}
 												alt={member.name}
 												fill
+												sizes="(min-width: 768px) 33vw, 100vw"
 												className={`object-cover ${
 													member.id === 1
 														? "object-[50%_28%]"
@@ -151,6 +152,7 @@ export default function Team() {
 												src={member.image}
 												alt={member.name}
 												fill
+												sizes="(min-width: 768px) 33vw, 100vw"
 												className={`object-cover ${
 													member.id === 1
 														? "object-[50%_35%]"

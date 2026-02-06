@@ -15,6 +15,7 @@ export default function Hero() {
 					src="/images/End-3.jpg"
 					alt="Athlete hero"
 					fill
+					sizes="100vw"
 					className="object-cover object-[50%_45%] md:object-center"
 					priority
 					quality={100}
@@ -46,7 +47,9 @@ export default function Hero() {
 						alt="Enduranc3"
 						width={140}
 						height={42}
+						sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, (max-width: 1280px) 180px, 200px"
 						className="h-[1.2em] w-auto inline align-text-bottom mr-1 brightness-0 invert sm:w-[160px] md:w-[180px] lg:w-[180px] 2xl:w-[200px]"
+						priority
 						quality={100}
 					/>{t("hero.description")}
 				</p>

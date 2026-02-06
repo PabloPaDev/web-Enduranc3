@@ -70,7 +70,7 @@ export default function Blog() {
 			<section className="py-12 sm:py-16 md:py-24 bg-[#2B2B2B]">
 				<div className="container mx-auto px-4 sm:px-6">
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
-						{blogPosts.map((post) => {
+						{blogPosts.map((post, index) => {
 							const isExpanded = expandedPost === post.id;
 							return (
 								<article
@@ -84,7 +84,9 @@ export default function Blog() {
 											src={post.image}
 											alt={post.title}
 											fill
+											sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
 											className="object-cover group-hover:scale-105 transition-transform duration-300"
+											priority={index === 0}
 											quality={100}
 										/>
 										<div className="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/80 to-transparent"></div>

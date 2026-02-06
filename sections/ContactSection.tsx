@@ -43,6 +43,7 @@ export default function ContactSection() {
 					src="/images/End-4.jpg"
 					alt="Cyclist background"
 					fill
+					sizes="100vw"
 					className="object-cover object-center"
 					quality={100}
 				/>
@@ -183,6 +184,7 @@ export default function ContactSection() {
 						alt="Enduranc3 Logo"
 						width={250}
 						height={80}
+						sizes="(max-width: 640px) 150px, 300px"
 						className="h-auto brightness-0 invert w-[150px] sm:w-[300px]"
 						quality={100}
 					/>

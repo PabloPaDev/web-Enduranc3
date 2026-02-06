@@ -73,7 +73,9 @@ export default function Servicios({ variant = "normal" }: Props) {
 						src="/images/End-5.jpg"
 						alt="Runner"
 						fill
+						sizes="50vw"
 						className="object-cover"
+						priority
 						quality={100}
 					/>
 					<div className="absolute inset-0 bg-[#2B2B2B]/50 flex flex-col items-center justify-center p-2 sm:p-4 md:p-8">

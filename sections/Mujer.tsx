@@ -1,20 +1,28 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Mujer() {
 	const { t } = useLanguage();
 
 	return (
-		<section
-			id="mujer"
-			className="relative flex-1 text-white bg-cover bg-center bg-no-repeat min-h-screen"
-			style={{ backgroundImage: "url('/images/End-1.jpg')" }}
-		>
-			<div className="absolute inset-0 bg-black/50" />
+		<section id="mujer" className="relative flex-1 text-white min-h-screen overflow-hidden">
+			<div className="absolute inset-0 z-0">
+				<Image
+					src="/images/End-1.jpg"
+					alt=""
+					fill
+					sizes="100vw"
+					className="object-cover object-center"
+					priority
+					quality={100}
+				/>
+			</div>
+			<div className="absolute inset-0 z-0 bg-black/50" />
 			
 			{/* Móvil: texto más arriba para leer mejor. Desktop: abajo derecha */}
-			<div className="absolute inset-0 flex items-center md:items-end justify-center md:justify-end p-4 sm:p-6 md:p-8 pt-20 sm:pt-24 md:pt-0 pb-8 sm:pb-12 md:pb-16">
+			<div className="absolute inset-0 z-10 flex items-center md:items-end justify-center md:justify-end p-4 sm:p-6 md:p-8 pt-20 sm:pt-24 md:pt-0 pb-8 sm:pb-12 md:pb-16">
 				<div className="w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl text-center md:text-right bg-black/30 backdrop-blur-sm p-5 sm:p-6 md:p-8 rounded-lg">
 					<p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold leading-snug">
 						{t("mujer.description")}

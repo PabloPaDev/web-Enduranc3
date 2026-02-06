@@ -30,9 +30,21 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const scrollToTopScript = `
+		(function() {
+			if (typeof history !== 'undefined' && 'scrollRestoration' in history) history.scrollRestoration = 'manual';
+			if (!window.location.hash) {
+				window.scrollTo(0, 0);
+				if (document.documentElement) document.documentElement.scrollTop = 0;
+				if (document.body) document.body.scrollTop = 0;
+			}
+		})();
+	`;
+
 	return (
 		<html lang="es" className={righteous.variable}>
 			<body>
+				<script dangerouslySetInnerHTML={{ __html: scrollToTopScript }} />
 				<LanguageProvider>
 					<ScrollToHero />
 					{children}

@@ -105,6 +105,7 @@ export default function Services() {
 						src="/images/End-2.jpg"
 						alt="Servicios Enduranc3"
 						fill
+						sizes="100vw"
 						className="object-cover"
 						priority
 						quality={100}
@@ -298,6 +299,7 @@ export default function Services() {
 						src="/images/servicios/Equipo.jpeg"
 						alt="Equipo de ciclistas"
 						fill
+						sizes="100vw"
 						className="object-cover"
 						quality={100}
 					/>
@@ -395,6 +397,7 @@ export default function Services() {
 							alt="Enduranc3 Logo"
 							width={250}
 							height={80}
+							sizes="(max-width: 640px) 120px, 300px"
 							className="h-auto brightness-0 invert w-[120px] sm:w-[300px]"
 							quality={100}
 						/>

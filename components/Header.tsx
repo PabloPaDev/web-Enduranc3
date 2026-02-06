@@ -58,8 +58,10 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 							alt="Enduranc3 Logo"
 							width={200}
 							height={70}
+							sizes="(max-width: 768px) 140px, 200px"
 							className={`${logoClassName} transition-opacity duration-300 ${isScrolled ? "md:opacity-100 opacity-0" : "opacity-100"}`}
 							priority
+							quality={100}
 						/>
 						{/* Logo alternativo (móvil con scroll) - solo visible en móvil al hacer scroll */}
 						<Image
@@ -67,8 +69,10 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 							alt="Enduranc3 Logo"
 							width={48}
 							height={48}
+							sizes="48px"
 							className={`absolute top-1/2 -translate-y-1/2 left-0 w-[38px] h-[38px] sm:w-[46px] sm:h-[46px] brightness-0 invert transition-opacity duration-300 md:opacity-0 ${isScrolled ? "opacity-100" : "opacity-0"}`}
 							priority
+							quality={100}
 						/>
 					</Link>
 					<div className="hidden md:block">
@@ -130,7 +134,9 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 						alt="Enduranc3 Logo"
 						width={36}
 						height={36}
+						sizes="36px"
 						className="w-[36px] h-[36px] brightness-0 invert"
+						quality={100}
 					/>
 				</Link>
 				

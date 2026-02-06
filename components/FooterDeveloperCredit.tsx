@@ -20,7 +20,9 @@ export default function FooterDeveloperCredit() {
 					alt="Pablo Palacios - Desarrollador Web"
 					width={14}
 					height={14}
+					sizes="14px"
 					className="h-3.5 w-3.5 object-contain brightness-0 invert opacity-90"
+					quality={100}
 				/>
 			</a>
 		</div>

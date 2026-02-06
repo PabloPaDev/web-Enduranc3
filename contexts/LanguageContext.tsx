@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import esTranslations from "@/translations/es.json";
 
 type Language = "es" | "en";
 
@@ -14,29 +15,26 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
 	const [language, setLanguageState] = useState<Language>("es");
-	const [translations, setTranslations] = useState<Record<string, any>>({});
+	// Español por defecto: carga síncrona para primera pintada rápida
+	const [translations, setTranslations] = useState<Record<string, any>>(esTranslations);
 
 	useEffect(() => {
-		// Cargar el idioma guardado en localStorage
+		// Aplicar idioma guardado después del primer render (primera carga siempre en español)
 		const savedLanguage = localStorage.getItem("language") as Language | null;
-		if (savedLanguage && (savedLanguage === "es" || savedLanguage === "en")) {
-			setLanguageState(savedLanguage);
+		if (savedLanguage === "en") {
+			setLanguageState("en");
 		}
 	}, []);
 
 	useEffect(() => {
-		// Cargar traducciones según el idioma
-		import(`@/translations/${language}.json`)
-			.then((mod) => {
-				setTranslations(mod.default);
-			})
-			.catch(() => {
-				// Si falla, usar español por defecto
-				import(`@/translations/es.json`)
-					.then((mod) => {
-						setTranslations(mod.default);
-					});
-			});
+		if (language === "es") {
+			setTranslations(esTranslations);
+			return;
+		}
+		// Cargar inglés solo cuando el usuario cambie a inglés
+		import(`@/translations/en.json`)
+			.then((mod) => setTranslations(mod.default))
+			.catch(() => setTranslations(esTranslations));
 	}, [language]);
 
 	const setLanguage = (lang: Language) => {
