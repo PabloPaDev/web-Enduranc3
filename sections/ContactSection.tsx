@@ -6,6 +6,8 @@ import { useState } from "react";
 import FooterDeveloperCredit from "@/components/FooterDeveloperCredit";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+type SubmitStatus = "idle" | "sending" | "success" | "error";
+
 export default function ContactSection() {
 	const [formData, setFormData] = useState({
 		nombre: "",
@@ -13,11 +15,27 @@ export default function ContactSection() {
 		asunto: "",
 		mensaje: "",
 	});
+	const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		// Aquí iría la lógica para enviar el email
-		console.log("Formulario enviado:", formData);
+		setSubmitStatus("sending");
+		try {
+			const res = await fetch("/api/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			});
+			const data = await res.json();
+			if (data.ok) {
+				setSubmitStatus("success");
+				setFormData({ nombre: "", email: "", asunto: "", mensaje: "" });
+			} else {
+				setSubmitStatus("error");
+			}
+		} catch {
+			setSubmitStatus("error");
+		}
 	};
 
 	const handleChange = (
@@ -37,11 +55,11 @@ export default function ContactSection() {
 	const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
 	return (
-		<section id="contacto" className="relative bg-[#2B2B2B] text-white min-h-screen flex flex-col scroll-mt-20 overflow-x-hidden">
+		<section id="contacto" aria-labelledby="section-contacto" className="relative bg-[#2B2B2B] text-white min-h-screen flex flex-col scroll-mt-20 overflow-x-hidden">
 			<div className="absolute inset-0 z-0">
 				<Image
 					src="/images/End-4.jpg"
-					alt="Cyclist background"
+					alt="Ciclista en entrenamiento, fondo sección contacto"
 					fill
 					sizes="100vw"
 					className="object-cover object-center"
@@ -53,9 +71,9 @@ export default function ContactSection() {
 			<div className="relative z-10 container mx-auto px-4 sm:px-6 pt-14 sm:pt-8 pb-4 sm:pb-6 flex-1 flex flex-col justify-center">
 				{/* Título - Compacto en móvil */}
 				<div className="max-w-4xl mx-auto text-center mb-3 sm:mb-10">
-					<h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-6">
+					<h2 id="section-contacto" className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-6">
 						{t("contact.title")}
-					</h1>
+					</h2>
 					<p className="text-white/90 text-xs sm:text-lg md:text-xl">
 						{t("contact.subtitle")}
 					</p>
@@ -126,10 +144,23 @@ export default function ContactSection() {
 							/>
 							<button
 								type="submit"
-								className="w-full bg-[#E10613] hover:bg-[#C10510] text-white font-semibold px-4 py-2.5 sm:px-8 sm:py-3 rounded-lg transition-colors text-sm sm:text-base min-h-[40px] sm:min-h-[48px]"
+								disabled={submitStatus === "sending"}
+								className="w-full bg-[#E10613] hover:bg-[#C10510] disabled:opacity-70 disabled:cursor-not-allowed text-white font-semibold px-4 py-2.5 sm:px-8 sm:py-3 rounded-lg transition-colors text-sm sm:text-base min-h-[40px] sm:min-h-[48px]"
 							>
-								{t("contact.form.submit")}
+								{submitStatus === "sending"
+									? t("contact.form.sending")
+									: t("contact.form.submit")}
 							</button>
+							{submitStatus === "success" && (
+								<p className="text-green-400 text-sm" role="status">
+									{t("contact.form.success")}
+								</p>
+							)}
+							{submitStatus === "error" && (
+								<p className="text-red-400 text-sm" role="alert">
+									{t("contact.form.error")}
+								</p>
+							)}
 						</form>
 					</div>
 				</div>
@@ -141,10 +172,6 @@ export default function ContactSection() {
 							<div>
 								<h3 className="font-bold text-white mb-0.5 sm:mb-2 text-xs sm:text-lg">{t("contact.email")}</h3>
 								<p className="text-white/80 text-[10px] sm:text-base">endurance3.es@gmail.com</p>
-							</div>
-							<div>
-								<h3 className="font-bold text-white mb-0.5 sm:mb-2 text-xs sm:text-lg">{t("contact.sponsors")}</h3>
-								<p className="text-white/80 text-[10px] sm:text-base">sponsors@endurance3.es</p>
 							</div>
 						</div>
 					</div>
@@ -198,6 +225,9 @@ export default function ContactSection() {
 						<h4 className="font-bold text-white mb-0.5 sm:mb-1">Endurance3</h4>
 						<p className="text-white/60 leading-snug line-clamp-2 sm:line-clamp-none">
 							{t("footer.description")}
+						</p>
+						<p className="text-white/50 text-xs mt-1 leading-snug">
+							{t("footer.basedIn")}
 						</p>
 					</div>
 					<div>

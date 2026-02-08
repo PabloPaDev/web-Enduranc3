@@ -35,8 +35,55 @@
 		}
 	},
 	"mujer": {
-		"description": "We are developing an app where hormonal science and sport come together to take women's training to the next level",
-		"button": "Coming Soon"
+		"hero": {
+			"headline": "Training aligned with female physiology",
+			"subline": "Evidence-based integration into sport and performance.",
+			"cta": "Coming soon",
+			"instagram": "Find out more on our Instagram"
+		},
+		"about": {
+			"sectionHeading": "About Ciclo Activa",
+			"p1": "Ciclo Activa is a training application that integrates knowledge of female physiology into sport planning. It is aimed at athletes and users seeking an evidence-based approach to training and performance.",
+			"p2": "The project takes a multidisciplinary approach: it combines sport science, physiology and cycle tracking to adapt load and intensity. The aim is to provide a clear tool that supports day-to-day decision-making, without replacing professional judgement.",
+			"p3": "The app is in development. Its launch will be announced on this website and on Enduranc3 official channels."
+		},
+		"accompaniment": {
+			"ariaLabel": "More about Ciclo Activa",
+			"invite": "We're here to accompany you. If you'd like, we can tell you a bit more.",
+			"body": "Ciclo Activa is a project in development: it's not an app yet. It's a different way of approaching training and health. We want to accompany you at your own pace.",
+			"close": "Close"
+		},
+		"accompanimentPersistent": {
+			"ariaLabel": "Information about Ciclo Activa",
+			"invite": "We're here if you want to understand what Ciclo Activa is.",
+			"panelTitle": "Ciclo Activa",
+			"panelBody": "Ciclo Activa is an Enduranc3 project in development. It's not an app yet: it's a different way of approaching training and health. We're here to accompany you when you want to know more.",
+			"close": "Close"
+		},
+		"chatbot": {
+			"ariaLabel": "Questions about Ciclo Activa",
+			"suggestionPrompt": "Have questions? Open the chat and we'll answer.",
+			"invite": "Ask anything about Ciclo Activa.",
+			"panelTitle": "Ciclo Activa",
+			"close": "Close",
+			"welcome": "Hello, I'm here to accompany you.\nWhat would you like to know more about Ciclo Activa?",
+			"questions": {
+				"whatIs": "What is Ciclo Activa?",
+				"status": "What stage is the project at?",
+				"whoFor": "Who is it for?",
+				"whoBehind": "Who is behind it?",
+				"needs": "What needs does it address?"
+			},
+			"answers": {
+				"whatIs": "Ciclo Activa is an initiative in development within Endurance, focused on accompanying the female athlete through training, health and knowledge of her physiology.",
+				"status": "Ciclo Activa is currently in development as a digital environment. It is not an app available at this time.",
+				"whoFor": "The project is aimed at high-performance athletes who want to go to the next level.",
+				"whoBehind": "Ciclo Activa has a multidisciplinary team of health and sports professionals: coaches, physiotherapists, nutritionists, gynaecologists and psychologists, all with experience in women's sport.",
+				"needs": "The project addresses common needs of the female athlete such as adapting training to the menstrual cycle, injury prevention, hormonal health, psychological wellbeing and support through different life stages."
+			},
+			"otherQuestion": "Another question",
+			"closeButton": "Close"
+		}
 	},
 	"team": {
 		"title": "Team",
@@ -89,7 +136,10 @@
 			"email": "youremail.com",
 			"asunto": "What would you like to talk about?",
 			"mensaje": "Write your message here...",
-			"submit": "Send Message"
+			"submit": "Send Message",
+			"sending": "Sending...",
+			"success": "Message sent. We will reply to your email.",
+			"error": "Could not send. Try WhatsApp or email instead."
 		},
 		"email": "Email",
 		"sponsors": "Sponsorships",
@@ -97,7 +147,8 @@
 		"description": "Endurance3 is a sports training center specialized in performance. We combine science, data and experience to maximize your athletic potential."
 	},
 	"footer": {
-		"description": "Sports training based on science and data. Maximize your potential with proven methodology.",
+		"description": "Training based on science and data to maximize your potential.",
+		"basedIn": "Project based in Gandia (Valencia).",
 		"servicios": "Services",
 		"entrenamientoOnline": "Online Training",
 		"presencial": "In-Person",
@@ -112,6 +163,7 @@
 		"copyright": "All rights reserved."
 	},
 	"servicesPage": {
+		"sectionEntrenamientoYTesting": "Online training and testing",
 		"hero": {
 			"title": "SERVICES",
 			"description": "We offer professional sports training services based on science and data. Choose the service that best suits your needs."
@@ -208,6 +260,7 @@
 		"whatsappMessage": "Hello, I would like to know about..."
 	},
 	"blogPage": {
+		"articlesHeading": "Blog articles",
 		"hero": {
 			"title": "BLOG",
 			"description": "Stories, experiences and reflections from our team about training, performance and passion for sports."

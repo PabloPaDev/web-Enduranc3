@@ -1,7 +1,22 @@
 "use client";
 
-import { LanguageProvider as BaseLanguageProvider } from "@/contexts/LanguageContext";
+import {
+	LanguageProvider as BaseLanguageProvider,
+	type Language,
+} from "@/contexts/LanguageContext";
 
-export default function LanguageProvider({ children }: { children: React.ReactNode }) {
-	return <BaseLanguageProvider>{children}</BaseLanguageProvider>;
+interface LanguageProviderProps {
+	children: React.ReactNode;
+	initialLanguage: Language;
+}
+
+export default function LanguageProvider({
+	children,
+	initialLanguage,
+}: LanguageProviderProps) {
+	return (
+		<BaseLanguageProvider initialLanguage={initialLanguage}>
+			{children}
+		</BaseLanguageProvider>
+	);
 }

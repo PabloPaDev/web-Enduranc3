@@ -126,17 +126,20 @@ export default function Services() {
 			<div className="h-screen"></div>
 
 			{/* Entrenamiento Online y Testing - Sticky; móvil: centrado + expandir con "+" */}
-			<section id="entrenamiento-online" className="sticky top-0 z-10 min-h-screen md:min-h-0 pt-16 pb-8 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)] flex flex-col md:flex-none justify-center">
+			<section id="entrenamiento-online" aria-labelledby="section-entrenamiento-testing" className="sticky top-0 z-10 min-h-screen md:min-h-0 pt-16 pb-8 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)] flex flex-col md:flex-none justify-center">
 				<div ref={entrenamientoRef} className="container mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-none justify-center">
+					<h2 id="section-entrenamiento-testing" className="sr-only">
+						{t("servicesPage.sectionEntrenamientoYTesting")}
+					</h2>
 					<div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-12 lg:gap-12">
 						{/* Entrenamiento Online - móvil: tarjeta tipo asesoramiento */}
 						<div className="flex flex-col md:block">
 							{/* Móvil: tarjeta con formato referencia */}
 							<div className="md:contents">
 								<div className="md:hidden bg-white/5 border border-white/10 rounded-xl p-4 shadow-inner">
-									<h2 className="text-base font-bold text-white uppercase mb-1">
+									<h3 className="text-base font-bold text-white uppercase mb-1">
 										{t("servicesPage.entrenamientoOnline.title")}
-									</h2>
+									</h3>
 									<div className="w-12 h-0.5 bg-[#E10613] mb-3"></div>
 									<p className="text-white/80 text-xs leading-relaxed mb-3">
 										{t("servicesPage.entrenamientoOnline.description")}
@@ -152,9 +155,9 @@ export default function Services() {
 									</div>
 									{expandOnline && (
 										<div className="pt-2 border-t border-white/10">
-											<h3 className="text-xs font-semibold text-white mb-2">
+											<h4 className="text-xs font-semibold text-white mb-2">
 												{t("servicesPage.entrenamientoOnline.serviciosIncluidos")}
-											</h3>
+											</h4>
 											<ul className="space-y-1.5 mb-3 list-none pl-0">
 												{(Array.isArray(t("servicesPage.entrenamientoOnline.items")) ? t("servicesPage.entrenamientoOnline.items") : []).map((item: { title: string; description: string }, index: number) => (
 													<li key={index} className="flex items-start text-white/80 text-xs">
@@ -178,19 +181,19 @@ export default function Services() {
 							</div>
 							{/* Desktop: contenido sin tarjeta */}
 							<div className="hidden md:block">
-								<h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
+								<h3 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
 									{t("servicesPage.entrenamientoOnline.title")}
-								</h2>
+								</h3>
 								<p className="text-white/80 text-xs sm:text-base mb-4 sm:mb-8">
 									{t("servicesPage.entrenamientoOnline.description")}
 								</p>
-								<h3 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
+								<h4 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
 									{t("servicesPage.entrenamientoOnline.serviciosIncluidos")}
-								</h3>
+								</h4>
 								<div className="space-y-3 sm:space-y-6 mb-4 sm:mb-8">
 									{(Array.isArray(t("servicesPage.entrenamientoOnline.items")) ? t("servicesPage.entrenamientoOnline.items") : []).map((item: { title: string; description: string }, index: number) => (
 										<div key={index}>
-											<h4 className="text-white font-semibold text-xs sm:text-base mb-0.5 sm:mb-1">{item.title}</h4>
+											<p className="text-white font-semibold text-xs sm:text-base mb-0.5 sm:mb-1">{item.title}</p>
 											<p className="text-white/60 text-[10px] sm:text-sm">{item.description}</p>
 										</div>
 									))}
@@ -214,9 +217,9 @@ export default function Services() {
 						<div id="testing" className="scroll-mt-20 flex flex-col md:block">
 							<div className="md:contents">
 								<div className="md:hidden bg-white/5 border border-white/10 rounded-xl p-4 shadow-inner">
-									<h2 className="text-base font-bold text-white uppercase mb-1">
+									<h3 className="text-base font-bold text-white uppercase mb-1">
 										{t("servicesPage.testing.title")}
-									</h2>
+									</h3>
 									<div className="w-12 h-0.5 bg-[#E10613] mb-3"></div>
 									<p className="text-white/80 text-xs leading-relaxed mb-3">
 										{t("servicesPage.testing.description")}
@@ -235,9 +238,9 @@ export default function Services() {
 											<p className="text-white/80 text-xs font-medium mb-2">
 												{t("servicesPage.testing.resumen")}
 											</p>
-											<h3 className="text-xs font-semibold text-white mb-2">
+											<h4 className="text-xs font-semibold text-white mb-2">
 												{t("servicesPage.testing.paraQueSirve")}
-											</h3>
+											</h4>
 											<ul className="space-y-1.5 mb-3 list-none pl-0">
 												{(Array.isArray(t("servicesPage.testing.items")) ? t("servicesPage.testing.items") : []).map((item: string, index: number) => (
 													<li key={index} className="flex items-start text-white/80 text-xs">
@@ -260,18 +263,18 @@ export default function Services() {
 								</div>
 							</div>
 							<div className="hidden md:block">
-								<h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
+								<h3 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-6">
 									{t("servicesPage.testing.title")}
-								</h2>
+								</h3>
 								<p className="text-white/80 text-xs sm:text-base mb-2 sm:mb-4">
 									{t("servicesPage.testing.description")}
 								</p>
 								<p className="text-white/80 text-xs sm:text-base mb-4 md:mb-8 font-medium">
 									{t("servicesPage.testing.resumen")}
 								</p>
-								<h3 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
+								<h4 className="text-sm sm:text-xl font-semibold text-white mb-3 sm:mb-6">
 									{t("servicesPage.testing.paraQueSirve")}
-								</h3>
+								</h4>
 								<ul className="space-y-1.5 sm:space-y-3 mb-4 sm:mb-8">
 									{(Array.isArray(t("servicesPage.testing.items")) ? t("servicesPage.testing.items") : []).map((item: string, index: number) => (
 										<li key={index} className="text-white/80 text-[10px] sm:text-base">{item}</li>
@@ -293,7 +296,7 @@ export default function Services() {
 			</section>
 
 			{/* Gestión de Clubes - Sticky, tapa a la anterior */}
-			<section id="gestion-clubes" className="sticky top-0 z-20 h-screen text-white scroll-mt-20 overflow-hidden flex items-center rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
+			<section id="gestion-clubes" aria-labelledby="section-gestion-clubes" className="sticky top-0 z-20 h-screen text-white scroll-mt-20 overflow-hidden flex items-center rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
 				<div className="absolute inset-0">
 					<Image
 						src="/images/servicios/Equipo.jpeg"
@@ -308,7 +311,7 @@ export default function Services() {
 				
 				<div ref={clubesTextRef} className="relative z-10 container mx-auto px-4 sm:px-6">
 					<div className="max-w-5xl mx-auto text-center">
-						<h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 md:mb-10">
+						<h2 id="section-gestion-clubes" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 md:mb-10">
 							{t("servicesPage.gestionClubes.title")}
 						</h2>
 						<p className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-8 sm:mb-10 md:mb-12 leading-relaxed">
@@ -330,11 +333,11 @@ export default function Services() {
 			</section>
 
 			{/* Asesoramiento - Sticky, tapa a la anterior, ocupa pantalla completa */}
-			<section id="asesoramiento" className="sticky top-0 z-30 min-h-screen flex flex-col bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
+			<section id="asesoramiento" aria-labelledby="section-asesoramiento" className="sticky top-0 z-30 min-h-screen flex flex-col bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
 				{/* Contenido centrado en la pantalla */}
 				<div ref={asesoramientoRef} className="flex-1 flex items-center justify-center px-4 sm:px-6 pt-12 sm:pt-0">
 					<div className="max-w-4xl mx-auto">
-						<h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-4 sm:mb-8">
+						<h2 id="section-asesoramiento" className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-4 sm:mb-8">
 							{t("servicesPage.asesoramiento.title")}
 						</h2>
 						
@@ -411,6 +414,9 @@ export default function Services() {
 							<h4 className="font-bold text-white mb-0.5 sm:mb-1">Endurance3</h4>
 							<p className="text-white/60 leading-snug line-clamp-2 sm:line-clamp-none">
 								{t("footer.description")}
+							</p>
+							<p className="text-white/50 text-xs mt-1 leading-snug">
+								{t("footer.basedIn")}
 							</p>
 						</div>
 						<div>

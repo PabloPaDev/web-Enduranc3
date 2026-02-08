@@ -7,7 +7,7 @@ export default function Footer() {
 			<div className="absolute inset-0 z-0">
 				<Image
 					src="/images/End-4.jpg"
-					alt="Triathlete"
+					alt="Triatleta en entrenamiento, fondo footer Enduranc3"
 					fill
 					sizes="100vw"
 					className="object-cover opacity-40"
@@ -23,10 +23,6 @@ export default function Footer() {
 							<div>
 								<h3 className="font-bold text-white mb-2 text-lg sm:text-xl">Email</h3>
 								<p className="text-white/80 text-sm sm:text-base">info@enduranc3.es</p>
-							</div>
-							<div>
-								<h3 className="font-bold text-white mb-2 text-lg sm:text-xl">Patrocinios</h3>
-								<p className="text-white/80 text-sm sm:text-base">patrocinios@enduranc3.es</p>
 							</div>
 						</div>
 					</div>

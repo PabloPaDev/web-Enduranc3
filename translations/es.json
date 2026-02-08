@@ -35,8 +35,55 @@
 		}
 	},
 	"mujer": {
-		"description": "Estamos desarrollando una App donde ciencia hormonal y deportiva se juntan para llevar al entrenamiento femenino al siguiente nivel",
-		"button": "Proximamente"
+		"hero": {
+			"headline": "Entrenamiento adaptado a la fisiología femenina",
+			"subline": "Integración de evidencia científica en el rendimiento deportivo.",
+			"cta": "Disponible próximamente",
+			"instagram": "Entérate de todo en nuestro Instagram"
+		},
+		"about": {
+			"sectionHeading": "Información sobre Ciclo Activa",
+			"p1": "Ciclo Activa es una aplicación de entrenamiento que integra el conocimiento de la fisiología femenina en la planificación deportiva. Está dirigida a deportistas y usuarias que buscan un enfoque basado en evidencia para el entrenamiento y el rendimiento.",
+			"p2": "El proyecto parte de un enfoque multidisciplinar: combina ciencias del deporte, fisiología y seguimiento del ciclo para adaptar la carga y la intensidad. El objetivo es ofrecer una herramienta clara que facilite la toma de decisiones en el día a día, sin sustituir el criterio profesional.",
+			"p3": "La app está en desarrollo. Su lanzamiento se comunicará en esta web y en los canales oficiales de Enduranc3."
+		},
+		"accompaniment": {
+			"ariaLabel": "Más sobre Ciclo Activa",
+			"invite": "Estamos aquí para acompañarte. Si quieres, te contamos un poco más.",
+			"body": "Ciclo Activa es un proyecto en desarrollo: todavía no es una app. Es una forma distinta de enfocar el entrenamiento y la salud. Queremos acompañarte a tu ritmo.",
+			"close": "Cerrar"
+		},
+		"accompanimentPersistent": {
+			"ariaLabel": "Información sobre Ciclo Activa",
+			"invite": "Estamos aquí si quieres entender qué es Ciclo Activa.",
+			"panelTitle": "Ciclo Activa",
+			"panelBody": "Ciclo Activa es un proyecto de Enduranc3 en desarrollo. No es una aplicación todavía: es una forma distinta de enfocar el entrenamiento y la salud. Estamos aquí para acompañarte cuando quieras saber más.",
+			"close": "Cerrar"
+		},
+		"chatbot": {
+			"ariaLabel": "Preguntas sobre Ciclo Activa",
+			"suggestionPrompt": "¿Tienes dudas? Abre el chat y preguntanos.",
+			"invite": "Pregunta lo que quieras sobre Ciclo Activa.",
+			"panelTitle": "Ciclo Activa",
+			"close": "Cerrar",
+			"welcome": "Hola, soy Trini, la asistente virtual de Ciclo Activa.\n¿Sobre qué quieres saber más?",
+			"questions": {
+				"whatIs": "¿Qué es Ciclo Activa?",
+				"status": "¿En qué punto está el proyecto?",
+				"whoFor": "¿A quién va dirigido?",
+				"whoBehind": "¿Quién está detrás?",
+				"needs": "¿Qué necesidades aborda?"
+			},
+			"answers": {
+				"whatIs": "Ciclo Activa es una iniciativa en desarrollo dentro de Endurance, centrada en el acompañamiento de la mujer deportista desde el entrenamiento, la salud y el conocimiento de su fisiología.",
+				"status": "Ciclo Activa se encuentra actualmente en fase de desarrollo como entorno digital. No es una app disponible en este momento.",
+				"whoFor": "El proyecto está dirigido a deportistas de alto rendimiento que quieran ir al siguiente nivel.",
+				"whoBehind": "Ciclo Activa cuenta con un equipo multidisciplinar de profesionales de la salud y el deporte: entrenadoras, fisioterapeutas, nutricionistas, ginecólogas y psicólogas, todas con experiencia en deporte femenino.",
+				"needs": "El proyecto aborda necesidades habituales en la mujer deportista como la adaptación del entrenamiento al ciclo menstrual, la prevención de lesiones, la salud hormonal, el bienestar psicológico y el acompañamiento en distintas etapas de la vida."
+			},
+			"otherQuestion": "Otra pregunta",
+			"closeButton": "Cerrar"
+		}
 	},
 	"team": {
 		"title": "Equipo",
@@ -89,7 +136,10 @@
 			"email": "tuemail.com",
 			"asunto": "¿Sobre qué quieres hablar?",
 			"mensaje": "Escribe tu mensaje aquí...",
-			"submit": "Enviar Mensaje"
+			"submit": "Enviar Mensaje",
+			"sending": "Enviando...",
+			"success": "Mensaje enviado. Te responderemos a tu correo.",
+			"error": "No se pudo enviar. Prueba por WhatsApp o por email."
 		},
 		"email": "Email",
 		"sponsors": "Patrocinios",
@@ -97,7 +147,8 @@
 		"description": "Endurance3 es un centro de entrenamiento deportivo especializado en rendimiento. Combinamos ciencia, datos y experiencia para maximizar tu potencial atlético."
 	},
 	"footer": {
-		"description": "Entrenamiento deportivo basado en ciencia y datos. Maximiza tu potencial con metodología probada.",
+		"description": "Entrenamiento basado en ciencia y datos para maximizar tu potencial.",
+		"basedIn": "Proyecto con base en Gandia (Valencia).",
 		"servicios": "Servicios",
 		"entrenamientoOnline": "Entrenamiento Online",
 		"presencial": "Presencial",
@@ -112,6 +163,7 @@
 		"copyright": "Todos los derechos reservados."
 	},
 	"servicesPage": {
+		"sectionEntrenamientoYTesting": "Entrenamiento online y testing",
 		"hero": {
 			"title": "SERVICIOS",
 			"description": "Ofrecemos servicios de entrenamiento deportivo profesional basados en ciencia y datos. Elige el servicio que mejor se adapte a tus necesidades."
@@ -208,6 +260,7 @@
 		"whatsappMessage": "Hola, me gustaría saber sobre..."
 	},
 	"blogPage": {
+		"articlesHeading": "Artículos del blog",
 		"hero": {
 			"title": "BLOG",
 			"description": "Historias, experiencias y reflexiones de nuestro equipo sobre entrenamiento, rendimiento y pasión por el deporte."

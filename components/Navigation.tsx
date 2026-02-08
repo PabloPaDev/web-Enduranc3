@@ -5,11 +5,24 @@ import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export default function Navigation() {
+type NavigationProps = {
+	linkHoverVariant?: "red" | "purple";
+};
+
+export default function Navigation({ linkHoverVariant = "red" }: NavigationProps) {
 	const [isServicesOpen, setIsServicesOpen] = useState(false);
 	const router = useRouter();
 	const pathname = usePathname();
 	const { t, language, setLanguage } = useLanguage();
+
+	const linkHoverClass =
+		linkHoverVariant === "purple"
+			? "text-white hover:text-ciclo-activa transition-colors"
+			: "text-white hover:text-[#E10613] transition-colors";
+	const dropdownItemClass =
+		linkHoverVariant === "purple"
+			? "block px-4 py-3 text-white hover:bg-ciclo-activa/20 hover:text-ciclo-activa transition-colors text-base"
+			: "block px-4 py-3 text-white hover:bg-[#E10613]/20 hover:text-[#E10613] transition-colors text-base";
 
 	const services = [
 		{ name: t("nav.entrenamientoOnline"), href: "/services#entrenamiento-online" },
@@ -41,7 +54,7 @@ export default function Navigation() {
 				href="/#equipo"
 				scroll
 				onClick={handleSectionClick("equipo")}
-				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium"
+				className={`${linkHoverClass} text-lg md:text-xl font-medium`}
 			>
 				{t("nav.equipo")}
 			</Link>
@@ -53,10 +66,9 @@ export default function Navigation() {
 				<Link
 					href="/services"
 					onClick={() => {
-						// Cerrar el menú si está abierto, pero permitir navegación
 						setIsServicesOpen(false);
 					}}
-					className="text-white hover:text-gray-300 transition-colors flex items-center gap-2 text-lg md:text-xl font-medium"
+					className={`${linkHoverClass} flex items-center gap-2 text-lg md:text-xl font-medium`}
 				>
 					{t("nav.servicios")}
 					<svg
@@ -79,7 +91,7 @@ export default function Navigation() {
 								<Link
 									href="/services"
 									onClick={() => setIsServicesOpen(false)}
-									className="block px-4 py-3 text-white hover:bg-[#E10613]/20 hover:text-[#E10613] transition-colors text-base border-b border-white/10"
+									className={`${dropdownItemClass} border-b border-white/10`}
 								>
 									{t("nav.verTodosServicios")}
 								</Link>
@@ -88,7 +100,7 @@ export default function Navigation() {
 										key={index}
 										href={service.href}
 										onClick={() => setIsServicesOpen(false)}
-										className="block px-4 py-3 text-white hover:bg-[#E10613]/20 hover:text-[#E10613] transition-colors text-base"
+										className={dropdownItemClass}
 									>
 										{service.name}
 									</Link>
@@ -100,7 +112,7 @@ export default function Navigation() {
 			</div>
 			<Link
 				href="/mujer"
-				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium"
+				className={`${linkHoverClass} text-lg md:text-xl font-medium`}
 			>
 				{t("nav.mujer")}
 			</Link>
@@ -108,16 +120,16 @@ export default function Navigation() {
 				href="/#contacto" 
 				scroll 
 				onClick={handleSectionClick("contacto")}
-				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium"
+				className={`${linkHoverClass} text-lg md:text-xl font-medium`}
 			>
 				{t("nav.contacto")}
 			</Link>
-			<Link href="/blog" className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium">
+			<Link href="/blog" className={`${linkHoverClass} text-lg md:text-xl font-medium`}>
 				{t("nav.blog")}
 			</Link>
 			<button
 				onClick={toggleLanguage}
-				className="text-white hover:text-gray-300 transition-colors text-lg md:text-xl font-medium flex items-center gap-2"
+				className={`${linkHoverClass} text-lg md:text-xl font-medium flex items-center gap-2`}
 				aria-label="Cambiar idioma"
 			>
 				<span className={language === "es" ? "" : "opacity-50"}>ES</span>

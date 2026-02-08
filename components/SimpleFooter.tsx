@@ -16,6 +16,9 @@ export default function SimpleFooter() {
 						<p className="text-white/70 text-sm leading-relaxed">
 							{t("footer.description")}
 						</p>
+						<p className="text-white/50 text-xs mt-1 leading-snug">
+							{t("footer.basedIn")}
+						</p>
 					</div>
 					
 					<div>

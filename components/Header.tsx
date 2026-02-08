@@ -43,6 +43,11 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 		setIsMenuOpen(false);
 	};
 
+	const isMujerPage = pathname === "/mujer";
+	const logoHoverFilter = isMujerPage
+		? "group-hover:[filter:brightness(0)_saturate(100%)_invert(42%)_sepia(93%)_saturate(1500%)_hue-rotate(288deg)_brightness(95%)_contrast(95%)]"
+		: "group-hover:[filter:brightness(0)_saturate(100%)_invert(27%)_sepia(51%)_saturate(2878%)_hue-rotate(346deg)_brightness(104%)_contrast(97%)]";
+
 	return (
 		<>
 			<header 
@@ -51,7 +56,7 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 				}`}
 			>
 				<nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 md:py-6 flex items-center justify-between">
-					<Link href="/" className="flex items-center relative h-[40px] sm:h-[50px] md:h-[70px]" onClick={handleMobileLink}>
+					<Link href="/" className="group flex items-center relative h-[40px] sm:h-[50px] md:h-[70px]" onClick={handleMobileLink}>
 						{/* Logo principal - visible en desktop siempre, en móvil solo sin scroll */}
 						<Image
 							src="/images/logoEndurance.png"
@@ -59,7 +64,7 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 							width={200}
 							height={70}
 							sizes="(max-width: 768px) 140px, 200px"
-							className={`${logoClassName} transition-opacity duration-300 ${isScrolled ? "md:opacity-100 opacity-0" : "opacity-100"}`}
+							className={`${logoClassName} transition-all duration-300 ${logoHoverFilter} ${isScrolled ? "md:opacity-100 opacity-0" : "opacity-100"}`}
 							priority
 							quality={100}
 						/>
@@ -70,36 +75,37 @@ export default function Header({ logoVariant = "default" }: HeaderProps) {
 							width={48}
 							height={48}
 							sizes="48px"
-							className={`absolute top-1/2 -translate-y-1/2 left-0 w-[38px] h-[38px] sm:w-[46px] sm:h-[46px] brightness-0 invert transition-opacity duration-300 md:opacity-0 ${isScrolled ? "opacity-100" : "opacity-0"}`}
-							priority
+							className={`absolute top-1/2 -translate-y-1/2 left-0 w-[38px] h-[38px] sm:w-[46px] sm:h-[46px] brightness-0 invert transition-all duration-300 ${logoHoverFilter} md:opacity-0 ${isScrolled ? "opacity-100" : "opacity-0"}`}
 							quality={100}
 						/>
 					</Link>
 					<div className="hidden md:block">
-						<Navigation />
+						<Navigation linkHoverVariant={isMujerPage ? "purple" : "red"} />
 					</div>
 					
 					{/* Botón hamburguesa animado - visible en móvil */}
 					<button
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						className="md:hidden p-2 text-white relative w-10 h-10 flex items-center justify-center"
+						className={`md:hidden p-2 relative w-10 h-10 flex items-center justify-center transition-colors text-white ${
+							isMujerPage ? "hover:text-ciclo-activa" : ""
+						}`}
 						aria-label="Menú"
 					>
 						<div className="w-6 h-5 relative flex flex-col justify-between">
 							<span 
-								className={`block h-0.5 w-full bg-white rounded-full transition-all duration-500 ease-in-out origin-center ${
-									isMenuOpen ? "rotate-45 translate-y-[9px]" : ""
-								}`}
+								className={`block h-0.5 w-full rounded-full transition-all duration-500 ease-in-out origin-center ${
+									isMujerPage ? "bg-current" : "bg-white"
+								} ${isMenuOpen ? "rotate-45 translate-y-[9px]" : ""}`}
 							/>
 							<span 
-								className={`block h-0.5 w-full bg-white rounded-full transition-all duration-500 ease-in-out ${
-									isMenuOpen ? "opacity-0 scale-0" : "opacity-100"
-								}`}
+								className={`block h-0.5 w-full rounded-full transition-all duration-500 ease-in-out ${
+									isMujerPage ? "bg-current" : "bg-white"
+								} ${isMenuOpen ? "opacity-0 scale-0" : "opacity-100"}`}
 							/>
 							<span 
-								className={`block h-0.5 w-full bg-white rounded-full transition-all duration-500 ease-in-out origin-center ${
-									isMenuOpen ? "-rotate-45 -translate-y-[9px]" : ""
-								}`}
+								className={`block h-0.5 w-full rounded-full transition-all duration-500 ease-in-out origin-center ${
+									isMujerPage ? "bg-current" : "bg-white"
+								} ${isMenuOpen ? "-rotate-45 -translate-y-[9px]" : ""}`}
 							/>
 						</div>
 					</button>

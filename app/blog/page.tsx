@@ -67,7 +67,10 @@ export default function Blog() {
 			</section>
 
 			{/* Blog Posts */}
-			<section className="py-12 sm:py-16 md:py-24 bg-[#2B2B2B]">
+			<section aria-labelledby="blog-articles" className="py-12 sm:py-16 md:py-24 bg-[#2B2B2B]">
+				<h2 id="blog-articles" className="sr-only">
+					{t("blogPage.articlesHeading")}
+				</h2>
 				<div className="container mx-auto px-4 sm:px-6">
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
 						{blogPosts.map((post, index) => {
@@ -97,9 +100,9 @@ export default function Blog() {
 											<span>•</span>
 											<span>{post.date}</span>
 										</div>
-										<h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-[#E10613] transition-colors">
+										<h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-[#E10613] transition-colors">
 											{post.title}
-										</h2>
+										</h3>
 										<p className={`text-white/80 mb-4 transition-all duration-300 ${isExpanded ? "" : "line-clamp-3"}`}>
 											{post.excerpt}
 										</p>

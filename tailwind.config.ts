@@ -7,8 +7,14 @@ const config: Config = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 		"./sections/**/*.{js,ts,jsx,tsx,mdx}",
 	],
+	safelist: [
+		{ pattern: /(bg|text|border|ring)-ciclo-activa(\/\d+)?/, variants: ["hover", "focus", "focus-visible"] },
+	],
 	theme: {
 		extend: {
+			colors: {
+				"ciclo-activa": "#B639C5",
+			},
 			container: {
 				center: true,
 				padding: "1rem",

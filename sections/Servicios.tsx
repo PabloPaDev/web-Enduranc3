@@ -62,34 +62,35 @@ export default function Servicios({ variant = "normal" }: Props) {
 	return (
 		<section
 			id="servicios"
+			aria-labelledby="section-servicios"
 			className={`text-white ${
 				isOverlay ? "h-screen overflow-hidden bg-transparent" : "bg-[#2B2B2B]"
 			}`}
 		>
 			{/* Siempre 2 columnas para que funcione la animación de cortinas; overflow para que desaparezcan por los lados */}
+			{/* Con overlay: cortinas fuera de vista desde el primer frame (evita flash antes del Hero) */}
 			<div className={`grid grid-cols-2 h-full ${isOverlay ? "overflow-hidden" : ""}`}>
-				<div className={`relative overflow-hidden ${isOverlay ? "h-full" : "min-h-[400px] sm:min-h-[600px] md:min-h-[900px]"}`}>
+				<div className={`relative overflow-hidden ${isOverlay ? "h-full -translate-x-[50vw]" : "min-h-[400px] sm:min-h-[600px] md:min-h-[900px]"}`}>
 					<Image
 						src="/images/End-5.jpg"
-						alt="Runner"
+						alt="Corredor en entrenamiento, sección servicios Enduranc3"
 						fill
 						sizes="50vw"
 						className="object-cover"
-						priority
 						quality={100}
 					/>
 					<div className="absolute inset-0 bg-[#2B2B2B]/50 flex flex-col items-center justify-center p-2 sm:p-4 md:p-8">
-						<h2 className="text-lg sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-1 sm:mb-2 text-center">
+						<p className="text-lg sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-1 sm:mb-2 text-center">
 							<AnimatedCounter target={150} duration={3500} /> {t("servicios.atletasText")}
-						</h2>
+						</p>
 						<p className="text-white/90 text-xs sm:text-sm md:text-base text-center">
 							{t("servicios.llevadosNivel")}
 						</p>
 					</div>
 				</div>
 
-				<div className={`bg-[#2B2B2B] flex flex-col items-center justify-center p-3 sm:p-6 md:p-10 lg:p-12 ${isOverlay ? "h-full" : "min-h-[400px] sm:min-h-[600px] md:min-h-[900px]"}`}>
-					<h2 className="text-lg sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 text-center">
+				<div className={`bg-[#2B2B2B] flex flex-col items-center justify-center p-3 sm:p-6 md:p-10 lg:p-12 ${isOverlay ? "h-full translate-x-[50vw]" : "min-h-[400px] sm:min-h-[600px] md:min-h-[900px]"}`}>
+					<h2 id="section-servicios" className="text-lg sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 text-center">
 						{titleLines.map((line: string, i: number) => (
 							<span key={i}>
 								{line}
