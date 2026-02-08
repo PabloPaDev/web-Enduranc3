@@ -415,7 +415,7 @@ export default function Services() {
 							<p className="text-white/60 leading-snug line-clamp-2 sm:line-clamp-none">
 								{t("footer.description")}
 							</p>
-							<p className="text-white/50 text-xs mt-1 leading-snug">
+							<p className="text-white/50 mt-1 leading-snug">
 								{t("footer.basedIn")}
 							</p>
 						</div>

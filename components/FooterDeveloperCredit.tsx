@@ -6,7 +6,7 @@ import Image from "next/image";
  */
 export default function FooterDeveloperCredit() {
 	return (
-		<div className="flex flex-wrap items-center justify-center gap-1 mt-2 text-center text-[8px] sm:text-sm text-white/40">
+		<div className="flex flex-wrap items-center justify-center gap-1 mt-2 text-center text-[7px] sm:text-xs text-white/40">
 			<span>Objetivo alcanzado por</span>
 			<a
 				href="https://pablopadev.es/"
@@ -21,7 +21,7 @@ export default function FooterDeveloperCredit() {
 					width={24}
 					height={24}
 					sizes="24px"
-					className="h-3.5 w-3.5 sm:h-5 sm:w-5 object-contain brightness-0 invert opacity-90"
+					className="h-3 w-3 sm:h-4 sm:w-4 object-contain brightness-0 invert opacity-90"
 					quality={100}
 				/>
 			</a>

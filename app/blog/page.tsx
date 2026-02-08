@@ -2,7 +2,7 @@
 
 import Header from "@/components/Header";
 import Image from "next/image";
-import SimpleFooter from "@/components/SimpleFooter";
+import ServicesStyleFooter from "@/components/ServicesStyleFooter";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -139,7 +139,7 @@ export default function Blog() {
 				</div>
 			</section>
 
-			<SimpleFooter />
+			<ServicesStyleFooter />
 		</main>
 	);
 }
