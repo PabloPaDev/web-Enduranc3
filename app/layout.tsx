@@ -115,7 +115,7 @@ export default async function RootLayout({
 				<link rel="manifest" href="/manifest.json" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-				<link rel="apple-touch-icon" href="/images/icon-pwa.svg" />
+				<link rel="apple-touch-icon" href="/images/icon-pwa-512.png" />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: organizationSchema }}
