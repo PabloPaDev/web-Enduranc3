@@ -83,7 +83,11 @@ export const metadata: Metadata = {
 			"Enduranc3. Planificación deportiva profesional, enfoque multidisciplinar en rendimiento y salud.",
 	},
 	icons: {
-		icon: "/images/logo.png",
+		icon: [
+			{ url: "/images/icon-pwa.svg", type: "image/svg+xml" },
+			{ url: "/images/logo.png", type: "image/png", sizes: "192x192" },
+		],
+		apple: "/images/icon-pwa.svg",
 	},
 };
 
@@ -114,7 +118,7 @@ export default async function RootLayout({
 				<link rel="manifest" href="/manifest.json" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-				<link rel="apple-touch-icon" href="/images/logo.png" />
+				<link rel="apple-touch-icon" href="/images/icon-pwa.svg" />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: organizationSchema }}

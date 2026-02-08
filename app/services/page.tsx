@@ -1,91 +1,16 @@
 "use client";
 
-import { useRef, useLayoutEffect, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState } from "react";
 import FooterDeveloperCredit from "@/components/FooterDeveloperCredit";
 import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function Services() {
 	const { t } = useLanguage();
 	const [expandOnline, setExpandOnline] = useState(false);
 	const [expandTesting, setExpandTesting] = useState(false);
-	const heroTextRef = useRef<HTMLDivElement>(null);
-	const entrenamientoRef = useRef<HTMLDivElement>(null);
-	const clubesTextRef = useRef<HTMLDivElement>(null);
-	const asesoramientoRef = useRef<HTMLDivElement>(null);
-	const sectionsRef = useRef<HTMLDivElement>(null);
-
-	useLayoutEffect(() => {
-		const ctx = gsap.context(() => {
-			// Fade del texto del Hero mientras se tapa
-			if (heroTextRef.current) {
-				gsap.to(heroTextRef.current, {
-					opacity: 0,
-					y: -50,
-					ease: "none",
-					scrollTrigger: {
-						trigger: heroTextRef.current.parentElement,
-						start: "top top",
-						end: "50% top",
-						scrub: 1,
-					},
-				});
-			}
-
-			// Animación de entrada para Entrenamiento Online - aparece antes
-			if (entrenamientoRef.current) {
-				gsap.from(entrenamientoRef.current, {
-					opacity: 0,
-					y: 60,
-					ease: "power2.out",
-					scrollTrigger: {
-						trigger: entrenamientoRef.current.parentElement,
-						start: "top 100%",
-						end: "top 70%",
-						scrub: 0.5,
-					},
-				});
-			}
-
-			// Animación de entrada para Clubes - aparece antes (el texto no desaparece al hacer scroll)
-			if (clubesTextRef.current) {
-				gsap.from(clubesTextRef.current, {
-					opacity: 0,
-					y: 80,
-					ease: "power2.out",
-					scrollTrigger: {
-						trigger: clubesTextRef.current.parentElement,
-						start: "top 100%",
-						end: "top 60%",
-						scrub: 0.5,
-					},
-				});
-			}
-
-			// Animación de entrada para Asesoramiento - aparece antes
-			if (asesoramientoRef.current) {
-				gsap.from(asesoramientoRef.current, {
-					opacity: 0,
-					y: 60,
-					ease: "power2.out",
-					scrollTrigger: {
-						trigger: asesoramientoRef.current.parentElement,
-						start: "top 100%",
-						end: "top 70%",
-						scrub: 0.5,
-					},
-				});
-			}
-		}, sectionsRef);
-
-		return () => ctx.revert();
-	}, []);
 	const whatsappNumber = "+34633940227";
 	
 	// URLs de WhatsApp con mensajes personalizados por sección
@@ -95,7 +20,7 @@ export default function Services() {
 	const whatsappAsesoramiento = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t("servicesPage.asesoramiento.whatsappMessage") as string)}`;
 
 	return (
-		<main ref={sectionsRef} className="min-h-screen bg-[#2B2B2B] text-white">
+		<main className="min-h-screen bg-[#2B2B2B] text-white">
 			<Header />
 			
 			{/* Hero Section - Fija, el contenido sube por encima */}
@@ -112,7 +37,7 @@ export default function Services() {
 					/>
 					<div className="absolute inset-0 bg-gradient-to-b from-[#2B2B2B]/40 via-[#2B2B2B]/50 to-[#2B2B2B]/70"></div>
 				</div>
-				<div ref={heroTextRef} className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 sm:px-6">
+				<div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 sm:px-6">
 					<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-4 sm:mb-6 uppercase tracking-tight">
 						{t("servicesPage.hero.title")}
 					</h1>
@@ -127,7 +52,7 @@ export default function Services() {
 
 			{/* Entrenamiento Online y Testing - Sticky; móvil: centrado + expandir con "+" */}
 			<section id="entrenamiento-online" aria-labelledby="section-entrenamiento-testing" className="sticky top-0 z-10 min-h-screen md:min-h-0 pt-16 pb-8 sm:py-16 md:py-24 bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)] flex flex-col md:flex-none justify-center">
-				<div ref={entrenamientoRef} className="container mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-none justify-center">
+				<div className="container mx-auto px-4 sm:px-6 flex-1 flex flex-col md:flex-none justify-center">
 					<h2 id="section-entrenamiento-testing" className="sr-only">
 						{t("servicesPage.sectionEntrenamientoYTesting")}
 					</h2>
@@ -309,7 +234,7 @@ export default function Services() {
 					<div className="absolute inset-0 bg-gradient-to-b from-[#2B2B2B]/40 via-[#2B2B2B]/50 to-[#2B2B2B]/70"></div>
 				</div>
 				
-				<div ref={clubesTextRef} className="relative z-10 container mx-auto px-4 sm:px-6">
+				<div className="relative z-10 container mx-auto px-4 sm:px-6">
 					<div className="max-w-5xl mx-auto text-center">
 						<h2 id="section-gestion-clubes" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 md:mb-10">
 							{t("servicesPage.gestionClubes.title")}
@@ -335,7 +260,7 @@ export default function Services() {
 			{/* Asesoramiento - Sticky, tapa a la anterior, ocupa pantalla completa */}
 			<section id="asesoramiento" aria-labelledby="section-asesoramiento" className="sticky top-0 z-30 min-h-screen flex flex-col bg-[#2B2B2B] scroll-mt-20 rounded-t-3xl shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
 				{/* Contenido centrado en la pantalla */}
-				<div ref={asesoramientoRef} className="flex-1 flex items-center justify-center px-4 sm:px-6 pt-12 sm:pt-0">
+				<div className="flex-1 flex items-center justify-center px-4 sm:px-6 pt-12 sm:pt-0">
 					<div className="max-w-4xl mx-auto">
 						<h2 id="section-asesoramiento" className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-4 sm:mb-8">
 							{t("servicesPage.asesoramiento.title")}
