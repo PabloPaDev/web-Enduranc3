@@ -83,11 +83,8 @@ export const metadata: Metadata = {
 			"Enduranc3. Planificación deportiva profesional, enfoque multidisciplinar en rendimiento y salud.",
 	},
 	icons: {
-		icon: [
-			{ url: "/images/icon-pwa.svg", type: "image/svg+xml" },
-			{ url: "/images/logo.png", type: "image/png", sizes: "192x192" },
-		],
-		apple: "/images/icon-pwa.svg",
+		icon: "/images/logo.png",
+		apple: "/images/logo.png",
 	},
 };
 

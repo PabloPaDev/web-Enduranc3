@@ -48,10 +48,14 @@ export default function ScrollToHero() {
 				window.history.replaceState(null, "", pathname + window.location.search);
 			}
 			forceScrollToTop();
-			const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
-			const delays = isMobile ? [100, 250, 500, 800] : [100, 300];
-			const timeouts = delays.map((ms) => setTimeout(forceScrollToTop, ms));
-			return () => timeouts.forEach((t) => clearTimeout(t));
+			// Solo en home sin hash: reintentos por si el navegador restaura scroll tras pintar.
+			// En el resto de páginas (ej. /mujer) un solo scroll evita el salto al llegar al footer.
+			if (pathname === "/") {
+				const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
+				const delays = isMobile ? [100, 250, 500, 800] : [100, 300];
+				const timeouts = delays.map((ms) => setTimeout(forceScrollToTop, ms));
+				return () => timeouts.forEach((t) => clearTimeout(t));
+			}
 		}
 	}, [pathname]);
 

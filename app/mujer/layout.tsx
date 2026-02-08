@@ -5,6 +5,10 @@ export const metadata: Metadata = {
 	title: "Ciclo Activa",
 	description:
 		"Ciclo Activa: entrenamiento adaptado a la fisiología femenina. Integración de evidencia científica en el rendimiento deportivo. Proyecto Enduranc3.",
+	icons: {
+		icon: "/images/Ciclo-Activa.png",
+		apple: "/images/Ciclo-Activa.png",
+	},
 	openGraph: {
 		title: "Ciclo Activa | Enduranc3",
 		description:
