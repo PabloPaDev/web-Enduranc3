@@ -5,11 +5,15 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Mujer() {
 	const { t } = useLanguage();
+	const whatsappNumber = "+34633940227";
+	const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+		t("mujer.hero.whatsappMessage")
+	)}`;
 
 	return (
 		<section
 			id="mujer"
-			className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center"
+			className="fixed top-0 left-0 right-0 w-full h-screen overflow-hidden z-0 flex flex-col items-center justify-center"
 		>
 			<div className="absolute inset-0">
 				<Image
@@ -30,10 +34,18 @@ export default function Mujer() {
 				<p className="mt-4 sm:mt-5 text-white/85 text-base sm:text-lg md:text-xl font-normal max-w-2xl mx-auto">
 					{t("mujer.hero.subline")}
 				</p>
+				<p className="mt-2 sm:mt-3 text-white/80 text-sm sm:text-base font-normal max-w-2xl mx-auto">
+					{t("mujer.hero.tagline")}
+				</p>
 				<p className="mt-8 sm:mt-10">
-					<span className="inline-block px-4 py-2 rounded-full bg-ciclo-activa text-white text-sm sm:text-base tracking-wide border border-ciclo-activa/50 backdrop-blur-sm">
+					<a
+						href={whatsappUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="inline-block px-4 py-2 rounded-full bg-ciclo-activa text-white text-sm sm:text-base tracking-wide border border-ciclo-activa/50 backdrop-blur-sm"
+					>
 						{t("mujer.hero.cta")}
-					</span>
+					</a>
 				</p>
 				<div className="mt-4 sm:mt-5 flex flex-col items-center gap-2">
 					<p className="text-white/80 text-sm sm:text-base text-center">

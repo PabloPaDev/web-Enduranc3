@@ -37,9 +37,64 @@
 	"mujer": {
 		"hero": {
 			"headline": "Entrenamiento adaptado a la fisiología femenina",
-			"subline": "Integración de evidencia científica en el rendimiento deportivo.",
-			"cta": "Disponible próximamente",
-			"instagram": "Entérate de todo en nuestro Instagram"
+			"subline": "Entrena mejor entendiendo tu ciclo, tu cuerpo y tu recuperación",
+			"tagline": "Un enfoque basado en ciencia y coordinado por profesionales",
+			"cta": "Empieza tu valoración",
+			"whatsappMessage": "Hola, me gustaría empezar mi valoración con Ciclo Activa.",
+			"instagram": "Síguenos y descubre cómo trabajamos"
+		},
+		"problema": {
+			"title": "El deporte femenino sigue sin estar bien atendido",
+			"p1": "La fisiología femenina requiere un enfoque específico que el modelo tradicional no contempla.",
+			"p2": "El ciclo menstrual, la disponibilidad energética o la salud hormonal siguen sin formar parte real del entrenamiento.",
+			"issues": [
+				"Amenorrea hipotalámica",
+				"RED-S (déficit energético)",
+				"SOP",
+				"Lesiones por estrés y suelo pélvico"
+			],
+			"pMental": "Además, la presión estética, la ansiedad o los trastornos de la conducta alimentaria afectan directamente al rendimiento y bienestar.",
+			"closing": "Entrenar sin entender tu cuerpo tiene un coste"
+		},
+		"solucion": {
+			"title": "CicloActiva nace para cambiar esto",
+			"p1": "Un proyecto de salud deportiva femenina que integra todas las dimensiones de la deportista.",
+			"p2": "No trabajamos solo el entrenamiento.",
+			"p3": "Abordamos de forma conjunta la salud hormonal, la energía disponible, la recuperación y el contexto completo de la deportista.",
+			"p4": "Entrenamiento, nutrición, fisioterapia, ginecología y psicología trabajan en un mismo proceso coordinado.",
+			"purpose": "Empoderar a la mujer deportista desde el conocimiento, la prevención y el acompañamiento personalizado.",
+			"closingLine1": "La diferencia no es entrenar más",
+			"closingLine2": "Es entrenar entendiendo tu cuerpo"
+		},
+		"equipo": {
+			"title": "Un equipo, una visión",
+			"p1": "Un equipo multidisciplinar que trabaja de forma coordinada para entender cada caso desde todas sus dimensiones.",
+			"p2": "Las decisiones no se toman de forma aislada, se toman en conjunto.",
+			"workflowSteps": [
+				{
+					"n": "01",
+					"title": "Valoración inicial",
+					"text": "Estudio multidisciplinar completo de la deportista"
+				},
+				{
+					"n": "02",
+					"title": "Identificación de necesidades",
+					"text": "Análisis profundo de cada dimensión de la salud"
+				},
+				{
+					"n": "03",
+					"title": "Propuesta de abordaje",
+					"text": "Estrategia personalizada y coordinada entre especialistas"
+				},
+				{
+					"n": "04",
+					"title": "Seguimiento individualizado",
+					"text": "Acompañamiento continuo y ajuste del plan"
+				}
+			],
+			"value": "La coordinación entre profesionales permite ajustar cargas, prevenir lesiones y optimizar el rendimiento.",
+			"closingLine1": "No son especialistas aislados",
+			"closingLine2": "Es un sistema que trabaja en conjunto"
 		},
 		"about": {
 			"sectionHeading": "Información sobre Ciclo Activa",
@@ -61,28 +116,58 @@
 			"close": "Cerrar"
 		},
 		"chatbot": {
-			"ariaLabel": "Preguntas sobre Ciclo Activa",
-			"suggestionPrompt": "¿Tienes dudas? Abre el chat y preguntanos.",
-			"invite": "Pregunta lo que quieras sobre Ciclo Activa.",
+			"ariaLabel": "Orientación sobre salud y entrenamiento femenino",
+			"suggestionPrompt": "¿Tienes una duda? Te orientamos sin prisas.",
+			"invite": "Habla con Ciclo Activa",
 			"panelTitle": "Ciclo Activa",
 			"close": "Cerrar",
-			"welcome": "Hola, soy Trini, la asistente virtual de Ciclo Activa.\n¿Sobre qué quieres saber más?",
-			"questions": {
-				"whatIs": "¿Qué es Ciclo Activa?",
-				"status": "¿En qué punto está el proyecto?",
-				"whoFor": "¿A quién va dirigido?",
-				"whoBehind": "¿Quién está detrás?",
-				"needs": "¿Qué necesidades aborda?"
-			},
-			"answers": {
-				"whatIs": "Ciclo Activa es una iniciativa en desarrollo dentro de Endurance, centrada en el acompañamiento de la mujer deportista desde el entrenamiento, la salud y el conocimiento de su fisiología.",
-				"status": "Ciclo Activa se encuentra actualmente en fase de desarrollo como entorno digital. No es una app disponible en este momento.",
-				"whoFor": "El proyecto está dirigido a deportistas de alto rendimiento que quieran ir al siguiente nivel.",
-				"whoBehind": "Ciclo Activa cuenta con un equipo multidisciplinar de profesionales de la salud y el deporte: entrenadoras, fisioterapeutas, nutricionistas, ginecólogas y psicólogas, todas con experiencia en deporte femenino.",
-				"needs": "El proyecto aborda necesidades habituales en la mujer deportista como la adaptación del entrenamiento al ciclo menstrual, la prevención de lesiones, la salud hormonal, el bienestar psicológico y el acompañamiento en distintas etapas de la vida."
-			},
-			"otherQuestion": "Otra pregunta",
-			"closeButton": "Cerrar"
+			"flow": {
+				"intro": "¿Sobre qué te gustaría orientarte?",
+				"backToMenu": "Elegir otro tema",
+				"tracks": {
+					"cycle": {
+						"label": "Mi ciclo no es regular",
+						"main": "El ciclo menstrual es uno de los indicadores más importantes de salud en la mujer deportista.\n\nAlteraciones como ciclos irregulares o ausencia de regla suelen estar relacionadas con el estrés, la carga o el déficit energético.",
+						"question1": "¿Has notado cambios recientes en tu entrenamiento o alimentación?",
+						"options1": ["Sí", "No estoy segura", "No"],
+						"afterChoice": "Gracias por compartirlo. Ver el ciclo junto con carga, descanso y energía ayuda a entender el cuadro, sin juzgar ni etiquetar."
+					},
+					"fatigue": {
+						"label": "Me siento cansada siempre",
+						"main": "La fatiga constante en mujeres deportistas suele estar relacionada con la carga de entrenamiento, la recuperación o la energía disponible.\n\nTambién puede afectar el ciclo menstrual y la salud hormonal.",
+						"question1": "¿Notas que te cuesta recuperar incluso cuando reduces la carga?",
+						"options1": ["Sí, a menudo", "A veces", "No, suelo recuperar bien"],
+						"afterChoice": "Entender cómo duermes, comes y gestionas el estrés es clave. Son señales que conviene revisar con calma y mirada global."
+					},
+					"performance": {
+						"label": "Quiero mejorar mi rendimiento",
+						"main": "Mejorar el rendimiento no es solo «más entrenar»: encaja con recuperación adecuada, energía estable y un contexto hormonal coherente con tu fase vital.\n\nForzar la carga sin esas bases suele frenar el progreso.",
+						"question1": "¿Sientes que entrenas mucho pero no ves mejora, o que te cuesta mantener el ritmo?",
+						"options1": ["Entreno mucho y estoy estancada", "Me cuesta mantener ritmo", "Las dos cosas"],
+						"afterChoice": "Ese patrón es frecuente. Revisar volumen, intensidad y recuperación —y cómo responde tu cuerpo— suele aportar respuestas antes que solo endurecer el plan."
+					},
+					"injuries": {
+						"label": "Tengo lesiones frecuentes",
+						"main": "Las lesiones recurrentes muchas veces no dependen solo del entrenamiento.\n\nEn mujeres deportistas pueden estar relacionadas con fatiga acumulada, salud hormonal o falta de recuperación.",
+						"question1": "¿Son siempre en la misma zona o van cambiando?",
+						"options1": ["Casi siempre la misma zona", "Van cambiando", "No lo tengo claro"],
+						"afterChoice": "Eso orienta sobre si hay un foco mecánico, un patrón de sobrecarga o varios factores. En cualquier caso, conviene mirar carga, técnica y descanso en conjunto."
+					},
+					"understand": {
+						"label": "Quiero entender mi cuerpo",
+						"main": "Ciclo, energía, estado de ánimo y rendimiento están conectados. Entender tus señales te ayuda a entrenar con más criterio y menos frustración.\n\nNo se trata de exigirte más, sino de alinear esfuerzo con lo que tu cuerpo puede sostener.",
+						"question1": "¿Qué te resulta más difícil de leer ahora mismo?",
+						"options1": ["Cómo me afecta el ciclo", "Si descanso o como lo suficiente", "Estrés o presión (rendimiento, imagen…)"],
+						"afterChoice": "Es un buen punto de partida. Llevar un registro sencillo y revisarlo con perspectiva suele aclarar patrones sin necesidad de adivinar."
+					}
+				},
+				"closure": {
+					"invite": "Si quieres, podemos analizar tu caso de forma más completa y ver qué está pasando exactamente.",
+					"ctaHint": "Valoración con equipo especializado (opcional)",
+					"whatsappMessage": "Hola, me gustaría profundizar en mi caso con Ciclo Activa.",
+					"restart": "Nueva conversación"
+				}
+			}
 		}
 	},
 	"team": {

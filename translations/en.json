@@ -37,9 +37,64 @@
 	"mujer": {
 		"hero": {
 			"headline": "Training aligned with female physiology",
-			"subline": "Evidence-based integration into sport and performance.",
-			"cta": "Coming soon",
-			"instagram": "Find out more on our Instagram"
+			"subline": "Train better by understanding your cycle, your body and your recovery",
+			"tagline": "An approach grounded in science and coordinated by professionals",
+			"cta": "Start your assessment",
+			"whatsappMessage": "Hi, I'd like to start my assessment with Ciclo Activa.",
+			"instagram": "Follow us and see how we work"
+		},
+		"problema": {
+			"title": "Women's sport still isn't getting the support it needs",
+			"p1": "Female physiology calls for a specific approach that the traditional model doesn't address.",
+			"p2": "The menstrual cycle, energy availability and hormonal health still aren't really part of training.",
+			"issues": [
+				"Functional hypothalamic amenorrhoea",
+				"RED-S (low energy availability)",
+				"PCOS",
+				"Stress injuries and pelvic floor issues"
+			],
+			"pMental": "In addition, appearance pressure, anxiety or eating disorders directly affect performance and wellbeing.",
+			"closing": "Training without understanding your body has a cost"
+		},
+		"solucion": {
+			"title": "CicloActiva exists to change this",
+			"p1": "A women's sports health project that integrates every dimension of the athlete.",
+			"p2": "We don't only work on training.",
+			"p3": "Together we address hormonal health, available energy, recovery and the athlete's full context.",
+			"p4": "Training, nutrition, physiotherapy, gynaecology and psychology work in one coordinated process.",
+			"purpose": "Empowering women athletes through knowledge, prevention and personalised support.",
+			"closingLine1": "The difference isn't training more",
+			"closingLine2": "It's training while understanding your body"
+		},
+		"equipo": {
+			"title": "One team, one vision",
+			"p1": "A multidisciplinary team working in a coordinated way to understand each case from every dimension.",
+			"p2": "Decisions aren't made in isolation—they're made together.",
+			"workflowSteps": [
+				{
+					"n": "01",
+					"title": "Initial assessment",
+					"text": "Full multidisciplinary review of the athlete"
+				},
+				{
+					"n": "02",
+					"title": "Needs identification",
+					"text": "In-depth analysis of each dimension of health"
+				},
+				{
+					"n": "03",
+					"title": "Approach proposal",
+					"text": "Personalised strategy coordinated across specialists"
+				},
+				{
+					"n": "04",
+					"title": "Individualised follow-up",
+					"text": "Ongoing support and plan adjustments"
+				}
+			],
+			"value": "Coordination between professionals makes it possible to adjust load, prevent injuries and optimise performance.",
+			"closingLine1": "They aren't isolated specialists",
+			"closingLine2": "It's a system that works as a whole"
 		},
 		"about": {
 			"sectionHeading": "About Ciclo Activa",
@@ -61,28 +116,58 @@
 			"close": "Close"
 		},
 		"chatbot": {
-			"ariaLabel": "Questions about Ciclo Activa",
-			"suggestionPrompt": "Have questions? Open the chat and we'll answer.",
-			"invite": "Ask anything about Ciclo Activa.",
+			"ariaLabel": "Guidance on women's health and training",
+			"suggestionPrompt": "Have a question? We'll take it step by step.",
+			"invite": "Talk to Ciclo Activa",
 			"panelTitle": "Ciclo Activa",
 			"close": "Close",
-			"welcome": "Hello, I'm here to accompany you.\nWhat would you like to know more about Ciclo Activa?",
-			"questions": {
-				"whatIs": "What is Ciclo Activa?",
-				"status": "What stage is the project at?",
-				"whoFor": "Who is it for?",
-				"whoBehind": "Who is behind it?",
-				"needs": "What needs does it address?"
-			},
-			"answers": {
-				"whatIs": "Ciclo Activa is an initiative in development within Endurance, focused on accompanying the female athlete through training, health and knowledge of her physiology.",
-				"status": "Ciclo Activa is currently in development as a digital environment. It is not an app available at this time.",
-				"whoFor": "The project is aimed at high-performance athletes who want to go to the next level.",
-				"whoBehind": "Ciclo Activa has a multidisciplinary team of health and sports professionals: coaches, physiotherapists, nutritionists, gynaecologists and psychologists, all with experience in women's sport.",
-				"needs": "The project addresses common needs of the female athlete such as adapting training to the menstrual cycle, injury prevention, hormonal health, psychological wellbeing and support through different life stages."
-			},
-			"otherQuestion": "Another question",
-			"closeButton": "Close"
+			"flow": {
+				"intro": "What would you like guidance on?",
+				"backToMenu": "Choose another topic",
+				"tracks": {
+					"cycle": {
+						"label": "My cycle isn't regular",
+						"main": "The menstrual cycle is one of the most important health markers for women athletes.\n\nIrregular cycles or missed periods are often linked to stress, training load or low energy availability.",
+						"question1": "Have you noticed recent changes in your training or nutrition?",
+						"options1": ["Yes", "I'm not sure", "No"],
+						"afterChoice": "Thanks for sharing. Looking at your cycle alongside load, rest and energy helps build a clearer picture—without labelling or judging."
+					},
+					"fatigue": {
+						"label": "I always feel tired",
+						"main": "Constant fatigue in women athletes is often related to training load, recovery or energy availability.\n\nIt can also interact with your menstrual cycle and hormonal health.",
+						"question1": "Do you find it hard to recover even when you reduce your training load?",
+						"options1": ["Yes, often", "Sometimes", "No, I usually recover well"],
+						"afterChoice": "How you sleep, eat and manage stress matters. These are signals worth reviewing calmly, with a whole-person view."
+					},
+					"performance": {
+						"label": "I want to improve my performance",
+						"main": "Improving performance isn't just \"train more\": it lines up with solid recovery, stable energy and hormonal context that fits your life stage.\n\nPushing load without those foundations often stalls progress.",
+						"question1": "Do you feel you train a lot but don't improve, or that you struggle to keep up the pace?",
+						"options1": ["I train hard but I'm stuck", "I struggle to keep pace", "Both"],
+						"afterChoice": "That pattern is common. Reviewing volume, intensity and recovery—and how your body responds—usually helps more than simply toughening the plan."
+					},
+					"injuries": {
+						"label": "I keep getting injuries",
+						"main": "Recurring injuries often aren't only about training.\n\nIn women athletes they can relate to accumulated fatigue, hormonal health or inadequate recovery.",
+						"question1": "Is it always the same area, or does it change?",
+						"options1": ["Mostly the same area", "It changes", "I'm not sure"],
+						"afterChoice": "That hints whether there's a local issue, a load pattern or several factors. Either way, load, technique and rest are best looked at together."
+					},
+					"understand": {
+						"label": "I want to understand my body",
+						"main": "Cycle, energy, mood and performance are connected. Understanding your signals helps you train with better judgment and less frustration.\n\nIt's not about demanding more of yourself, but aligning effort with what your body can sustain.",
+						"question1": "What's hardest for you to read right now?",
+						"options1": ["How my cycle affects me", "Whether I rest or eat enough", "Stress or pressure (performance, body image…)"],
+						"afterChoice": "That's a good starting point. A simple log, reviewed with perspective, often clarifies patterns without guesswork."
+					}
+				},
+				"closure": {
+					"invite": "If you'd like, we can look at your case in more depth and understand more clearly what's going on.",
+					"ctaHint": "Optional: assessment with a specialist team",
+					"whatsappMessage": "Hi, I'd like to explore my situation further with Ciclo Activa.",
+					"restart": "New conversation"
+				}
+			}
 		}
 	},
 	"team": {
