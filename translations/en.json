@@ -41,7 +41,8 @@
 			"tagline": "An approach grounded in science and coordinated by professionals",
 			"cta": "Start your assessment",
 			"whatsappMessage": "Hi, I'd like to start my assessment with Ciclo Activa.",
-			"instagram": "Follow us and see how we work"
+			"instagram": "Follow us and see how we work",
+			"ctaBeta": "Demo/Private beta"
 		},
 		"problema": {
 			"title": "Women's sport still isn't getting the support it needs",
@@ -129,35 +130,55 @@
 						"label": "My cycle isn't regular",
 						"main": "The menstrual cycle is one of the most important health markers for women athletes.\n\nIrregular cycles or missed periods are often linked to stress, training load or low energy availability.",
 						"question1": "Have you noticed recent changes in your training or nutrition?",
-						"options1": ["Yes", "I'm not sure", "No"],
+						"options1": [
+							"Yes",
+							"I'm not sure",
+							"No"
+						],
 						"afterChoice": "Thanks for sharing. Looking at your cycle alongside load, rest and energy helps build a clearer picture—without labelling or judging."
 					},
 					"fatigue": {
 						"label": "I always feel tired",
 						"main": "Constant fatigue in women athletes is often related to training load, recovery or energy availability.\n\nIt can also interact with your menstrual cycle and hormonal health.",
 						"question1": "Do you find it hard to recover even when you reduce your training load?",
-						"options1": ["Yes, often", "Sometimes", "No, I usually recover well"],
+						"options1": [
+							"Yes, often",
+							"Sometimes",
+							"No, I usually recover well"
+						],
 						"afterChoice": "How you sleep, eat and manage stress matters. These are signals worth reviewing calmly, with a whole-person view."
 					},
 					"performance": {
 						"label": "I want to improve my performance",
 						"main": "Improving performance isn't just \"train more\": it lines up with solid recovery, stable energy and hormonal context that fits your life stage.\n\nPushing load without those foundations often stalls progress.",
 						"question1": "Do you feel you train a lot but don't improve, or that you struggle to keep up the pace?",
-						"options1": ["I train hard but I'm stuck", "I struggle to keep pace", "Both"],
+						"options1": [
+							"I train hard but I'm stuck",
+							"I struggle to keep pace",
+							"Both"
+						],
 						"afterChoice": "That pattern is common. Reviewing volume, intensity and recovery—and how your body responds—usually helps more than simply toughening the plan."
 					},
 					"injuries": {
 						"label": "I keep getting injuries",
 						"main": "Recurring injuries often aren't only about training.\n\nIn women athletes they can relate to accumulated fatigue, hormonal health or inadequate recovery.",
 						"question1": "Is it always the same area, or does it change?",
-						"options1": ["Mostly the same area", "It changes", "I'm not sure"],
+						"options1": [
+							"Mostly the same area",
+							"It changes",
+							"I'm not sure"
+						],
 						"afterChoice": "That hints whether there's a local issue, a load pattern or several factors. Either way, load, technique and rest are best looked at together."
 					},
 					"understand": {
 						"label": "I want to understand my body",
 						"main": "Cycle, energy, mood and performance are connected. Understanding your signals helps you train with better judgment and less frustration.\n\nIt's not about demanding more of yourself, but aligning effort with what your body can sustain.",
 						"question1": "What's hardest for you to read right now?",
-						"options1": ["How my cycle affects me", "Whether I rest or eat enough", "Stress or pressure (performance, body image…)"],
+						"options1": [
+							"How my cycle affects me",
+							"Whether I rest or eat enough",
+							"Stress or pressure (performance, body image…)"
+						],
 						"afterChoice": "That's a good starting point. A simple log, reviewed with perspective, often clarifies patterns without guesswork."
 					}
 				},

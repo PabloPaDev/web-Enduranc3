@@ -41,7 +41,8 @@
 			"tagline": "Un enfoque basado en ciencia y coordinado por profesionales",
 			"cta": "Empieza tu valoración",
 			"whatsappMessage": "Hola, me gustaría empezar mi valoración con Ciclo Activa.",
-			"instagram": "Síguenos y descubre cómo trabajamos"
+			"instagram": "Síguenos y descubre cómo trabajamos",
+			"ctaBeta": "Demo/Beta privada"
 		},
 		"problema": {
 			"title": "El deporte femenino sigue sin estar bien atendido",
@@ -129,35 +130,55 @@
 						"label": "Mi ciclo no es regular",
 						"main": "El ciclo menstrual es uno de los indicadores más importantes de salud en la mujer deportista.\n\nAlteraciones como ciclos irregulares o ausencia de regla suelen estar relacionadas con el estrés, la carga o el déficit energético.",
 						"question1": "¿Has notado cambios recientes en tu entrenamiento o alimentación?",
-						"options1": ["Sí", "No estoy segura", "No"],
+						"options1": [
+							"Sí",
+							"No estoy segura",
+							"No"
+						],
 						"afterChoice": "Gracias por compartirlo. Ver el ciclo junto con carga, descanso y energía ayuda a entender el cuadro, sin juzgar ni etiquetar."
 					},
 					"fatigue": {
 						"label": "Me siento cansada siempre",
 						"main": "La fatiga constante en mujeres deportistas suele estar relacionada con la carga de entrenamiento, la recuperación o la energía disponible.\n\nTambién puede afectar el ciclo menstrual y la salud hormonal.",
 						"question1": "¿Notas que te cuesta recuperar incluso cuando reduces la carga?",
-						"options1": ["Sí, a menudo", "A veces", "No, suelo recuperar bien"],
+						"options1": [
+							"Sí, a menudo",
+							"A veces",
+							"No, suelo recuperar bien"
+						],
 						"afterChoice": "Entender cómo duermes, comes y gestionas el estrés es clave. Son señales que conviene revisar con calma y mirada global."
 					},
 					"performance": {
 						"label": "Quiero mejorar mi rendimiento",
 						"main": "Mejorar el rendimiento no es solo «más entrenar»: encaja con recuperación adecuada, energía estable y un contexto hormonal coherente con tu fase vital.\n\nForzar la carga sin esas bases suele frenar el progreso.",
 						"question1": "¿Sientes que entrenas mucho pero no ves mejora, o que te cuesta mantener el ritmo?",
-						"options1": ["Entreno mucho y estoy estancada", "Me cuesta mantener ritmo", "Las dos cosas"],
+						"options1": [
+							"Entreno mucho y estoy estancada",
+							"Me cuesta mantener ritmo",
+							"Las dos cosas"
+						],
 						"afterChoice": "Ese patrón es frecuente. Revisar volumen, intensidad y recuperación —y cómo responde tu cuerpo— suele aportar respuestas antes que solo endurecer el plan."
 					},
 					"injuries": {
 						"label": "Tengo lesiones frecuentes",
 						"main": "Las lesiones recurrentes muchas veces no dependen solo del entrenamiento.\n\nEn mujeres deportistas pueden estar relacionadas con fatiga acumulada, salud hormonal o falta de recuperación.",
 						"question1": "¿Son siempre en la misma zona o van cambiando?",
-						"options1": ["Casi siempre la misma zona", "Van cambiando", "No lo tengo claro"],
+						"options1": [
+							"Casi siempre la misma zona",
+							"Van cambiando",
+							"No lo tengo claro"
+						],
 						"afterChoice": "Eso orienta sobre si hay un foco mecánico, un patrón de sobrecarga o varios factores. En cualquier caso, conviene mirar carga, técnica y descanso en conjunto."
 					},
 					"understand": {
 						"label": "Quiero entender mi cuerpo",
 						"main": "Ciclo, energía, estado de ánimo y rendimiento están conectados. Entender tus señales te ayuda a entrenar con más criterio y menos frustración.\n\nNo se trata de exigirte más, sino de alinear esfuerzo con lo que tu cuerpo puede sostener.",
 						"question1": "¿Qué te resulta más difícil de leer ahora mismo?",
-						"options1": ["Cómo me afecta el ciclo", "Si descanso o como lo suficiente", "Estrés o presión (rendimiento, imagen…)"],
+						"options1": [
+							"Cómo me afecta el ciclo",
+							"Si descanso o como lo suficiente",
+							"Estrés o presión (rendimiento, imagen…)"
+						],
 						"afterChoice": "Es un buen punto de partida. Llevar un registro sencillo y revisarlo con perspectiva suele aclarar patrones sin necesidad de adivinar."
 					}
 				},
